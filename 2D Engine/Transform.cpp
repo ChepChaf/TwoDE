@@ -6,18 +6,38 @@ namespace TwoDE
 	{
 	}
 
-	void Transform::Translate(Vector2 translation)
+	void Transform::translate(Vector2 translation)
 	{
 		m_Position += translation;
 	}
 
-	void Transform::Rotate(Vector2 rotation)
+	void Transform::rotate(Vector2 rotation)
 	{
 		m_Rotation += rotation;
 	}
 
-	void Transform::Scale(Vector2 scale)
+	void Transform::scale(Vector2 scale)
 	{
 		m_Scale += scale;
+	}
+
+	void Transform::setPosition(Vector2 position)
+	{
+		m_Position = position;
+	}
+
+	void Transform::setRotation(Vector2 rotation)
+	{
+		m_Rotation = rotation;
+	}
+
+	void Transform::setScale(Vector2 scale)
+	{
+		m_Scale = scale;
+	}
+
+	Vector2 Transform::setPosition()
+	{
+		return m_Position;
 	}
 }

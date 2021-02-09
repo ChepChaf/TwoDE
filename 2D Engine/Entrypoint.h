@@ -13,6 +13,7 @@ int main(int argc, char** argv)
     auto app = TwoDE::createApplication();
 
     app->init();
+    app->start();
 
     while(!app->shouldClose())
         app->update();

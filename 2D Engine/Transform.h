@@ -1,10 +1,11 @@
 #pragma once
 
+#include "Core.h"
 #include "Vector2.h"
 
 namespace TwoDE
 {
-	class Transform
+	class TWO_DLL Transform
 	{
 		Vector2 m_Position;
 		Vector2 m_Rotation;
@@ -12,9 +13,14 @@ namespace TwoDE
 	public:
 		Transform(Vector2 position = { 0.0f, 0.0f }, Vector2 rotation = { 0.0f, 0.0f }, Vector2 scale = { 1.0f, 1.0f });
 
-		void Translate(Vector2 translation);
-		void Rotate(Vector2 rotation);
-		void Scale(Vector2 scale);
+		void translate(Vector2 translation);
+		void rotate(Vector2 rotation);
+		void scale(Vector2 scale);
+
+		void setPosition(Vector2 position);
+		void setRotation(Vector2 rotation);
+		void setScale(Vector2 scale);
+		Vector2 setPosition();
 	};
 }
 

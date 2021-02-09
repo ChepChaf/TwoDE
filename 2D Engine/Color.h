@@ -1,8 +1,10 @@
 #pragma once
 
+#include "Core.h"
+
 namespace TwoDE
 {
-	class Color
+	class TWO_DLL Color
 	{
 		// TODO: Create a Vector4 class to use here
 		float m_r, m_g, m_b, m_a;

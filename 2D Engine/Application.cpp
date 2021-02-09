@@ -1,37 +1,49 @@
 #include "Application.h"
 #include "Color.h"
+#include "EngineTime.h"
 
 #include <iostream>
+#include <memory>
+#include <ctime>
 
 namespace TwoDE
 {
     void Application::init()
     {
-        m_Window = Window::createWindow();
+        resourceManager = std::make_unique<ResourceManager>();
+
+        window = Window::createWindow();
 
         int width = 800;
         int height = 640;
 
-        if (m_Window->init("TwoDEngine", width, height) < 0)
+        if (window->init("TwoDEngine", width, height) < 0)
         {
             // TODO: Log error
             std::cout << "Error initializing window" << std::endl;
         }
 
-        m_Renderer = Renderer::createRenderer();
-        if (m_Renderer->init(width, height) < 0)
+        renderer = Renderer::createRenderer();
+
+        if (renderer->init(width, height) < 0)
         {
             std::cout << "Error initializing renderer" << std::endl;
         }
     }
     bool Application::shouldClose()
     {
-        return m_Window->shouldClose();
+        return window->shouldClose();
     }
     void Application::update()
     {
-        m_Renderer->clear(Color(0.5f, 0.5f, 0.0f, 1.0f));
-        m_Window->swapBuffers();
+        auto current = std::clock();
+        EngineTime::deltaTime = current - elapsed;
+        EngineTime::deltaTime /= 1000;
+
+        elapsed = current;
+
+        renderer->draw();
+        window->swapBuffers();
     }
 }
 

@@ -12,3 +12,5 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR}/vendor)
 add_library(TwoDE ${SOURCE_FILES} ${VENDOR_FILES})
 
 target_link_libraries(TwoDE PRIVATE glad glfw glm)
+
+file(COPY "${CMAKE_CURRENT_SOURCE_DIR}/resources" DESTINATION "${PROJECT_BINARY_DIR}")
