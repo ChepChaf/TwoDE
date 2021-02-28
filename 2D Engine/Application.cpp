@@ -1,6 +1,7 @@
 #include "Application.h"
 #include "Color.h"
 #include "EngineTime.h"
+#include "Logger.h"
 
 #include <iostream>
 #include <memory>
@@ -10,6 +11,9 @@ namespace TwoDE
 {
     void Application::init()
     {
+        Logger::init();
+        TWODE_CORE_INFO("Hello from Application init");
+
         resourceManager = std::make_unique<ResourceManager>();
 
         window = Window::createWindow();
@@ -17,7 +21,7 @@ namespace TwoDE
         int width = 800;
         int height = 640;
 
-        if (window->init("TwoDEngine", width, height) < 0)
+        if (window->init("TwoDEngine", &width, &height) < 0)
         {
             // TODO: Log error
             std::cout << "Error initializing window" << std::endl;

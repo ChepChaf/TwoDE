@@ -4,6 +4,7 @@
 
 void SandboxApp::start()
 {
+	TWODE_INFO("Hello from SandboxApp");
 	std::cout << "Hello from SandboxApp" << std::endl;
 
 	sprite = resourceManager->loadSprite("resources/sprites/Character01.png");

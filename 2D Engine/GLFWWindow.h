@@ -14,10 +14,12 @@ namespace TwoDE
 	public:
 		// Inherited via Window
 		GLFWWindow();
-		virtual int init(std::string windowName, int width, int height) override;
+		virtual int init(std::string windowName, int* width, int* height) override;
 		virtual void destroy() override;
 		virtual bool shouldClose() override;
 		virtual void swapBuffers() override;
+	private:
+		static void windowSizeCallback(GLFWwindow* window, int width, int height);
 	};
 }
 

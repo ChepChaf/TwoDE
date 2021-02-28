@@ -172,6 +172,7 @@
     <ClInclude Include="Core.h" />
     <ClInclude Include="Entrypoint.h" />
     <ClInclude Include="GLFWWindow.h" />
+    <ClInclude Include="Logger.h" />
     <ClInclude Include="OpenGLRenderer.h" />
     <ClInclude Include="Renderer.h" />
     <ClInclude Include="ResourceManager.h" />
@@ -188,6 +189,7 @@
     <ClCompile Include="Application.cpp" />
     <ClCompile Include="Color.cpp" />
     <ClCompile Include="GLFWWindow.cpp" />
+    <ClCompile Include="Logger.cpp" />
     <ClCompile Include="OpenGLRenderer.cpp" />
     <ClCompile Include="Renderer.cpp" />
     <ClCompile Include="ResourceManager.cpp" />
@@ -203,6 +205,7 @@
     <Text Include="CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="ClassDiagram.cd" />
     <None Include="resources\shaders\default.frag" />
     <None Include="resources\shaders\default.vert" />
   </ItemGroup>

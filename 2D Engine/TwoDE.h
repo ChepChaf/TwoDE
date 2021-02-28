@@ -1,7 +1,8 @@
 #pragma once
 
-#include "Application.h"
 #include "Core.h"
+#include "Application.h"
+#include "Logger.h"
 
 #include "ResourceManager.h"
 #include "EngineTime.h"

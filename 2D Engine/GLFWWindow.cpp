@@ -7,15 +7,16 @@ namespace TwoDE
 		m_Window = nullptr;
 	}
 
-	int GLFWWindow::init(std::string windowName, int width, int height)
+	int GLFWWindow::init(std::string windowName, int* width, int* height)
 	{
 		if (!glfwInit())
 			return -1;
 
 		glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
 		glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 5);
+		glfwWindowHint(GLFW_MAXIMIZED, GLFW_TRUE);
 
-		m_Window = glfwCreateWindow(width, height, windowName.c_str(), NULL, NULL);
+		m_Window = glfwCreateWindow(*width, *height, windowName.c_str(), NULL, NULL);
 
 		if (!m_Window)
 		{
@@ -26,7 +27,7 @@ namespace TwoDE
 
 		glfwMakeContextCurrent(m_Window);
 
-		glfwGetFramebufferSize(m_Window, &width, &height);
+		glfwGetFramebufferSize(m_Window, width, height);
 
 		return 0;
 	}
@@ -45,5 +46,9 @@ namespace TwoDE
 	void GLFWWindow::swapBuffers()
 	{
 		glfwSwapBuffers(m_Window);
+	}
+	void GLFWWindow::windowSizeCallback(GLFWwindow* window, int width, int height)
+	{
+		glfwSetWindowSize(window, width, height);
 	}
 }
