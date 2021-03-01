@@ -52,6 +52,7 @@ namespace TwoDE
 
 		glEnable(GL_DEBUG_OUTPUT);
 		glDebugMessageCallback(messageCallback, 0);
+		glDebugMessageControl(GL_DONT_CARE, GL_DEBUG_TYPE_OTHER, GL_DEBUG_SEVERITY_NOTIFICATION, 0, 0, GL_FALSE);
 
 		glCreateVertexArrays(1, &vao);
 		glBindVertexArray(vao);
@@ -63,6 +64,8 @@ namespace TwoDE
 
 		glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 2 * sizeof(float), (void*)0);
 		glEnableVertexAttribArray(0);
+
+		
 
 		defaultShader = Shader("resources/shaders/default.vert", "resources/shaders/default.frag");
 
