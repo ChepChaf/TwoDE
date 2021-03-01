@@ -2,6 +2,7 @@
 #include "Color.h"
 #include "EngineTime.h"
 #include "Logger.h"
+#include "PubSub.h"
 
 #include <iostream>
 #include <memory>
@@ -12,6 +13,10 @@ namespace TwoDE
     void Application::init()
     {
         Logger::init();
+
+        pubsub = std::make_unique<PubSub>();
+        pubsub->init();
+
         TWODE_CORE_INFO("Hello from Application init");
 
         resourceManager = std::make_unique<ResourceManager>();
@@ -24,14 +29,14 @@ namespace TwoDE
         if (window->init("TwoDEngine", &width, &height) < 0)
         {
             // TODO: Log error
-            std::cout << "Error initializing window" << std::endl;
+            TWODE_CORE_ERROR("Error initializing window");
         }
 
         renderer = Renderer::createRenderer();
 
         if (renderer->init(width, height) < 0)
         {
-            std::cout << "Error initializing renderer" << std::endl;
+            TWODE_CORE_ERROR("Error initializing renderer");
         }
     }
     bool Application::shouldClose()

@@ -1,3 +1,4 @@
+#include "Logger.h"
 #include "OpenGLRenderer.h"
 
 #include "glad/glad.h"
@@ -34,7 +35,7 @@ namespace TwoDE
 	{
 		GLenum err;
 		while ((err = glGetError()) != GL_NO_ERROR) {
-			std::cout << err << std::endl;
+			TWODE_CORE_ERROR(err);
 		}
 	}
 

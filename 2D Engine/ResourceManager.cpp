@@ -1,3 +1,4 @@
+#include "Logger.h"
 #include "ResourceManager.h"
 #include "Texture.h"
 
@@ -22,7 +23,7 @@ namespace TwoDE
             return sprite;
         }
 
-        std::cout << "Error loading sprite" << std::endl;
+        TWODE_CORE_ERROR("Error loading sprite");
         // TODO: Log error
 
         return nullptr;
@@ -42,7 +43,7 @@ namespace TwoDE
             return texture;
         }
 
-        std::cout << "Error loading sprite" << std::endl;
+        TWODE_CORE_ERROR("Error loading sprite");
         // TODO: Log error
 
         return nullptr;

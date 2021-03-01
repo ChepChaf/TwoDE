@@ -171,9 +171,11 @@
     <ClInclude Include="Color.h" />
     <ClInclude Include="Core.h" />
     <ClInclude Include="Entrypoint.h" />
+    <ClInclude Include="Event.h" />
     <ClInclude Include="GLFWWindow.h" />
     <ClInclude Include="Logger.h" />
     <ClInclude Include="OpenGLRenderer.h" />
+    <ClInclude Include="PubSub.h" />
     <ClInclude Include="Renderer.h" />
     <ClInclude Include="ResourceManager.h" />
     <ClInclude Include="Shader.h" />
@@ -188,9 +190,11 @@
   <ItemGroup>
     <ClCompile Include="Application.cpp" />
     <ClCompile Include="Color.cpp" />
+    <ClCompile Include="Event.cpp" />
     <ClCompile Include="GLFWWindow.cpp" />
     <ClCompile Include="Logger.cpp" />
     <ClCompile Include="OpenGLRenderer.cpp" />
+    <ClCompile Include="PubSub.cpp" />
     <ClCompile Include="Renderer.cpp" />
     <ClCompile Include="ResourceManager.cpp" />
     <ClCompile Include="Shader.cpp" />

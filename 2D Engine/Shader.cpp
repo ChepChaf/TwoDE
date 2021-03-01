@@ -1,3 +1,4 @@
+#include "Logger.h"
 #include "Shader.h"
 
 #include <glad/glad.h>
@@ -41,7 +42,7 @@ namespace TwoDE
         }
         catch (std::ifstream::failure e)
         {
-            std::cout << "ERROR::SHADER::FILE_NOT_SUCCESFULLY_READ" << std::endl;
+            TWODE_CORE_ERROR("ERROR::SHADER::FILE_NOT_SUCCESFULLY_READ");
         }
         const char* vShaderCode = vertexCode.c_str();
         const char* fShaderCode = fragmentCode.c_str();
@@ -58,7 +59,7 @@ namespace TwoDE
         if (!success)
         {
             glGetShaderInfoLog(vertex, 512, NULL, infoLog);
-            std::cout << "ERROR::SHADER::VERTEX::COMPILATION_FAILED\n" << infoLog << std::endl;
+            TWODE_CORE_ERROR("ERROR::SHADER::VERTEX::COMPILATION_FAILED\n", infoLog);
         }
 
         fragment = glCreateShader(GL_FRAGMENT_SHADER);
@@ -69,7 +70,7 @@ namespace TwoDE
         if (!success)
         {
             glGetShaderInfoLog(fragment, 512, NULL, infoLog);
-            std::cout << "ERROR::SHADER::FRAGMENT::COMPILATION_FAILED\n" << infoLog << std::endl;
+            TWODE_CORE_ERROR("ERROR::SHADER::FRAGMENT::COMPILATION_FAILED\n",infoLog);
         }
 
         ID = glCreateProgram();
@@ -81,7 +82,7 @@ namespace TwoDE
         if (!success)
         {
             glGetProgramInfoLog(ID, 512, NULL, infoLog);
-            std::cout << "ERROR::SHADER::PROGRAM::LINKING_FAILED\n" << infoLog << std::endl;
+            TWODE_CORE_ERROR("ERROR::SHADER::PROGRAM::LINKING_FAILED\n", infoLog);
         }
 
         glDeleteShader(vertex);

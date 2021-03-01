@@ -5,7 +5,6 @@
 void SandboxApp::start()
 {
 	TWODE_INFO("Hello from SandboxApp");
-	std::cout << "Hello from SandboxApp" << std::endl;
 
 	sprite = resourceManager->loadSprite("resources/sprites/Character01.png");
 	renderer->drawSprite(sprite);
@@ -27,6 +26,10 @@ void SandboxApp::start()
 
 	TwoDE::Sprite sprite05 = TwoDE::Sprite(tile, TwoDE::Vector2(1.0f, -1.0f));
 	renderer->drawSprite(std::make_shared<TwoDE::Sprite>(sprite05));
+
+	pubsub->subscribe("direction_changed", TwoDE::Event([=]() {
+		TWODE_INFO("direction_changed");
+	}));
 }
 
 void SandboxApp::update()
@@ -35,6 +38,10 @@ void SandboxApp::update()
 	renderer->clear(TwoDE::Color(0.2f, 0.4f, 0.6f, 1.0f));
 
 	if (sprite->getPosition().getX() > 1.0 || sprite->getPosition().getX() < -1.0)
+	{
 		speed *= -1;
+		pubsub->publish("direction_changed");
+	}
+		
 	sprite->setPosition(sprite->getPosition() + (TwoDE::EngineTime::deltaTime * speed));
 }
