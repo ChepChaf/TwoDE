@@ -2,9 +2,5 @@
 
 namespace TwoDE
 {
-	const void Event::call() const
-	{
-		fun();
-	}
-}
 
+}

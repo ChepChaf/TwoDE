@@ -26,8 +26,14 @@ namespace TwoDE
 		void operator+=(const Vector2& other);
 		void operator+=(float scalar);
 		Vector2 operator+(float scalar);
+		Vector2 operator+(Vector2 other);
 		void operator*=(float scalar);
 	};
+
+	inline Vector2 operator*(Vector2 vec, float scalar)
+	{
+		return Vector2{ vec.getX() * scalar, vec.getY() * scalar };
+	}
 }
 
 

@@ -27,21 +27,30 @@ void SandboxApp::start()
 	TwoDE::Sprite sprite05 = TwoDE::Sprite(tile, TwoDE::Vector2(1.0f, -1.0f));
 	renderer->drawSprite(std::make_shared<TwoDE::Sprite>(sprite05));
 
-	pubsub->subscribe("direction_changed", TwoDE::Event([=]() {
-		TWODE_INFO("direction_changed");
-	}));
+	TwoDE::Locator::getEventSystem().subscribe("button_clicked", TwoDE::Event(std::function([=](TwoDE::Input::ButtonEventInfo& params) {
+		TwoDE::Vector2 right{ 1, 0 };
+		TwoDE::Vector2 up{ 0, 1 };
+
+		switch (params.button)
+		{
+		case TwoDE::Input::BUTTON::RIGHT_KEY:
+			sprite->setPosition(sprite->getPosition() + right * (speed * TwoDE::EngineTime::deltaTime));
+			break;
+		case TwoDE::Input::BUTTON::LEFT_KEY:
+			sprite->setPosition(sprite->getPosition() + right * (-1 * speed * TwoDE::EngineTime::deltaTime));
+			break;
+		case TwoDE::Input::BUTTON::UP_KEY:
+			sprite->setPosition(sprite->getPosition() + up * (speed * TwoDE::EngineTime::deltaTime));
+			break;
+		case TwoDE::Input::BUTTON::DOWN_KEY:
+			sprite->setPosition(sprite->getPosition() + up * (-1 * speed * TwoDE::EngineTime::deltaTime));
+			break;
+		}
+	})));
 }
 
 void SandboxApp::update()
 {
 	TwoDE::Application::update();
 	renderer->clear(TwoDE::Color(0.2f, 0.4f, 0.6f, 1.0f));
-
-	if (sprite->getPosition().getX() > 1.0 || sprite->getPosition().getX() < -1.0)
-	{
-		speed *= -1;
-		pubsub->publish("direction_changed");
-	}
-		
-	sprite->setPosition(sprite->getPosition() + (TwoDE::EngineTime::deltaTime * speed));
 }

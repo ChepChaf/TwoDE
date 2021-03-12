@@ -1,4 +1,5 @@
 #include "GLFWWindow.h"
+#include "Locator.h"
 
 namespace TwoDE
 {
@@ -28,6 +29,13 @@ namespace TwoDE
 		glfwMakeContextCurrent(m_Window);
 
 		glfwGetFramebufferSize(m_Window, width, height);
+
+		auto key_callback = [](GLFWwindow* window, int key, int scancode, int action, int mods)
+		{
+			Locator::getInputSystem().buttonClicked(key);
+		};
+
+		glfwSetKeyCallback(m_Window, key_callback);
 
 		return 0;
 	}

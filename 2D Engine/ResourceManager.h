@@ -6,15 +6,15 @@
 #include "Texture.h"
 
 #include <string>
-#include <map>
+#include <unordered_map>
 #include <memory>
 
 namespace TwoDE
 {
 	class TWO_DLL ResourceManager
 	{
-		std::map<std::string, std::shared_ptr<Sprite>> loadedSprites;
-		std::map<std::string, std::shared_ptr<Texture>> loadedTextures;
+		std::unordered_map<std::string, std::shared_ptr<Sprite>> loadedSprites;
+		std::unordered_map<std::string, std::shared_ptr<Texture>> loadedTextures;
 
 	public:
 		std::shared_ptr<Sprite> loadSprite(std::string spritePath);

@@ -11,7 +11,7 @@ namespace TwoDE
 {
     std::shared_ptr<Sprite> ResourceManager::loadSprite(std::string spritePath)
     {
-        if (loadedTextures.contains(spritePath) && loadedTextures[spritePath] != nullptr)
+        if (loadedTextures.find(spritePath) != loadedTextures.end() && loadedTextures[spritePath] != nullptr)
             return std::make_shared<Sprite>(Sprite(loadedTextures[spritePath], Vector2(0.0f, 0.0f)));
 
         std::shared_ptr<Texture> texture = loadTexture(spritePath);
@@ -30,7 +30,7 @@ namespace TwoDE
     }
     std::shared_ptr<Texture> ResourceManager::loadTexture(std::string texturePath)
     {
-        if (loadedTextures.contains(texturePath) && loadedTextures[texturePath] != nullptr)
+        if (loadedTextures.find(texturePath) != loadedTextures.end() && loadedTextures[texturePath] != nullptr)
             return loadedTextures[texturePath];
 
         stbi_set_flip_vertically_on_load(true);

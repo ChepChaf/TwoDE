@@ -18,7 +18,7 @@ namespace TwoDE
 		Window* window = nullptr;
 	protected:
 		std::unique_ptr<ResourceManager> resourceManager;
-		std::unique_ptr<PubSub> pubsub;
+
 		Renderer* renderer;
 
 	public:

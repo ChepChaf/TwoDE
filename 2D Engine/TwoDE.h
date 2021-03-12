@@ -9,6 +9,9 @@
 #include "EngineTime.h"
 
 #include "Event.h"
+
+#include "Locator.h"
+#include "Input.h"
 #include "PubSub.h"
 
 // Entrypoint

@@ -3,14 +3,25 @@
 #include "Core.h"
 
 #include <functional>
+#include <any>
 
 namespace TwoDE
-{
+{	
 	class TWO_DLL Event
 	{
-		std::function<void()> fun;
+		template<typename T>
+		using callback = std::function<void(T&)>;
+		
+		std::any fun;
+
 	public:
-		Event(std::function<void()> fun) : fun(fun) {}
-		const void call() const;
+		template<typename T>
+		Event(callback<T> fun) : fun(fun) {}
+		
+		template<typename T>
+		void call(T params)
+		{
+			std::any_cast<callback<T>>(fun)(params);
+		}
 	};
 }

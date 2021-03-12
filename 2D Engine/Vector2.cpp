@@ -53,9 +53,8 @@ namespace TwoDE
 		return Vector2(x + scalar, y + scalar);
 	}
 
-	void Vector2::operator*=(float scalar)
+	Vector2 Vector2::operator+(Vector2 other)
 	{
-		x *= scalar;
-		y *= scalar;
+		return Vector2(x + other.x, y + other.y);
 	}
 }

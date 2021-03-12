@@ -1,27 +1,19 @@
 #include "PubSub.h"
 #include "Event.h"
 
-void TwoDE::PubSub::publish(std::string topic)
+namespace TwoDE
 {
-	if (subscriptions.find(topic) != subscriptions.end())
+	void PubSub::subscribe(std::string topic, Event event)
 	{
-		for (auto& event : subscriptions[topic])
+		if (subscriptions.find(topic) == subscriptions.end())
 		{
-			event.call();
+			subscriptions[topic] = std::vector<Event>();
 		}
-	}
-}
 
-void TwoDE::PubSub::subscribe(std::string topic, Event event)
-{
-	if (subscriptions.find(topic) == subscriptions.end())
+		subscriptions[topic].push_back(event);
+	}
+
+	void TwoDE::PubSub::init()
 	{
-		subscriptions[topic] = std::vector<Event>();
 	}
-
-	subscriptions[topic].push_back(event);
-}
-
-void TwoDE::PubSub::init()
-{
 }

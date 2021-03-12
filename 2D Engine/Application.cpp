@@ -3,6 +3,8 @@
 #include "EngineTime.h"
 #include "Logger.h"
 #include "PubSub.h"
+#include "Locator.h"
+#include "Input.h"
 
 #include <iostream>
 #include <memory>
@@ -14,8 +16,10 @@ namespace TwoDE
     {
         Logger::init();
 
-        pubsub = std::make_unique<PubSub>();
-        pubsub->init();
+        Input inputSystem = Input();
+        PubSub pubsub = PubSub();
+     
+        Locator::init(inputSystem, pubsub);
 
         TWODE_CORE_INFO("Hello from Application init");
 
