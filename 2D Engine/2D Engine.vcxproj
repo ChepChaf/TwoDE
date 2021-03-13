@@ -176,6 +176,8 @@
     <ClInclude Include="Input.h" />
     <ClInclude Include="Locator.h" />
     <ClInclude Include="Logger.h" />
+    <ClInclude Include="EngineMath.h" />
+    <ClInclude Include="Matrix4.h" />
     <ClInclude Include="OpenGLRenderer.h" />
     <ClInclude Include="PubSub.h" />
     <ClInclude Include="Renderer.h" />
@@ -197,6 +199,8 @@
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="Locator.cpp" />
     <ClCompile Include="Logger.cpp" />
+    <ClCompile Include="EngineMath.cpp" />
+    <ClCompile Include="Matrix4.cpp" />
     <ClCompile Include="OpenGLRenderer.cpp" />
     <ClCompile Include="PubSub.cpp" />
     <ClCompile Include="Renderer.cpp" />

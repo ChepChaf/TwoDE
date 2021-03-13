@@ -60,10 +60,18 @@ namespace TwoDE
 		glCreateBuffers(1, &vbo);
 		glBindBuffer(GL_ARRAY_BUFFER, vbo);
 
-		glBufferData(GL_ARRAY_BUFFER, 8 * sizeof(float) * maxNumberSprites, 0, GL_DYNAMIC_DRAW);
+		glBufferData(GL_ARRAY_BUFFER, 16 * sizeof(float) * maxNumberSprites, 0, GL_DYNAMIC_DRAW);
 
-		glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 2 * sizeof(float), (void*)0);
+		glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 4 * sizeof(float), (void*)0);
 		glEnableVertexAttribArray(0);
+
+		glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 4 * sizeof(float), (void*)(2* sizeof(float)));
+		glEnableVertexAttribArray(1);
+
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 
 		defaultShader = Shader("resources/shaders/default.vert", "resources/shaders/default.frag");
 
@@ -78,10 +86,10 @@ namespace TwoDE
 	void OpenGLRenderer::draw()
 	{
 		float square[] = {
-			0.5f, 0.5f,
-			0.5f, -0.5f,
-			-0.5f, -0.5f,
-			-0.5f, 0.5f
+			0.5f, 0.5f, 1.f, 1.f,
+			0.5f, -0.5f, 1.f, 0.f,
+			-0.5f, -0.5f, 0.f, 0.f,
+			-0.5f, 0.5f, 0.f, 1.f
 		};
 
 		unsigned int indices[]{
@@ -101,8 +109,9 @@ namespace TwoDE
 
 		for (int i = 0; i < sprites.size(); i++)
 		{
-			glBufferSubData(GL_ARRAY_BUFFER, i * sizeof(square), 8 * sizeof(float), square);
-			OpenGLRenderer::defaultShader.setVector2("position", sprites[i]->getPosition());
+			glBufferSubData(GL_ARRAY_BUFFER, i * sizeof(square), 16 * sizeof(float), square);
+
+			OpenGLRenderer::defaultShader.setMatrix4("transform", sprites[i]->getTransform()->getMatrix());
 
 			std::shared_ptr<Texture> texture = sprites[i]->getTexture();
 

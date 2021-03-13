@@ -21,11 +21,15 @@ namespace TwoDE
 
 		void setTexture(std::shared_ptr<Texture> texture);
 		void setPosition(Vector2 position);
-		void setRotation(Vector2 setRotation);
+		void setRotation(float setRotation);
 		void setTransform(Transform transform);
+
+		void scale(Vector2 scale);
+		void rotate(float angle);
 
 		Vector2 getPosition();
 		std::shared_ptr<Texture> getTexture();
+		const Transform* getTransform() const;
 	};
 }
 

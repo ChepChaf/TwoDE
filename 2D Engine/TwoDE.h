@@ -11,8 +11,13 @@
 #include "Event.h"
 
 #include "Locator.h"
+
+#define onEvent(...) TwoDE::Locator::getEventSystem().subscribe(__VA_ARGS__)
+
 #include "Input.h"
 #include "PubSub.h"
+
+#include "EngineMath.h"
 
 // Entrypoint
 #include "Entrypoint.h"

@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Core.h"
+#include "Vector2.h"
 
 #include <GLFW/glfw3.h>
 
@@ -8,6 +9,7 @@ namespace TwoDE
 {
 	class TWO_DLL Input
 	{
+		Vector2 currentMousePosition;
 	public:
 		// TODO: make this glfw agnostic
 		enum class BUTTON
@@ -17,13 +19,42 @@ namespace TwoDE
 			UP_KEY = GLFW_KEY_UP,
 			DOWN_KEY = GLFW_KEY_DOWN
 		};
+
+		enum class MOUSE_BUTTON
+		{
+			LEFT_BUTTON = GLFW_MOUSE_BUTTON_LEFT,
+			RIGHT_BUTTON = GLFW_MOUSE_BUTTON_RIGHT,
+			MIDDLE_BUTTON = GLFW_MOUSE_BUTTON_MIDDLE
+		};
+
 		struct ButtonEventInfo
 		{
 			BUTTON button;
 		};
 
+		struct MouseEventInfo
+		{
+			Vector2 position;
+			MOUSE_BUTTON button;
+		};
+
+		struct ScrollEventInfo
+		{
+			Vector2 position;
+			Vector2 offset;
+		};
+
 		void init();
 		void buttonClicked(int button);
+		void buttonReleased(int button);
+
+		void mouseClick(int button, Vector2 position);
+		void mouseRelease(int button, Vector2 position);
+
+		void mouseScroll(Vector2 position, Vector2 offset);
+
+		void setCursorPosition(Vector2 position);
+		Vector2 getCursorPosition();
 	};
 }
 

@@ -1,7 +1,5 @@
 #pragma once
 
-#include <glm/glm.hpp>
-
 #include "Core.h"
 
 namespace TwoDE
@@ -10,6 +8,7 @@ namespace TwoDE
 	{
 		float x, y;
 	public:
+		Vector2() : x(0), y(0) {}
 		Vector2(float x, float y);
 		Vector2(const Vector2& other);
 		float dot(const Vector2& other);

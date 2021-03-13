@@ -16,8 +16,8 @@ namespace TwoDE
     {
         Logger::init();
 
-        Input inputSystem = Input();
-        PubSub pubsub = PubSub();
+        Input inputSystem;
+        PubSub pubsub;
      
         Locator::init(inputSystem, pubsub);
 

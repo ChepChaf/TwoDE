@@ -19,7 +19,7 @@ namespace TwoDE
 		m_Transform.setPosition(position);
 	}
 
-	void Sprite::setRotation(Vector2 rotation)
+	void Sprite::setRotation(float rotation)
 	{
 		m_Transform.setRotation(rotation);
 	}
@@ -33,9 +33,23 @@ namespace TwoDE
 		return m_Transform.setPosition();
 	}
 
+	void Sprite::scale(Vector2 scale)
+	{
+		m_Transform.scale(scale);
+	}
+
+	void Sprite::rotate(float angle)
+	{
+		m_Transform.rotate(angle);
+	}
+
 	std::shared_ptr<Texture> Sprite::getTexture()
 	{
 		return m_Texture;
+	}
+	const Transform* Sprite::getTransform() const
+	{
+		return &m_Transform;
 	}
 }
 
