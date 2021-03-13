@@ -58,6 +58,10 @@ namespace TwoDE
 	{
 		return m_Position;
 	}
+	Vector2 Transform::getPosition()
+	{
+		return m_Position;
+	}
 	const Matrix4 Transform::getMatrix() const
 	{
 		return m_Matrix;

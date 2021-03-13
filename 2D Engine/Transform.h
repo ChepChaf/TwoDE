@@ -27,6 +27,7 @@ namespace TwoDE
 		void setScale(Vector2 scale);
 		Vector2 setPosition();
 
+		Vector2 getPosition();
 		const Matrix4 getMatrix() const;
 	};
 }

@@ -24,6 +24,7 @@ namespace TwoDE
         TWODE_CORE_INFO("Hello from Application init");
 
         resourceManager = std::make_unique<ResourceManager>();
+        camera = std::make_unique<Camera>();
 
         window = Window::createWindow();
 
@@ -55,7 +56,7 @@ namespace TwoDE
 
         elapsed = current;
 
-        renderer->draw();
+        renderer->draw(*camera.get());
         window->swapBuffers();
     }
 }

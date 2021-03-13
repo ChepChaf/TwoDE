@@ -81,13 +81,9 @@ void SandboxApp::start()
 
 	onEvent("mouse_scroll", TwoDE::Event(std::function([=](TwoDE::Input::ScrollEventInfo& params)
 		{
-			TWODE_INFO("Scalingx: {}", params.offset.getX());
-			TWODE_INFO("Scalingy: {}", params.offset.getY());
-			TWODE_INFO("Delta time: {}", TwoDE::EngineTime::deltaTime);
-
 			TwoDE::Vector2 scale = TwoDE::Vector2{ params.offset.getY(), params.offset.getY() };
 
-			sprite->scale(scale*TwoDE::EngineTime::deltaTime);
+			camera.get()->m_Transform.scale(scale*TwoDE::EngineTime::deltaTime);
 		}
 	)));
 }
@@ -98,9 +94,9 @@ void SandboxApp::update()
 
 	if (dragging)
 	{
-		TwoDE::Vector2 position = TwoDE::Locator::getInputSystem().getCursorPosition();
+		TwoDE::Vector2 position = TwoDE::Locator::getInputSystem().getCursorPosition() - camera.get()->m_Transform.setPosition();
 
-		sprite->setPosition(position);
+		camera.get()->m_Transform.translate(position);
 	}
 		
 	renderer->clear(TwoDE::Color(0.2f, 0.4f, 0.6f, 1.0f));

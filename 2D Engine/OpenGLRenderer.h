@@ -30,7 +30,7 @@ namespace TwoDE
 		virtual void drawSprite(std::shared_ptr<Sprite> sprite) override;
 		virtual int init(int widht, int height) override;
 		virtual void clear(Color clearColor) override;
-		virtual void draw() override;
+		virtual void draw(Camera& viewport) override;
 
 		void checkGLError();
 		//void GLAPIENTRY messageCallback(GLenum source, GLenum type, GLuint id, GLenum severity, GLsizei length, const GLchar* message, const void* userParam);

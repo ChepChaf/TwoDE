@@ -83,7 +83,7 @@ namespace TwoDE
 		glClearColor(clearColor.r(), clearColor.g(), clearColor.b(), clearColor.alpha());
 		glClear(GL_COLOR_BUFFER_BIT);
 	}
-	void OpenGLRenderer::draw()
+	void OpenGLRenderer::draw(Camera& viewport)
 	{
 		float square[] = {
 			0.5f, 0.5f, 1.f, 1.f,
@@ -101,6 +101,7 @@ namespace TwoDE
 		glBindBuffer(GL_ARRAY_BUFFER, vbo);
 
 		OpenGLRenderer::defaultShader.use();
+		OpenGLRenderer::defaultShader.setMatrix4("view", viewport.m_Transform.getMatrix());
 
 		unsigned int ebo;
 		glGenBuffers(1, &ebo);

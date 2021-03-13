@@ -5,7 +5,7 @@
 #include "ResourceManager.h"
 #include "Window.h"
 #include "Renderer.h"
-#include "PubSub.h"
+#include "Camera.h"
 
 #include <memory>
 #include <ctime>
@@ -17,6 +17,7 @@ namespace TwoDE
 		long elapsed = 0;
 		Window* window = nullptr;
 	protected:
+		std::unique_ptr<Camera> camera;
 		std::unique_ptr<ResourceManager> resourceManager;
 
 		Renderer* renderer;
