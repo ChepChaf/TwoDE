@@ -5,11 +5,12 @@
 
 #include <GLFW/glfw3.h>
 
+#include <map>
+
 namespace TwoDE
 {
 	class TWO_DLL Input
 	{
-		Vector2 currentMousePosition;
 	public:
 		// TODO: make this glfw agnostic
 		enum class BUTTON
@@ -17,7 +18,8 @@ namespace TwoDE
 			RIGHT_KEY = GLFW_KEY_RIGHT,
 			LEFT_KEY = GLFW_KEY_LEFT,
 			UP_KEY = GLFW_KEY_UP,
-			DOWN_KEY = GLFW_KEY_DOWN
+			DOWN_KEY = GLFW_KEY_DOWN,
+			SPACE_KEY = GLFW_KEY_SPACE
 		};
 
 		enum class MOUSE_BUTTON
@@ -53,8 +55,15 @@ namespace TwoDE
 
 		void mouseScroll(Vector2 position, Vector2 offset);
 
+		bool buttonPressed(BUTTON button);
+
+
 		void setCursorPosition(Vector2 position);
 		Vector2 getCursorPosition();
+	private:
+		Vector2 currentMousePosition;
+
+		std::map<BUTTON, bool> keyboardButtonsPressed;
 	};
 }
 

@@ -1,11 +1,24 @@
 #include "Input.h"
 #include "Locator.h"
+#include "Event.h"
 
+#include <functional>
 
 namespace TwoDE
 {
 	void Input::init()
 	{
+		Locator::getEventSystem().subscribe("button_clicked", Event(std::function([=](ButtonEventInfo& params) 
+			{
+				keyboardButtonsPressed[params.button] = true;
+			}
+		)));
+
+		Locator::getEventSystem().subscribe("button_released", Event(std::function([=](ButtonEventInfo& params) 
+			{
+				keyboardButtonsPressed[params.button] = false;
+			}
+		)));
 	}
 
 	void Input::buttonClicked(int button)
@@ -33,6 +46,10 @@ namespace TwoDE
 	{
 		ScrollEventInfo info{ .position = position, .offset = offset };
 		Locator::getEventSystem().publish("mouse_scroll", info);
+	}
+	bool Input::buttonPressed(BUTTON button)
+	{
+		return keyboardButtonsPressed[static_cast<BUTTON>(button)];
 	}
 	void Input::setCursorPosition(Vector2 position)
 	{

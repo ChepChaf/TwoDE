@@ -12,6 +12,10 @@ namespace TwoDE
     {
         m_Mat = glm::translate(m_Mat, glm::vec3(vec.getX(), vec.getY(), 0.0f));
     }
+    void Matrix4::translate(Vector3 vec)
+    {
+        m_Mat = glm::translate(m_Mat, glm::vec3(vec.x, vec.y, vec.z));
+    }
     void Matrix4::rotate(float angle)
     {
         m_Mat = glm::rotate(m_Mat, glm::radians(angle), glm::vec3(0.f, 0.f, 1.f));

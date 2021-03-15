@@ -48,8 +48,8 @@ namespace TwoDE
 			int width, height;
 			glfwGetWindowSize(window, &width, &height);
 
-			x = x/width - 0.5f;
-			y = -y/height + 0.5f;
+			x = x / width - 0.5f;
+			y = -y / height + 0.5f;
 
 			if (action == GLFW_PRESS)
 				Locator::getInputSystem().mouseClick(button, Vector2{ static_cast<float>(x), static_cast<float>(y) });
@@ -60,12 +60,6 @@ namespace TwoDE
 
 		auto cursor_callback = [](GLFWwindow* window, double xpos, double ypos)
 		{
-			int width, height;
-			glfwGetWindowSize(window, &width, &height);
-
-			xpos = xpos/width - 0.5f;
-			ypos = -ypos/height + 0.5f;
-
 			Locator::getInputSystem().setCursorPosition(Vector2{ static_cast<float>(xpos), static_cast<float>(ypos) });
 		};
 		glfwSetCursorPosCallback(m_Window, cursor_callback);

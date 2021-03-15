@@ -3,6 +3,8 @@
 
 #include "glad/glad.h"
 
+#include <glm/gtc/matrix_transform.hpp>
+
 #include <iostream>
 
 void GLAPIENTRY
@@ -29,6 +31,12 @@ namespace TwoDE
 	void OpenGLRenderer::drawSprite(std::shared_ptr<Sprite> sprite)
 	{
 		sprites.push_back(sprite);
+
+		sprites.sort([](std::shared_ptr<Sprite> sp1, std::shared_ptr<Sprite> sp2)
+			{
+				return sp1->getTransform()->m_Position.z < sp2->getTransform()->m_Position.z;
+			}
+		);
 	}
 
 	void OpenGLRenderer::checkGLError()
@@ -45,6 +53,8 @@ namespace TwoDE
 		if (!gladLoadGL())
 			return -1;
 
+		m_Width = width;
+		m_Height = height;
 		glViewport(0, 0, width, height);
 
 		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
@@ -73,6 +83,9 @@ namespace TwoDE
 		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
 		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 
+		glEnable(GL_ALPHA_TEST);
+		// glEnable(GL_DEPTH_TEST);
+
 		defaultShader = Shader("resources/shaders/default.vert", "resources/shaders/default.frag");
 
 		return 0;
@@ -81,7 +94,7 @@ namespace TwoDE
 	void OpenGLRenderer::clear(Color clearColor)
 	{
 		glClearColor(clearColor.r(), clearColor.g(), clearColor.b(), clearColor.alpha());
-		glClear(GL_COLOR_BUFFER_BIT);
+		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	}
 	void OpenGLRenderer::draw(Camera& viewport)
 	{
@@ -101,6 +114,12 @@ namespace TwoDE
 		glBindBuffer(GL_ARRAY_BUFFER, vbo);
 
 		OpenGLRenderer::defaultShader.use();
+
+		glm::mat4 ortho = glm::ortho(0.0f, m_Width, 0.0f, m_Height, -10.0f, 10.0f);
+		Matrix4 projection;
+		projection.m_Mat = ortho;
+
+		OpenGLRenderer::defaultShader.setMatrix4("projection", projection);
 		OpenGLRenderer::defaultShader.setMatrix4("view", viewport.m_Transform.getMatrix());
 
 		unsigned int ebo;
@@ -108,13 +127,14 @@ namespace TwoDE
 		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ebo);
 		glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_DYNAMIC_DRAW);
 
-		for (int i = 0; i < sprites.size(); i++)
+		int i = 0;
+		for (auto sprite : sprites)
 		{
 			glBufferSubData(GL_ARRAY_BUFFER, i * sizeof(square), 16 * sizeof(float), square);
 
-			OpenGLRenderer::defaultShader.setMatrix4("transform", sprites[i]->getTransform()->getMatrix());
+			OpenGLRenderer::defaultShader.setMatrix4("transform", sprite->getTransform()->getMatrix());
 
-			std::shared_ptr<Texture> texture = sprites[i]->getTexture();
+			std::shared_ptr<Texture> texture = sprite->getTexture();
 
 			if (!texture->binded)
 			{
@@ -133,6 +153,8 @@ namespace TwoDE
 			glBindTexture(GL_TEXTURE_2D, texture->ID);
 
 			glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+
+			i++;
 		}
 	}
 }

@@ -12,7 +12,7 @@ namespace TwoDE
     std::shared_ptr<Sprite> ResourceManager::loadSprite(std::string spritePath)
     {
         if (loadedTextures.find(spritePath) != loadedTextures.end() && loadedTextures[spritePath] != nullptr)
-            return std::make_shared<Sprite>(Sprite(loadedTextures[spritePath], Vector2(0.0f, 0.0f)));
+            return std::make_shared<Sprite>(Sprite(loadedTextures[spritePath], Vector3(0.0f, 0.0f, 0.0f)));
 
         std::shared_ptr<Texture> texture = loadTexture(spritePath);
 

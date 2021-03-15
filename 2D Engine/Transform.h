@@ -2,13 +2,14 @@
 
 #include "Core.h"
 #include "Vector2.h"
+#include "Vector3.h"
+
 #include "Matrix4.h"
 
 namespace TwoDE
 {
 	class TWO_DLL Transform
 	{
-		Vector2 m_Position;
 		float m_Rotation;
 		Vector2 m_Scale;
 
@@ -16,18 +17,24 @@ namespace TwoDE
 
 		void recalculateMatrix();
 	public:
-		Transform(Vector2 position = { 0.0f, 0.0f }, float rotation = { 0.0f }, Vector2 scale = { 1.0f, 1.0f });
+		Vector3 m_Position;
+
+		Transform(Vector3 position = { 0.0f, 0.0f, 0.0f }, float rotation = { 0.0f }, Vector2 scale = { 10.0f, 10.0f });
 
 		void translate(Vector2 translation);
+		void translate(Vector3 translation);
+
 		void rotate(float rotation);
 		void scale(Vector2 scale);
 
-		void setPosition(Vector2 position);
 		void setRotation(float rotation);
 		void setScale(Vector2 scale);
-		Vector2 setPosition();
+		void setZ(int z);
+		void setPosition(Vector3 pos);
 
-		Vector2 getPosition();
+		Vector3 getPosition();
+		Vector2 getPositionv2();
+
 		const Matrix4 getMatrix() const;
 	};
 }

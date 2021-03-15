@@ -13,12 +13,18 @@ namespace TwoDE
 		m_Matrix.rotate(m_Rotation);
 		m_Matrix.scale(m_Scale);
 	}
-	Transform::Transform(Vector2 position, float rotation, Vector2 scale) : m_Position(position), m_Rotation(rotation), m_Scale(scale)
+	Transform::Transform(Vector3 position, float rotation, Vector2 scale) : m_Position(position), m_Rotation(rotation), m_Scale(scale)
 	{
 		recalculateMatrix();
 	}
 
 	void Transform::translate(Vector2 translation)
+	{
+		m_Position += translation;
+		recalculateMatrix();
+	}
+
+	void Transform::translate(Vector3 translation)
 	{
 		m_Position += translation;
 		recalculateMatrix();
@@ -36,12 +42,6 @@ namespace TwoDE
 		recalculateMatrix();
 	}
 
-	void Transform::setPosition(Vector2 position)
-	{
-		m_Position = position;
-		recalculateMatrix();
-	}
-
 	void Transform::setRotation(float rotation)
 	{
 		m_Rotation = rotation;
@@ -54,14 +54,25 @@ namespace TwoDE
 		recalculateMatrix();
 	}
 
-	Vector2 Transform::setPosition()
+	void Transform::setZ(int z)
+	{
+		m_Position.z = z;
+	}
+
+	void Transform::setPosition(Vector3 pos)
+	{
+		m_Position = pos;
+	}
+	Vector3 Transform::getPosition()
 	{
 		return m_Position;
 	}
-	Vector2 Transform::getPosition()
+
+	Vector2 Transform::getPositionv2()
 	{
-		return m_Position;
+		return Vector2{ m_Position.x, m_Position.y };
 	}
+
 	const Matrix4 Transform::getMatrix() const
 	{
 		return m_Matrix;

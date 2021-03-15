@@ -3,10 +3,12 @@
 
 namespace TwoDE
 {
+	Sprite::Sprite(std::shared_ptr<Texture> texture, Vector2 pos) : m_Texture(texture)
+	{
+		m_Transform = Transform(Vector3(pos.getX(), pos.getY(), 0.0f));
+	}
 	Sprite::Sprite(std::shared_ptr<Texture> texture, Transform transform) : m_Texture(texture), m_Transform(transform)
 	{
-		m_Texture = texture;
-		m_Transform = transform;
 	}
 
 	void Sprite::setTexture(std::shared_ptr<Texture> texture)
@@ -14,7 +16,7 @@ namespace TwoDE
 		m_Texture = texture;
 	}
 
-	void Sprite::setPosition(Vector2 position)
+	void Sprite::setPosition(Vector3 position)
 	{
 		m_Transform.setPosition(position);
 	}
@@ -30,7 +32,7 @@ namespace TwoDE
 	}
 	Vector2 Sprite::getPosition()
 	{
-		return m_Transform.setPosition();
+		return Vector2{ m_Transform.getPosition().x, m_Transform.getPosition().y };
 	}
 
 	void Sprite::scale(Vector2 scale)
@@ -47,9 +49,17 @@ namespace TwoDE
 	{
 		return m_Texture;
 	}
-	const Transform* Sprite::getTransform() const
+	Transform* Sprite::getTransform()
 	{
 		return &m_Transform;
+	}
+	void Sprite::setZLevel(int level)
+	{
+		m_Transform.setZ(level);
+	}
+	bool Sprite::operator<(Sprite const& sp) const
+	{
+		return m_Transform.m_Position.z <= sp.m_Transform.m_Position.z;
 	}
 }
 

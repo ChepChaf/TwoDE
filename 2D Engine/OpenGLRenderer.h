@@ -7,7 +7,7 @@
 #include "Color.h"
 #include "Shader.h"
 
-#include <vector>
+#include <list>
 #include <memory>
 
 namespace TwoDE
@@ -16,12 +16,14 @@ namespace TwoDE
 	{
 		static const int maxNumberSprites = 100;
 		
-		std::vector<std::shared_ptr<Sprite>> sprites;
+		std::list<std::shared_ptr<Sprite>> sprites;
 
 		Shader defaultShader;
 
 		unsigned int vao;
 		unsigned int vbo;
+
+		float m_Width, m_Height;
 	public:
 		OpenGLRenderer();
 		~OpenGLRenderer();

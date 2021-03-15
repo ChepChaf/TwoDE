@@ -17,10 +17,11 @@ namespace TwoDE
 
 	public:
 		Sprite() {}
+		Sprite(std::shared_ptr<Texture> texture, Vector2 pos);
 		Sprite(std::shared_ptr<Texture> texture, Transform transform);
 
 		void setTexture(std::shared_ptr<Texture> texture);
-		void setPosition(Vector2 position);
+		void setPosition(Vector3 position);
 		void setRotation(float setRotation);
 		void setTransform(Transform transform);
 
@@ -29,7 +30,11 @@ namespace TwoDE
 
 		Vector2 getPosition();
 		std::shared_ptr<Texture> getTexture();
-		const Transform* getTransform() const;
+		Transform* getTransform();
+
+		void setZLevel(int level);
+
+		bool operator<(Sprite const& sp) const;
 	};
 }
 
