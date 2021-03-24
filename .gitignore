@@ -366,3 +366,9 @@ FodyWeavers.xsd
 
 resources/
 resources/*
+
+*.vcxproj*
+*CMakeFiles/*
+CMakeCache.txt
+*.sln
+*.cmake
