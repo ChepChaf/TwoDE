@@ -6,19 +6,19 @@ find_package(spdlog CONFIG REQUIRED)
 add_executable(Sandbox SandboxApp.cpp)
 
 target_link_libraries(Sandbox PRIVATE TwoDE)
-target_include_directories(Sandbox PUBLIC "${TwoDE_SOURCE_DIR}/src")
+target_include_directories(Sandbox PUBLIC "${TWODE_SOURCE}")
 
-file(COPY "${CMAKE_CURRENT_SOURCE_DIR}/resources" DESTINATION "${Sandbox_BINARY_DIR}/resources")
+message ("TWODE_BIN:" ${TWODE_BIN})
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${TWODE_BIN})
 
-set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
-set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
+set_property(TARGET Sandbox PROPERTY FOLDER "tests")
+set_target_properties(Sandbox PROPERTIES
+                      RUNTIME_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/bin)
 
-add_custom_command(TARGET Sandbox 
-    POST_BUILD
-    COMMAND ${CMAKE_COMMAND} copy ${CMAKE_BINARY_DIR}/lib/TwoDE.dll ${CMAKE_CURRENT_BINARY_DIR})
+install (TARGETS Sandbox
+    RUNTIME DESTINATION ${PROJECT_SOURCE_DIR}/_install)
 
-if(DEFINED ENV{VCPKG_ROOT} AND NOT DEFINED CMAKE_TOOLCHAIN_FILE)
-    set(CMAKE_TOOLCHAIN_FILE "$ENV{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake"
-        CACHE STRING "")
-endif()
+add_custom_command(TARGET Sandbox POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E copy_directory
+        ${CMAKE_CURRENT_SOURCE_DIR}/resources
+        ${TWODE_BIN}/$\(Configuration\)/resources)

@@ -55,7 +55,7 @@ void SandboxApp::start()
 		{
 			TwoDE::Vector2 scale = TwoDE::Vector2{ params.offset.getY(), params.offset.getY() };
 
-			camera.get()->m_Transform.scale(scale*TwoDE::EngineTime::deltaTime);
+			camera.get()->m_Transform.scale(scale*TwoDE::EngineTime::deltaTime * 4.0f);
 		}
 	)));
 }

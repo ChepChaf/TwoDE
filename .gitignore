@@ -372,3 +372,5 @@ resources/*
 CMakeCache.txt
 *.sln
 *.cmake
+/tests/CMakeFiles
+/tests/sandbox/CMakeFiles
