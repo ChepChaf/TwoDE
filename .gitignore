@@ -369,6 +369,7 @@ resources/*
 
 *.vcxproj*
 *CMakeFiles/*
+src/CMakeFiles/
 CMakeCache.txt
 *.sln
 *.cmake
