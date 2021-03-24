@@ -1,6 +1,6 @@
 #pragma once
 
-#include "TwoDE.h"
+#include "../../src/TwoDE.h"
 #include <memory>
 
 class SandboxApp : public TwoDE::Application

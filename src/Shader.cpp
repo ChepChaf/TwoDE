@@ -11,7 +11,6 @@
 #include <filesystem>
 namespace fs = std::filesystem;
 
-
 namespace TwoDE
 {
 
@@ -125,6 +124,6 @@ namespace TwoDE
     }
     void Shader::setMatrix4(const std::string& name, Matrix4 value) const
     {
-        glUniformMatrix4fv(glGetUniformLocation(ID, name.c_str()), 1, FALSE, value.value_ptr());
+        glUniformMatrix4fv(glGetUniformLocation(ID, name.c_str()), 1, GL_FALSE, value.value_ptr());
     }
 }

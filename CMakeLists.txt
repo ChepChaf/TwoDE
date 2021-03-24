@@ -1,6 +1,23 @@
-cmake_minimum_required(VERSION 3.2)
+﻿cmake_minimum_required(VERSION 3.11.0 FATAL_ERROR)
+set(CMAKE_CXX_STANDARD 20)
 
-project(2DESandbox)
+project("TwoDE")
 
-add_subdirectory("2D Engine")
-add_subdirectory(Sandbox)
+set(VENDOR_DIR "${CMAKE_CURRENT_SOURCE_DIR}/vendor" PATH)
+set(TWODE_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/src" PATH)
+
+add_subdirectory("src")
+
+# TODO: Make this an optional arg
+add_subdirectory("tests")
+
+file(COPY "${CMAKE_CURRENT_SOURCE_DIR}/resources" DESTINATION "${PROJECT_BINARY_DIR}")
+
+if(DEFINED ENV{VCPKG_ROOT} AND NOT DEFINED CMAKE_TOOLCHAIN_FILE)
+  set(CMAKE_TOOLCHAIN_FILE "$ENV{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake"
+      CACHE STRING "")
+endif()
+
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)

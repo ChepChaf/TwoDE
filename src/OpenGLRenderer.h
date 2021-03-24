@@ -20,10 +20,11 @@ namespace TwoDE
 
 		Shader defaultShader;
 
-		unsigned int vao;
-		unsigned int vbo;
+		unsigned int vao = 0;
+		unsigned int vbo = 0;
 
-		float m_Width, m_Height;
+		float m_Width = 0.0; 
+		float m_Height = 0.0;
 	public:
 		OpenGLRenderer();
 		~OpenGLRenderer();
