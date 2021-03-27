@@ -11,13 +11,13 @@ namespace TwoDE
 	class TWO_DLL Transform
 	{
 		float m_Rotation;
-		Vector2 m_Scale;
 
 		Matrix4 m_Matrix;
 
 		void recalculateMatrix();
 	public:
 		Vector3 m_Position;
+		Vector2 m_Scale;
 
 		Transform(Vector3 position = { 0.0f, 0.0f, 0.0f }, float rotation = { 0.0f }, Vector2 scale = { 10.0f, 10.0f });
 

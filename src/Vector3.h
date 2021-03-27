@@ -4,6 +4,8 @@
 
 #include "Vector2.h"
 
+#include "spdlog/fmt/ostr.h"
+
 namespace TwoDE
 {
 	class TWO_DLL Vector3
@@ -19,8 +21,15 @@ namespace TwoDE
 		void operator+=(Vector2 other);
 
 		Vector3 operator+(Vector3 other);
+		Vector3 operator+(float scalar);
+		Vector3 operator-(Vector3 other);
+		Vector3 operator-(float scalar);
 		Vector3 operator+(Vector2 other);
 
 		Vector3 operator*(float scalar);
+
+		float dot(Vector3 other);
+		Vector3 normalize();
+		float magnitude();
 	};
 }

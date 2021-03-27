@@ -25,18 +25,23 @@ namespace TwoDE
 
 		float m_Width = 0.0; 
 		float m_Height = 0.0;
+
+		void resortSprites();
 	public:
 		OpenGLRenderer();
 		~OpenGLRenderer();
 
 		// Inherited via Renderer
-		virtual void drawSprite(std::shared_ptr<Sprite> sprite) override;
+		virtual std::shared_ptr<Sprite> drawSprite(std::shared_ptr<Sprite> sprite) override;
+		virtual std::shared_ptr<Sprite> drawLine(Vector3 origin, Vector3 end, Color color, int width) override;
+		virtual std::shared_ptr<Sprite> drawRect(Vector3 origin, Vector2 size, Color color) override;
+		virtual std::shared_ptr<Sprite> drawCircle(Vector3 center, float radius, Color color, float quality=512.f) override;
 		virtual int init(int widht, int height) override;
 		virtual void clear(Color clearColor) override;
 		virtual void draw(Camera& viewport) override;
 
+
 		void checkGLError();
-		//void GLAPIENTRY messageCallback(GLenum source, GLenum type, GLuint id, GLenum severity, GLsizei length, const GLchar* message, const void* userParam);
 	};
 
 }

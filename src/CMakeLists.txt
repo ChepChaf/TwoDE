@@ -4,9 +4,11 @@ find_package(glm CONFIG REQUIRED)
 find_package(spdlog CONFIG REQUIRED)
 
 file(GLOB SOURCE_FILES ${CMAKE_CURRENT_SOURCE_DIR}/*.c*)
+file(GLOB HEADER_FILES ${CMAKE_CURRENT_SOURCE_DIR}/*.h*)
 file(GLOB VENDOR_FILES ${VENDOR_DIR}/*/*.c*)
 
-source_group("" FILES ${SOURCE_FILES})
+source_group("sources" FILES ${SOURCE_FILES})
+source_group("headers" FILES ${HEADER_FILES})
 source_group("vendor" FILES ${VENDOR_FILES})
 
 include_directories(.)

@@ -57,11 +57,13 @@ namespace TwoDE
 	void Transform::setZ(int z)
 	{
 		m_Position.z = z;
+		recalculateMatrix();
 	}
 
 	void Transform::setPosition(Vector3 pos)
 	{
 		m_Position = pos;
+		recalculateMatrix();
 	}
 	Vector3 Transform::getPosition()
 	{

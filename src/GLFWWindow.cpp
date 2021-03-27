@@ -1,5 +1,6 @@
 #include "GLFWWindow.h"
 #include "Locator.h"
+#include "Logger.h"
 
 namespace TwoDE
 {
@@ -48,8 +49,8 @@ namespace TwoDE
 			int width, height;
 			glfwGetWindowSize(window, &width, &height);
 
-			x = x / width - 0.5f;
-			y = -y / height + 0.5f;
+			x = x / width;
+			y = 1-y / height;
 
 			if (action == GLFW_PRESS)
 				Locator::getInputSystem().mouseClick(button, Vector2{ static_cast<float>(x), static_cast<float>(y) });
@@ -60,6 +61,12 @@ namespace TwoDE
 
 		auto cursor_callback = [](GLFWwindow* window, double xpos, double ypos)
 		{
+			int width, height;
+			glfwGetWindowSize(window, &width, &height);
+
+			xpos = xpos / width;
+			ypos = 1-ypos / height;
+
 			Locator::getInputSystem().setCursorPosition(Vector2{ static_cast<float>(xpos), static_cast<float>(ypos) });
 		};
 		glfwSetCursorPosCallback(m_Window, cursor_callback);
@@ -72,8 +79,8 @@ namespace TwoDE
 			int width, height;
 			glfwGetWindowSize(window, &width, &height);
 
-			x = x / width - 0.5f;
-			y = -y / height + 0.5f;
+			x = x / width;
+			y = 1-y / height;
 
 			Locator::getInputSystem().mouseScroll(Vector2{ static_cast<float>(x), static_cast<float>(y) },
 				Vector2{ static_cast<float>(xoffset), static_cast<float>(yoffset) });

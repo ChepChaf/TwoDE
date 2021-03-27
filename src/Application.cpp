@@ -18,12 +18,13 @@ namespace TwoDE
 
         Input inputSystem;
         PubSub pubsub;
-     
-        Locator::init(inputSystem, pubsub);
+        ResourceManager resourceManager;
+
+        Locator::init(inputSystem, pubsub, resourceManager);
 
         TWODE_CORE_INFO("Hello from Application init");
 
-        resourceManager = std::make_unique<ResourceManager>();
+        
         camera = std::make_unique<Camera>();
 
         window = Window::createWindow();

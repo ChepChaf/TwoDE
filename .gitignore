@@ -364,14 +364,11 @@ out/
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
 
-resources/
-resources/*
-
 *.vcxproj*
 *CMakeFiles/*
 src/CMakeFiles/
 CMakeCache.txt
-*.sln
+*.sln*
 *.cmake
 /tests/CMakeFiles
 /tests/sandbox/CMakeFiles

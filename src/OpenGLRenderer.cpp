@@ -1,11 +1,14 @@
 #include "Logger.h"
 #include "OpenGLRenderer.h"
+#include "Locator.h"
+#include "EngineMath.h"
 
 #include "glad/glad.h"
 
 #include <glm/gtc/matrix_transform.hpp>
 
 #include <iostream>
+#include <cmath>
 
 void GLAPIENTRY
 messageCallback(GLenum source,
@@ -28,10 +31,79 @@ namespace TwoDE
 	OpenGLRenderer::~OpenGLRenderer()
 	{
 	}
-	void OpenGLRenderer::drawSprite(std::shared_ptr<Sprite> sprite)
+	std::shared_ptr<Sprite> OpenGLRenderer::drawSprite(std::shared_ptr<Sprite> sprite)
 	{
 		sprites.push_back(sprite);
 
+		resortSprites();
+
+		return sprite;
+	}
+
+	std::shared_ptr<Sprite> OpenGLRenderer::drawLine(Vector3 origin, Vector3 end, Color color, int width)
+	{
+		Vector3 dir = end - origin;
+		float dirMagnitude = dir.magnitude();
+
+		Vector3 normalizedDir = dir.normalize();
+		float dot = normalizedDir.dot(Vector3{ 1, 0, 0 });
+
+		// Back to degrees
+		float ang = EngineMath::toDeg(acos(dot));
+
+		Transform trans;
+		trans.setPosition(origin + Vector3{ dir.x/2, dir.y/2, end.z });
+		trans.setRotation(static_cast<int>(ang));
+		trans.setScale(Vector2{ dirMagnitude, static_cast<float>(width) });
+
+		std::shared_ptr<Texture> tex = Locator::getResourceManagerSystem().getSolidColorTexture(color);
+
+		Sprite sprite = Sprite(tex, trans);
+		std::shared_ptr shrSprite = std::make_shared<Sprite>(sprite);
+
+		drawSprite(shrSprite);
+
+		return shrSprite;
+	}
+
+	std::shared_ptr<Sprite> OpenGLRenderer::drawRect(Vector3 origin, Vector2 size, Color color)
+	{
+		Transform trans;
+		
+		trans.setScale(size);
+		trans.setPosition(origin + (size * 0.5f));
+
+		std::shared_ptr<Texture> tex = Locator::getResourceManagerSystem().getSolidColorTexture(color);
+
+		Sprite sprite = Sprite(tex, trans);
+		std::shared_ptr shrSprite = std::make_shared<Sprite>(sprite);
+
+
+		drawSprite(shrSprite);
+
+		return shrSprite;
+	}
+
+	std::shared_ptr<Sprite> OpenGLRenderer::drawCircle(Vector3 center, float radius, Color color, float quality)
+	{
+		Transform trans;
+
+		trans.setScale(Vector2{ radius, radius });
+		trans.setPosition(center);
+
+		std::shared_ptr<Texture> tex = Locator::getResourceManagerSystem().getCircleTexture(color);
+
+		Sprite sprite = Sprite(tex, trans);
+
+		std::shared_ptr shrSprite = std::make_shared<Sprite>(sprite);
+
+		drawSprite(shrSprite);
+
+		return shrSprite;
+	}
+
+	void OpenGLRenderer::resortSprites()
+	{
 		sprites.sort([](std::shared_ptr<Sprite> sp1, std::shared_ptr<Sprite> sp2)
 			{
 				return sp1->getTransform()->m_Position.z < sp2->getTransform()->m_Position.z;
@@ -83,10 +155,13 @@ namespace TwoDE
 		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
 		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 
-		glEnable(GL_ALPHA_TEST);
+		// glEnable(GL_ALPHA_TEST);
 		// glEnable(GL_DEPTH_TEST);
 
 		defaultShader = Shader("resources/shaders/default.vert", "resources/shaders/default.frag");
+		defaultShader.use();
+		OpenGLRenderer::defaultShader.setInt("texture1", 0);
+		glActiveTexture(GL_TEXTURE0);
 
 		return 0;
 	}
@@ -94,7 +169,7 @@ namespace TwoDE
 	void OpenGLRenderer::clear(Color clearColor)
 	{
 		glClearColor(clearColor.r(), clearColor.g(), clearColor.b(), clearColor.alpha());
-		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+		glClear(GL_COLOR_BUFFER_BIT);
 	}
 	void OpenGLRenderer::draw(Camera& viewport)
 	{
@@ -148,8 +223,6 @@ namespace TwoDE
 				texture->binded = true;
 			}
 
-			OpenGLRenderer::defaultShader.setInt("texture1", 0);
-			glActiveTexture(GL_TEXTURE0);
 			glBindTexture(GL_TEXTURE_2D, texture->ID);
 
 			glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);

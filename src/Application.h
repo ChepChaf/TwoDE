@@ -18,7 +18,6 @@ namespace TwoDE
 		Window* window = nullptr;
 	protected:
 		std::unique_ptr<Camera> camera;
-		std::unique_ptr<ResourceManager> resourceManager;
 
 		Renderer* renderer;
 

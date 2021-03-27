@@ -14,5 +14,10 @@ namespace TwoDE
     {
         return Vector2(clamp(v.getX(), min, max), clamp(v.getY(), min, max));
     }
+    float EngineMath::toDeg(float rad)
+    {
+        return rad * 180.f / EngineMath::PI;
+    }
+    const double EngineMath::PI = 2 * acos(0.0);
 }
 

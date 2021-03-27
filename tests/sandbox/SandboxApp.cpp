@@ -6,13 +6,13 @@ void SandboxApp::start()
 {
 	TWODE_INFO("Hello from SandboxApp");
 
-	sprite = resourceManager->loadSprite("resources/sprites/Character01.png");
-	sprite->setPosition(TwoDE::Vector3{ 0.0f, 0.0f, 1.0f});
+	sprite = TwoDE::Locator::getResourceManagerSystem().loadSprite("resources/sprites/Character01.png");
+	sprite->setPosition({ 0.0f, 0.0f, 1.0f});
 
 	renderer->drawSprite(sprite);
 
 	// 5 tiles
-	std::shared_ptr<TwoDE::Texture> tile = resourceManager->loadTexture("resources/sprites/Tile01.png");
+	std::shared_ptr<TwoDE::Texture> tile = TwoDE::Locator::getResourceManagerSystem().loadTexture("resources/sprites/Tile01.png");
 
 	TwoDE::Sprite sprite01 = TwoDE::Sprite(tile, TwoDE::Vector2(0.0f, 0.0f));
 	renderer->drawSprite(std::make_shared<TwoDE::Sprite>(sprite01));
@@ -28,6 +28,9 @@ void SandboxApp::start()
 
 	TwoDE::Sprite sprite05 = TwoDE::Sprite(tile, TwoDE::Vector2(40.0f, 0.0f));
 	renderer->drawSprite(std::make_shared<TwoDE::Sprite>(sprite05));
+
+	renderer->drawLine({ 0.f, 0.f, 0.f }, { 1000.f, 0.f, 0.f }, { 0.5f, 0.1f, 0.1f, 1.f }, 2);
+	renderer->drawLine({ 0.f, 0.f, 0.f }, { 250.f, 1000.f, 0.f }, { 0.5f, 0.1f, 0.1f, 1.f }, 2);
 
 	onEvent("mouse_click", TwoDE::Event(std::function([=](TwoDE::Input::MouseEventInfo& params)
 		{
