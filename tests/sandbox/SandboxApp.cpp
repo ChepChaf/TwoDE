@@ -6,31 +6,18 @@ void SandboxApp::start()
 {
 	TWODE_INFO("Hello from SandboxApp");
 
-	sprite = TwoDE::Locator::getResourceManagerSystem().loadSprite("resources/sprites/Character01.png");
-	sprite->setPosition({ 0.0f, 0.0f, 1.0f});
-
-	renderer->drawSprite(sprite);
-
+	player = TwoDE::Locator::getSceneManagerSystem().CreateEntity();
+	
+	renderer->drawSprite(player, TwoDE::Sprite("resources/sprites/Character01.png"), TwoDE::Vector3{ 0.0f, 0.0f, 1.0f });
+	
 	// 5 tiles
-	std::shared_ptr<TwoDE::Texture> tile = TwoDE::Locator::getResourceManagerSystem().loadTexture("resources/sprites/Tile01.png");
+	TwoDE::Sprite tile{ "resources/sprites/Tile01.png" };
 
-	TwoDE::Sprite sprite01 = TwoDE::Sprite(tile, TwoDE::Vector2(0.0f, 0.0f));
-	renderer->drawSprite(std::make_shared<TwoDE::Sprite>(sprite01));
-
-	TwoDE::Sprite sprite02 = TwoDE::Sprite(tile, TwoDE::Vector2(10.f, 0.0f));
-	renderer->drawSprite(std::make_shared<TwoDE::Sprite>(sprite02));
-
-	TwoDE::Sprite sprite03 = TwoDE::Sprite(tile, TwoDE::Vector2(20.0f, 0.0f));
-	renderer->drawSprite(std::make_shared<TwoDE::Sprite>(sprite03));
-
-	TwoDE::Sprite sprite04 = TwoDE::Sprite(tile, TwoDE::Vector2(30.0f, 0.0f));
-	renderer->drawSprite(std::make_shared<TwoDE::Sprite>(sprite04));
-
-	TwoDE::Sprite sprite05 = TwoDE::Sprite(tile, TwoDE::Vector2(40.0f, 0.0f));
-	renderer->drawSprite(std::make_shared<TwoDE::Sprite>(sprite05));
-
-	renderer->drawLine({ 0.f, 0.f, 0.f }, { 1000.f, 0.f, 0.f }, { 0.5f, 0.1f, 0.1f, 1.f }, 2);
-	renderer->drawLine({ 0.f, 0.f, 0.f }, { 250.f, 1000.f, 0.f }, { 0.5f, 0.1f, 0.1f, 1.f }, 2);
+	renderer->drawSprite(tile, { { 0.f,  0.f, 0.f } });
+	renderer->drawSprite(tile, { { 10.f, 0.f, 0.f } });
+	renderer->drawSprite(tile, { { 20.f, 0.f, 0.f } });
+	renderer->drawSprite(tile, { { 30.f, 0.f, 0.f } });
+	renderer->drawSprite(tile, { { 40.f, 0.f, 0.f } });
 
 	onEvent("mouse_click", TwoDE::Event(std::function([=](TwoDE::Input::MouseEventInfo& params)
 		{
@@ -42,7 +29,8 @@ void SandboxApp::start()
 			}
 			if (params.button == TwoDE::Input::MOUSE_BUTTON::RIGHT_BUTTON)
 			{
-				sprite->rotate(-1);
+				auto& transform = getEntityRegistry()->get<TwoDE::Transform>(player);
+				transform.rotate(-1);
 			}
 		}
 	)));
@@ -58,7 +46,9 @@ void SandboxApp::start()
 		{
 			TwoDE::Vector2 scale = TwoDE::Vector2{ params.offset.getY(), params.offset.getY() };
 
-			camera.get()->m_Transform.scale(scale*TwoDE::EngineTime::deltaTime * 4.0f);
+			auto& cam = getEntityRegistry()->get<TwoDE::Transform>(camera);
+
+			cam.scale(scale*TwoDE::EngineTime::deltaTime * 4.0f);
 		}
 	)));
 }
@@ -70,31 +60,36 @@ void SandboxApp::update()
 	TwoDE::Vector2 right{ 1, 0 };
 	TwoDE::Vector2 up{ 0, 1 };
 
-
 	TwoDE::Input input = TwoDE::Locator::getInputSystem();
+
+	auto& transform= getEntityRegistry()->get<TwoDE::Transform>(player);
 
 	if (input.buttonPressed(TwoDE::Input::BUTTON::RIGHT_KEY))
 	{
-		sprite->getTransform()->translate(right * (speed * TwoDE::EngineTime::deltaTime));
+		transform.translate(right * (speed * TwoDE::EngineTime::deltaTime));
 	}
 	if (input.buttonPressed(TwoDE::Input::BUTTON::LEFT_KEY))
 	{
-		sprite->getTransform()->translate(right * (-1 * speed * TwoDE::EngineTime::deltaTime));
+		transform.translate(right * (-1 * speed * TwoDE::EngineTime::deltaTime));
 	}
 	if (input.buttonPressed(TwoDE::Input::BUTTON::UP_KEY))
 	{
-		sprite->getTransform()->translate(up * (speed * TwoDE::EngineTime::deltaTime));
+		transform.translate(up * (speed * TwoDE::EngineTime::deltaTime));
 	}
 	if (input.buttonPressed(TwoDE::Input::BUTTON::DOWN_KEY))
 	{
-		sprite->getTransform()->translate(up * (-1 * speed * TwoDE::EngineTime::deltaTime));
+		transform.translate(up * (-1 * speed * TwoDE::EngineTime::deltaTime));
 	}
+
+	auto registry = getEntityRegistry();
 	
 	if (dragging)
 	{
-		TwoDE::Vector2 position = TwoDE::Locator::getInputSystem().getCursorPosition() - camera.get()->m_Transform.getPositionv2();
+		TwoDE::Vector2 position = TwoDE::Locator::getInputSystem().getCursorPosition() - TwoDE::Vector2{ 0.5f, 0.5f };
 
-		camera.get()->m_Transform.translate(TwoDE::Vector2{ position.getX(), position.getY() });
+		auto& cam = registry->get<TwoDE::Transform>(camera);
+
+		cam.translate(position * -1.f * TwoDE::EngineTime::deltaTime * 200.f);
 	}
 
 	renderer->clear(TwoDE::Color(0.2f, 0.4f, 0.6f, 1.0f));

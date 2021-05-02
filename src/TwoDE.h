@@ -11,6 +11,7 @@
 #include "Event.h"
 
 #include "Locator.h"
+#include "Scene.h"
 
 #define onEvent(...) TwoDE::Locator::getEventSystem().subscribe(__VA_ARGS__)
 

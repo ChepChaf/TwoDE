@@ -31,16 +31,23 @@ namespace TwoDE
 	OpenGLRenderer::~OpenGLRenderer()
 	{
 	}
-	std::shared_ptr<Sprite> OpenGLRenderer::drawSprite(std::shared_ptr<Sprite> sprite)
+
+	void OpenGLRenderer::drawSprite(Entity& entity, Sprite const& sprite, Transform const& transform)
 	{
-		sprites.push_back(sprite);
-
-		resortSprites();
-
-		return sprite;
+		Locator::getSceneManagerSystem().AddComponent<Sprite>(entity, sprite);
+		Locator::getSceneManagerSystem().AddComponent<Transform>(entity, transform);
 	}
 
-	std::shared_ptr<Sprite> OpenGLRenderer::drawLine(Vector3 origin, Vector3 end, Color color, int width)
+	Entity OpenGLRenderer::drawSprite(Sprite const& sprite, Transform const& transform)
+	{
+		Entity ent = Locator::getSceneManagerSystem().CreateEntity();
+		
+		drawSprite(ent, sprite, transform);
+
+		return ent;
+	}
+
+	Entity OpenGLRenderer::drawLine(Vector3 origin, Vector3 end, Color color, int width)
 	{
 		Vector3 dir = end - origin;
 		float dirMagnitude = dir.magnitude();
@@ -52,63 +59,37 @@ namespace TwoDE
 		float ang = EngineMath::toDeg(acos(dot));
 
 		Transform trans;
-		trans.setPosition(origin + Vector3{ dir.x/2, dir.y/2, end.z });
+		trans.setPosition(origin + Vector3{ dir.x / 2, dir.y / 2, end.z });
 		trans.setRotation(static_cast<int>(ang));
 		trans.setScale(Vector2{ dirMagnitude, static_cast<float>(width) });
 
-		std::shared_ptr<Texture> tex = Locator::getResourceManagerSystem().getSolidColorTexture(color);
+		const auto& sprite = Locator::getResourceManagerSystem().getSolidColorTexture(color);
 
-		Sprite sprite = Sprite(tex, trans);
-		std::shared_ptr shrSprite = std::make_shared<Sprite>(sprite);
-
-		drawSprite(shrSprite);
-
-		return shrSprite;
+		return drawSprite(sprite, trans);
 	}
 
-	std::shared_ptr<Sprite> OpenGLRenderer::drawRect(Vector3 origin, Vector2 size, Color color)
+	Entity OpenGLRenderer::drawRect(Vector3 origin, Vector2 size, Color color)
 	{
 		Transform trans;
-		
+
 		trans.setScale(size);
 		trans.setPosition(origin + (size * 0.5f));
 
-		std::shared_ptr<Texture> tex = Locator::getResourceManagerSystem().getSolidColorTexture(color);
+		const auto& sprite = Locator::getResourceManagerSystem().getSolidColorTexture(color);
 
-		Sprite sprite = Sprite(tex, trans);
-		std::shared_ptr shrSprite = std::make_shared<Sprite>(sprite);
-
-
-		drawSprite(shrSprite);
-
-		return shrSprite;
+		return drawSprite(sprite, trans);
 	}
 
-	std::shared_ptr<Sprite> OpenGLRenderer::drawCircle(Vector3 center, float radius, Color color, float quality)
+	Entity OpenGLRenderer::drawCircle(Vector3 center, float radius, Color color, float quality)
 	{
 		Transform trans;
 
 		trans.setScale(Vector2{ radius, radius });
 		trans.setPosition(center);
 
-		std::shared_ptr<Texture> tex = Locator::getResourceManagerSystem().getCircleTexture(color);
+		const auto& sprite = Locator::getResourceManagerSystem().getCircleTexture(color);
 
-		Sprite sprite = Sprite(tex, trans);
-
-		std::shared_ptr shrSprite = std::make_shared<Sprite>(sprite);
-
-		drawSprite(shrSprite);
-
-		return shrSprite;
-	}
-
-	void OpenGLRenderer::resortSprites()
-	{
-		sprites.sort([](std::shared_ptr<Sprite> sp1, std::shared_ptr<Sprite> sp2)
-			{
-				return sp1->getTransform()->m_Position.z < sp2->getTransform()->m_Position.z;
-			}
-		);
+		return drawSprite(sprite, trans);
 	}
 
 	void OpenGLRenderer::checkGLError()
@@ -171,7 +152,7 @@ namespace TwoDE
 		glClearColor(clearColor.r(), clearColor.g(), clearColor.b(), clearColor.alpha());
 		glClear(GL_COLOR_BUFFER_BIT);
 	}
-	void OpenGLRenderer::draw(Camera& viewport)
+	void OpenGLRenderer::draw(Transform& viewport)
 	{
 		float square[] = {
 			0.5f, 0.5f, 1.f, 1.f,
@@ -195,35 +176,47 @@ namespace TwoDE
 		projection.m_Mat = ortho;
 
 		OpenGLRenderer::defaultShader.setMatrix4("projection", projection);
-		OpenGLRenderer::defaultShader.setMatrix4("view", viewport.m_Transform.getMatrix());
+		OpenGLRenderer::defaultShader.setMatrix4("view", viewport.getMatrix());
 
 		unsigned int ebo;
 		glGenBuffers(1, &ebo);
 		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ebo);
 		glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_DYNAMIC_DRAW);
 
+		auto registry = Locator::getSceneManagerSystem().GetRegistry();
+
+		registry->sort<Sprite>([&](const entt::entity lhs, const entt::entity rhs) {
+			const auto& lTrans = registry->get<Transform>(lhs);
+			const auto& rTrans = registry->get<Transform>(rhs);
+
+			return lTrans.m_Position.z < rTrans.m_Position.z;
+		});
+
+		auto view = registry->view<Sprite, Transform>();
+
 		int i = 0;
-		for (auto sprite : sprites)
+		for (auto entity : view)
 		{
+			auto& sprite = view.get<Sprite>(entity);
+			auto& transform = view.get<Transform>(entity);
+
 			glBufferSubData(GL_ARRAY_BUFFER, i * sizeof(square), 16 * sizeof(float), square);
 
-			OpenGLRenderer::defaultShader.setMatrix4("transform", sprite->getTransform()->getMatrix());
+			OpenGLRenderer::defaultShader.setMatrix4("transform", transform.getMatrix());
 
-			std::shared_ptr<Texture> texture = sprite->getTexture();
-
-			if (!texture->binded)
+			if (!sprite.binded)
 			{
-				glGenTextures(1, &texture->ID);
+				glGenTextures(1, &sprite.ID);
 
-				glBindTexture(GL_TEXTURE_2D, texture->ID);
+				glBindTexture(GL_TEXTURE_2D, sprite.ID);
 
-				glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, texture->m_Width, texture->m_Height, 0, GL_RGBA, GL_UNSIGNED_BYTE, texture->data);
+				glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, sprite.m_Width, sprite.m_Height, 0, GL_RGBA, GL_UNSIGNED_BYTE, sprite.data);
 				glGenerateMipmap(GL_TEXTURE_2D);
 
-				texture->binded = true;
+				sprite.binded = true;
 			}
 
-			glBindTexture(GL_TEXTURE_2D, texture->ID);
+			glBindTexture(GL_TEXTURE_2D, sprite.ID);
 
 			glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
 

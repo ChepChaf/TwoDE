@@ -5,7 +5,7 @@
 #include "ResourceManager.h"
 #include "Window.h"
 #include "Renderer.h"
-#include "Camera.h"
+#include "Scene.h"
 
 #include <memory>
 #include <ctime>
@@ -17,7 +17,7 @@ namespace TwoDE
 		long elapsed = 0;
 		Window* window = nullptr;
 	protected:
-		std::unique_ptr<Camera> camera;
+		Entity camera;
 
 		Renderer* renderer;
 
@@ -27,6 +27,7 @@ namespace TwoDE
 
 		virtual void start() = 0;
 		virtual void update();
+		EntityRegistry* getEntityRegistry();
 	};
 
 	Application* createApplication();

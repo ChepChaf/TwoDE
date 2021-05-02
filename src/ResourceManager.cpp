@@ -1,6 +1,5 @@
 #include "Logger.h"
 #include "ResourceManager.h"
-#include "Texture.h"
 
 #include "stb_image/stb_image.h"
 
@@ -9,46 +8,26 @@
 
 namespace TwoDE
 {
-    std::shared_ptr<Sprite> ResourceManager::loadSprite(std::string spritePath)
+    Sprite ResourceManager::loadSprite(std::string spritePath)
     {
-        if (loadedTextures.find(spritePath) != loadedTextures.end() && loadedTextures[spritePath] != nullptr)
-            return std::make_shared<Sprite>(Sprite(loadedTextures[spritePath], Vector3(0.0f, 0.0f, 0.0f)));
-
-        std::shared_ptr<Texture> texture = loadTexture(spritePath);
-
-        if (texture->data != NULL)
-        {
-            std::shared_ptr<Sprite> sprite = std::make_shared<Sprite>(texture, Vector2(0, 0));
-            
-            return sprite;
-        }
-
-        TWODE_CORE_ERROR("Error loading sprite");
-        // TODO: Log error
-
-        return nullptr;
-    }
-    std::shared_ptr<Texture> ResourceManager::loadTexture(std::string texturePath)
-    {
-        if (loadedTextures.find(texturePath) != loadedTextures.end() && loadedTextures[texturePath] != nullptr)
-            return loadedTextures[texturePath];
+        if (loadedSprites.find(spritePath) != loadedSprites.end())
+            return loadedSprites[spritePath];
 
         stbi_set_flip_vertically_on_load(true);
 
-        std::shared_ptr<Texture> texture = std::make_shared<Texture>();
-        texture->data = stbi_load(texturePath.c_str(), &texture->m_Width, &texture->m_Height, &texture->m_Channels, 0);
+        Sprite texture;
+        texture.data = stbi_load(spritePath.c_str(), &texture.m_Width, &texture.m_Height, &texture.m_Channels, 0);
 
-        if (texture->data != NULL)
+        if (texture.data == NULL)
         {
-            return texture;
+            TWODE_CORE_ERROR("Error loading sprite {}", spritePath);
         }
 
-        TWODE_CORE_ERROR("Error loading sprite");
-        // TODO: Log error
+        loadedSprites[spritePath] = texture;
 
-        return nullptr;
+        return loadedSprites[spritePath];
     }
-    std::shared_ptr<Texture> ResourceManager::getSolidColorTexture(Color color)
+    Sprite ResourceManager::getSolidColorTexture(Color color)
     {
         long colorHash = std::hash<Color>{}(color);
 
@@ -58,7 +37,7 @@ namespace TwoDE
             return colorTextures[colorHash];
         }
 
-        Texture tex;
+        Sprite tex;
         tex.m_Width = 1;
         tex.m_Height = 1;
         tex.m_Channels = 4;
@@ -70,11 +49,12 @@ namespace TwoDE
         tex.data[3] = color.alpha() * 255;
           
 
-        colorTextures[colorHash] = std::make_shared<Texture>(tex);
+        colorTextures[colorHash] = tex;
 
         return colorTextures[colorHash];
     }
-    std::shared_ptr<Texture> ResourceManager::getCircleTexture(Color color, float radius)
+    
+    Sprite ResourceManager::getCircleTexture(Color color, float radius)
     {
         long colorHash = std::hash<Color>{}(color);
 
@@ -84,7 +64,7 @@ namespace TwoDE
             return circleTextures[colorHash];
         }
 
-        Texture tex;
+        Sprite tex;
         tex.m_Width = radius * 2;
         tex.m_Height = radius * 2;
         tex.m_Channels = 4;
@@ -122,7 +102,7 @@ namespace TwoDE
         }
         
 
-        circleTextures[colorHash] = std::make_shared<Texture>(tex);
+        circleTextures[colorHash] = tex;
 
         return circleTextures[colorHash];
     }

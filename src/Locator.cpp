@@ -2,27 +2,28 @@
 
 namespace TwoDE
 {
-	void Locator::init(Input& input, PubSub& pubsub, ResourceManager& resourceManager)
+	void Locator::init(Input& input, PubSub& pubsub, ResourceManager& resourceManager, Scene& sceneManager)
 	{
-		Locator::inputSystem = std::make_unique<Input>(input);
-		Locator::eventSystem = std::make_unique<PubSub>(pubsub);
-		Locator::resourceManagerSystem = std::make_unique<ResourceManager>(resourceManager);
-
-		Locator::inputSystem->init();
-		Locator::eventSystem->init();
-		Locator::resourceManagerSystem->init();
+		Locator::inputSystem.init();
+		Locator::eventSystem.init();
+		Locator::resourceManagerSystem.init();
+		Locator::sceneManagerSystem.init();
 	}
 
-	Input& Locator::getInputSystem()
+	inline Input& Locator::getInputSystem()
 	{
-		return *Locator::inputSystem.get();
+		return inputSystem;
 	}
-	PubSub& Locator::getEventSystem()
+	inline PubSub& Locator::getEventSystem()
 	{
-		return *Locator::eventSystem.get();
+		return eventSystem;
 	}
-	ResourceManager& Locator::getResourceManagerSystem()
+	inline ResourceManager& Locator::getResourceManagerSystem()
 	{
-		return *Locator::resourceManagerSystem.get();
+		return resourceManagerSystem;
+	}
+	inline Scene& Locator::getSceneManagerSystem()
+	{
+		return sceneManagerSystem;
 	}
 }

@@ -5,9 +5,9 @@
 
 class PrimitivesApp : public TwoDE::Application
 {
-	std::vector<std::shared_ptr<TwoDE::Sprite>> circles;
-	std::vector<std::shared_ptr<TwoDE::Sprite>> squares;
-	std::vector<std::shared_ptr<TwoDE::Sprite>> lines;
+	std::vector<TwoDE::Entity> circles;
+	std::vector<TwoDE::Entity> squares;
+	std::vector<TwoDE::Entity> lines;
 	bool dragging = false;
 public:
 	void start() override;

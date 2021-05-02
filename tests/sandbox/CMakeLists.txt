@@ -1,8 +1,3 @@
-find_package(glad CONFIG REQUIRED)
-find_package(glfw3 CONFIG REQUIRED)
-find_package(glm CONFIG REQUIRED)
-find_package(spdlog CONFIG REQUIRED)
-
 add_executable(Sandbox SandboxApp.cpp)
 
 target_link_libraries(Sandbox PRIVATE TwoDE)

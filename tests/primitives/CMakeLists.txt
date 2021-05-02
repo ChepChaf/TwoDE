@@ -1,8 +1,3 @@
-find_package(glad CONFIG REQUIRED)
-find_package(glfw3 CONFIG REQUIRED)
-find_package(glm CONFIG REQUIRED)
-find_package(spdlog CONFIG REQUIRED)
-
 add_executable(Primitives Primitives.cpp)
 
 target_link_libraries(Primitives PRIVATE TwoDE)

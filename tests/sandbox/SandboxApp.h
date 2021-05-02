@@ -7,7 +7,7 @@ class SandboxApp : public TwoDE::Application
 {
 	bool dragging = false;
 
-	std::shared_ptr<TwoDE::Sprite> sprite;
+	TwoDE::Entity player;
 
 	float speed = 10.0f;
 public:

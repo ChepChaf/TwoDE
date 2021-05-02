@@ -19,13 +19,18 @@ namespace TwoDE
         Input inputSystem;
         PubSub pubsub;
         ResourceManager resourceManager;
+        Scene sceneManager;
 
-        Locator::init(inputSystem, pubsub, resourceManager);
+        Locator::init(inputSystem, pubsub, resourceManager, sceneManager);
 
         TWODE_CORE_INFO("Hello from Application init");
-
         
-        camera = std::make_unique<Camera>();
+        camera = Locator::getSceneManagerSystem().CreateEntity();
+
+        Transform trans;
+        trans.setScale({ 8.f, 8.f });
+        trans.setPosition({ 590.f, 120.f, 0.f });
+        Locator::getSceneManagerSystem().AddComponent<Transform>(camera, trans);
 
         window = Window::createWindow();
 
@@ -57,8 +62,12 @@ namespace TwoDE
 
         elapsed = current;
 
-        renderer->draw(*camera.get());
+        renderer->draw(getEntityRegistry()->get<Transform>(camera));
         window->swapBuffers();
+    }
+    EntityRegistry* Application::getEntityRegistry()
+    {
+        return Locator::getSceneManagerSystem().GetRegistry();
     }
 }
 
