@@ -1,11 +1,12 @@
 #pragma once
 
 #include "Core.h"
+#include "Logger.h"
 
 #include <memory>
 
-#include "spdlog/spdlog.h"
-#include "spdlog/fmt/ostr.h"
+#include <spdlog/spdlog.h>
+#include <spdlog/fmt/ostr.h>
 
 namespace TwoDE
 {

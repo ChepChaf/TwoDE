@@ -21,16 +21,16 @@ namespace TwoDE
         ResourceManager resourceManager;
         Scene sceneManager;
 
-        Locator::init(inputSystem, pubsub, resourceManager, sceneManager);
+        Locator::getLocator().init(inputSystem, pubsub, resourceManager, sceneManager);
 
         TWODE_CORE_INFO("Hello from Application init");
         
-        camera = Locator::getSceneManagerSystem().CreateEntity();
+        camera = Locator::getLocator().getSceneManagerSystem().CreateEntity();
 
         Transform trans;
         trans.setScale({ 8.f, 8.f });
         trans.setPosition({ 590.f, 120.f, 0.f });
-        Locator::getSceneManagerSystem().AddComponent<Transform>(camera, trans);
+        Locator::getLocator().getSceneManagerSystem().AddComponent<Transform>(camera, trans);
 
         window = Window::createWindow();
 
@@ -67,7 +67,7 @@ namespace TwoDE
     }
     EntityRegistry* Application::getEntityRegistry()
     {
-        return Locator::getSceneManagerSystem().GetRegistry();
+        return Locator::getLocator().getSceneManagerSystem().GetRegistry();
     }
 }
 

@@ -1,7 +1,9 @@
-find_package(glad CONFIG REQUIRED)
-find_package(glfw3 CONFIG REQUIRED)
-find_package(glm CONFIG REQUIRED)
-find_package(spdlog CONFIG REQUIRED)
+cmake_minimum_required(VERSION 3.20)
+
+set(TWODE_DLL 1)
+
+include(${TWODE_BIN}/conanbuildinfo.cmake)
+conan_basic_setup()
 
 file(GLOB SOURCE_FILES ${CMAKE_CURRENT_SOURCE_DIR}/*.c*)
 file(GLOB HEADER_FILES ${CMAKE_CURRENT_SOURCE_DIR}/*.h*)
@@ -12,12 +14,20 @@ source_group("headers" FILES ${HEADER_FILES})
 source_group("vendor" FILES ${VENDOR_FILES})
 
 include_directories(.)
+include_directories(${CONAN_INCLUDE_DIRS})
 include_directories(${VENDOR_DIR})
 
 add_library(TwoDE SHARED ${SOURCE_FILES} ${VENDOR_FILES})
+
 target_compile_definitions(TwoDE PRIVATE TWODE_DLL)
 
-target_link_libraries(TwoDE PRIVATE glad::glad glfw glm spdlog::spdlog)
+target_include_directories(TwoDE PRIVATE ${CONAN_INCLUDE_DIRS})
+target_link_libraries(TwoDE PRIVATE ${CONAN_LIBS})
+
+target_compile_definitions(${CMAKE_PROJECT_NAME}
+        PUBLIC
+        SPDLOG_COMPILED_LIB
+        SPDLOG_FMT_EXTERNAL)
 
 set_target_properties(TwoDE PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/bin)
 set_target_properties(TwoDE PROPERTIES LIBRARY_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/lib)

@@ -62,7 +62,7 @@ void PrimitivesApp::update()
 
 	if (dragging)
 	{
-		TwoDE::Vector2 position = TwoDE::Locator::getInputSystem().getCursorPosition() - TwoDE::Vector2{ 0.5f, 0.5f };
+		TwoDE::Vector2 position = TwoDE::Locator::getLocator().getInputSystem().getCursorPosition() - TwoDE::Vector2{ 0.5f, 0.5f };
 
 		auto& cam = registry->get<TwoDE::Transform>(camera);
 

@@ -6,7 +6,7 @@ void SandboxApp::start()
 {
 	TWODE_INFO("Hello from SandboxApp");
 
-	player = TwoDE::Locator::getSceneManagerSystem().CreateEntity();
+	player = TwoDE::Locator::getLocator().getSceneManagerSystem().CreateEntity();
 	
 	renderer->drawSprite(player, TwoDE::Sprite("resources/sprites/Character01.png"), TwoDE::Vector3{ 0.0f, 0.0f, 1.0f });
 	
@@ -60,7 +60,7 @@ void SandboxApp::update()
 	TwoDE::Vector2 right{ 1, 0 };
 	TwoDE::Vector2 up{ 0, 1 };
 
-	TwoDE::Input input = TwoDE::Locator::getInputSystem();
+	TwoDE::Input input = TwoDE::Locator::getLocator().getInputSystem();
 
 	auto& transform= getEntityRegistry()->get<TwoDE::Transform>(player);
 
@@ -85,7 +85,7 @@ void SandboxApp::update()
 	
 	if (dragging)
 	{
-		TwoDE::Vector2 position = TwoDE::Locator::getInputSystem().getCursorPosition() - TwoDE::Vector2{ 0.5f, 0.5f };
+		TwoDE::Vector2 position = TwoDE::Locator::getLocator().getInputSystem().getCursorPosition() - TwoDE::Vector2{ 0.5f, 0.5f };
 
 		auto& cam = registry->get<TwoDE::Transform>(camera);
 

@@ -5,7 +5,7 @@ namespace TwoDE
 {
 	Sprite::Sprite(std::string const& path)
 	{
-		const auto& sp = Locator::getResourceManagerSystem().loadSprite(path);
+		const auto& sp = Locator::getLocator().getResourceManagerSystem().loadSprite(path);
 
 		binded = sp.binded;
 		ID = sp.ID;

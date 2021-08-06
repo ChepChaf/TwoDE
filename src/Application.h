@@ -6,6 +6,7 @@
 #include "Window.h"
 #include "Renderer.h"
 #include "Scene.h"
+#include "Locator.h"
 
 #include <memory>
 #include <ctime>
@@ -20,7 +21,6 @@ namespace TwoDE
 		Entity camera;
 
 		Renderer* renderer;
-
 	public:
 		void init();
 		bool shouldClose();

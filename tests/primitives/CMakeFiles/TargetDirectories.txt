@@ -1,0 +1,7 @@
+/media/chep/Shared/Code/Games/TwoDE/tests/primitives/CMakeFiles/install/strip.dir
+/media/chep/Shared/Code/Games/TwoDE/tests/primitives/CMakeFiles/install/local.dir
+/media/chep/Shared/Code/Games/TwoDE/tests/primitives/CMakeFiles/Primitives.dir
+/media/chep/Shared/Code/Games/TwoDE/tests/primitives/CMakeFiles/install.dir
+/media/chep/Shared/Code/Games/TwoDE/tests/primitives/CMakeFiles/list_install_components.dir
+/media/chep/Shared/Code/Games/TwoDE/tests/primitives/CMakeFiles/edit_cache.dir
+/media/chep/Shared/Code/Games/TwoDE/tests/primitives/CMakeFiles/rebuild_cache.dir

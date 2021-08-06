@@ -34,13 +34,13 @@ namespace TwoDE
 
 	void OpenGLRenderer::drawSprite(Entity& entity, Sprite const& sprite, Transform const& transform)
 	{
-		Locator::getSceneManagerSystem().AddComponent<Sprite>(entity, sprite);
-		Locator::getSceneManagerSystem().AddComponent<Transform>(entity, transform);
+		Locator::getLocator().getSceneManagerSystem().AddComponent<Sprite>(entity, sprite);
+		Locator::getLocator().getSceneManagerSystem().AddComponent<Transform>(entity, transform);
 	}
 
 	Entity OpenGLRenderer::drawSprite(Sprite const& sprite, Transform const& transform)
 	{
-		Entity ent = Locator::getSceneManagerSystem().CreateEntity();
+		Entity ent = Locator::getLocator().getSceneManagerSystem().CreateEntity();
 		
 		drawSprite(ent, sprite, transform);
 
@@ -63,7 +63,7 @@ namespace TwoDE
 		trans.setRotation(static_cast<int>(ang));
 		trans.setScale(Vector2{ dirMagnitude, static_cast<float>(width) });
 
-		const auto& sprite = Locator::getResourceManagerSystem().getSolidColorTexture(color);
+		const auto& sprite = Locator::getLocator().getResourceManagerSystem().getSolidColorTexture(color);
 
 		return drawSprite(sprite, trans);
 	}
@@ -75,7 +75,7 @@ namespace TwoDE
 		trans.setScale(size);
 		trans.setPosition(origin + (size * 0.5f));
 
-		const auto& sprite = Locator::getResourceManagerSystem().getSolidColorTexture(color);
+		const auto& sprite = Locator::getLocator().getResourceManagerSystem().getSolidColorTexture(color);
 
 		return drawSprite(sprite, trans);
 	}
@@ -87,7 +87,7 @@ namespace TwoDE
 		trans.setScale(Vector2{ radius, radius });
 		trans.setPosition(center);
 
-		const auto& sprite = Locator::getResourceManagerSystem().getCircleTexture(color);
+		const auto& sprite = Locator::getLocator().getResourceManagerSystem().getCircleTexture(color);
 
 		return drawSprite(sprite, trans);
 	}
@@ -183,7 +183,7 @@ namespace TwoDE
 		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ebo);
 		glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_DYNAMIC_DRAW);
 
-		auto registry = Locator::getSceneManagerSystem().GetRegistry();
+		auto registry = Locator::getLocator().getSceneManagerSystem().GetRegistry();
 
 		registry->sort<Sprite>([&](const entt::entity lhs, const entt::entity rhs) {
 			const auto& lTrans = registry->get<Transform>(lhs);

@@ -372,3 +372,7 @@ CMakeCache.txt
 *.cmake
 /tests/CMakeFiles
 /tests/sandbox/CMakeFiles
+
+*.cbp
+/lib
+.python-version

@@ -18,7 +18,9 @@ it probably won't be usable on a productive environment.
   - cmake .
   - Open Visual Studio and build
 - Linux:
-  - Not ready yet, should be only changing and adding some macros for GCC.
+  - mkdir bin
+  - cd bin && conan install ..
+  - cmake ..
   
 ## Usage:
 
@@ -42,11 +44,8 @@ class MyApp : public TwoDE::Application
 ```
 ...
 // Read file from disk and save it in the ResourceManager
-sprite = TwoDE::Locator::getResourceManagerSystem().loadSprite("resources/sprites/Character01.png");
-sprite->setPosition({ 0.0f, 0.0f, 1.0f});
-
-// add sprite to the render
-renderer->drawSprite(sprite);
+player = TwoDE::Locator::getLocator().getSceneManagerSystem().CreateEntity();
+renderer->drawSprite(player, TwoDE::Sprite("resources/sprites/Character01.png"), TwoDE::Vector3{ 0.0f, 0.0f, 1.0f });
 ```
 
 ### events
@@ -61,7 +60,9 @@ onEvent("mouse_click", TwoDE::Event(std::function([=](TwoDE::Input::MouseEventIn
 		}
 		if (params.button == TwoDE::Input::MOUSE_BUTTON::RIGHT_BUTTON)
 		{
-			sprite->rotate(-1.f);
+			// Get Transform component and rotate
+			auto& transform = getEntityRegistry()->get<TwoDE::Transform>(player);
+			transform.rotate(-1);
 		}
 	}
 )));
@@ -72,15 +73,15 @@ onEvent("mouse_click", TwoDE::Event(std::function([=](TwoDE::Input::MouseEventIn
 ...
 // Lines
 // origin - end - color - width
-renderer->drawLine(Vector3{ 0.f, 0.f, 0.f }, Vector3{ 100.f, 100.f, 0.f }, Color{ 0.2f, 0.8f, 0.2f, 1.0f }, 1);
+auto line = renderer->drawLine(Vector3{ 0.f, 0.f, 0.f }, Vector3{ 100.f, 100.f, 0.f }, Color{ 0.2f, 0.8f, 0.2f, 1.0f }, 1);
 
 // Rects
 // origin (lower-left corner) - size - color
-renderer->drawRect({ 0.f, 0.f, 0.f }, { 10.f, 10.f }, { 0.6f, 0.2f, 0.2f, 1.0f });
+auto rect = renderer->drawRect({ 0.f, 0.f, 0.f }, { 10.f, 10.f }, { 0.6f, 0.2f, 0.2f, 1.0f });
 
 // Circles
 // center - radius - color
-renderer->drawCircle({ 0.f, 0.f, 0.f }, 50.f, { 0.2f, 0.2f, 0.6f, 1.0f });
+auto cirle = renderer->drawCircle({ 0.f, 0.f, 0.f }, 50.f, { 0.2f, 0.2f, 0.6f, 1.0f });
 ```
 
 ### [More examples](../master/tests)

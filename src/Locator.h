@@ -9,21 +9,35 @@
 
 #include <memory>
 
-namespace TwoDE
-{
-	class TWO_DLL Locator
-	{
-		inline static Input inputSystem;
-		inline static PubSub eventSystem;
-		inline static ResourceManager resourceManagerSystem;
-		inline static Scene sceneManagerSystem;
+namespace TwoDE {
+    class TWO_DLL Locator
+    {
+        Input inputSystem;
+        PubSub eventSystem;
+        ResourceManager resourceManagerSystem;
+        Scene sceneManagerSystem;
 
-	public:
-		inline static void init(Input&, PubSub&, ResourceManager&, Scene&);
-		inline static Input&  getInputSystem();
-		inline static PubSub& getEventSystem();
-		inline static ResourceManager& getResourceManagerSystem();
-		inline static Scene& getSceneManagerSystem();
-	};
+    public:
+        inline static void init(Input &input, PubSub &pubsub, ResourceManager &rm, Scene &scene)
+        {
+            getLocator().initLocator(input, pubsub, rm, scene);
+        }
+
+        inline static Locator &getLocator()
+        {
+            static Locator locator;
+            return locator;
+        }
+
+        void initLocator(Input &, PubSub &, ResourceManager &, Scene &);
+
+        Input &getInputSystem();
+
+        PubSub &getEventSystem();
+
+        ResourceManager &getResourceManagerSystem();
+
+        Scene &getSceneManagerSystem();
+    };
 }
 

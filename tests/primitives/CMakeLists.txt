@@ -1,7 +1,13 @@
+include(${TWODE_BIN}/conanbuildinfo.cmake)
+conan_basic_setup()
+
 add_executable(Primitives Primitives.cpp)
 
-target_link_libraries(Primitives PRIVATE TwoDE)
-target_include_directories(Primitives PUBLIC "${TWODE_SOURCE}")
+link_directories(${TWODE_LIB})
+include_directories(${TWODE_SOURCE} ${CONAN_INCLUDE_DIRS})
+
+target_link_libraries(Primitives PRIVATE TwoDE ${CONAN_LIBS})
+target_include_directories(Primitives PRIVATE ${TWODE_SOURCE} ${CONAN_INCLUDE_DIRS})
 
 message ("TWODE_BIN:" ${TWODE_BIN})
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${TWODE_BIN})

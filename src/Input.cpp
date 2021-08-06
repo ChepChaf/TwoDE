@@ -8,13 +8,13 @@ namespace TwoDE
 {
 	void Input::init()
 	{
-		Locator::getEventSystem().subscribe("button_clicked", Event(std::function([=](ButtonEventInfo& params) 
+		Locator::getLocator().getEventSystem().subscribe("button_clicked", Event(std::function([=](ButtonEventInfo& params)
 			{
 				keyboardButtonsPressed[params.button] = true;
 			}
 		)));
 
-		Locator::getEventSystem().subscribe("button_released", Event(std::function([=](ButtonEventInfo& params) 
+		Locator::getLocator().getEventSystem().subscribe("button_released", Event(std::function([=](ButtonEventInfo& params)
 			{
 				keyboardButtonsPressed[params.button] = false;
 			}
@@ -24,28 +24,28 @@ namespace TwoDE
 	void Input::buttonClicked(int button)
 	{
 		ButtonEventInfo info{ .button = (BUTTON)button };
-		Locator::getEventSystem().publish("button_clicked", info);
+		Locator::getLocator().getEventSystem().publish("button_clicked", info);
 	}
 
 	void Input::buttonReleased(int button)
 	{
 		ButtonEventInfo info{ .button = (BUTTON)button };
-		Locator::getEventSystem().publish("button_released", info);
+		Locator::getLocator().getEventSystem().publish("button_released", info);
 	}
 	void Input::mouseClick(int button, Vector2 position)
 	{
 		MouseEventInfo info{ .position=position, .button = (MOUSE_BUTTON)button };
-		Locator::getEventSystem().publish("mouse_click", info);
+		Locator::getLocator().getEventSystem().publish("mouse_click", info);
 	}
 	void Input::mouseRelease(int button, Vector2 position)
 	{
 		MouseEventInfo info{ .position=position, .button = (MOUSE_BUTTON)button };
-		Locator::getEventSystem().publish("mouse_release", info);
+		Locator::getLocator().getEventSystem().publish("mouse_release", info);
 	}
 	void Input::mouseScroll(Vector2 position, Vector2 offset)
 	{
 		ScrollEventInfo info{ .position = position, .offset = offset };
-		Locator::getEventSystem().publish("mouse_scroll", info);
+		Locator::getLocator().getEventSystem().publish("mouse_scroll", info);
 	}
 	bool Input::buttonPressed(BUTTON button)
 	{

@@ -34,9 +34,9 @@ namespace TwoDE
 		auto key_callback = [](GLFWwindow* window, int key, int scancode, int action, int mods)
 		{
 			if (action == GLFW_PRESS)
-				Locator::getInputSystem().buttonClicked(key);
+				Locator::getLocator().getInputSystem().buttonClicked(key);
 			else if (action == GLFW_RELEASE)
-				Locator::getInputSystem().buttonReleased(key);
+				Locator::getLocator().getInputSystem().buttonReleased(key);
 		};
 		glfwSetKeyCallback(m_Window, key_callback);
 
@@ -53,9 +53,9 @@ namespace TwoDE
 			y = 1-y / height;
 
 			if (action == GLFW_PRESS)
-				Locator::getInputSystem().mouseClick(button, Vector2{ static_cast<float>(x), static_cast<float>(y) });
+				Locator::getLocator().getInputSystem().mouseClick(button, Vector2{ static_cast<float>(x), static_cast<float>(y) });
 			if (action == GLFW_RELEASE)
-				Locator::getInputSystem().mouseRelease(button, Vector2{ static_cast<float>(x), static_cast<float>(y) });
+				Locator::getLocator().getInputSystem().mouseRelease(button, Vector2{ static_cast<float>(x), static_cast<float>(y) });
 		};
 		glfwSetMouseButtonCallback(m_Window, mouse_callback);
 
@@ -67,7 +67,7 @@ namespace TwoDE
 			xpos = xpos / width;
 			ypos = 1-ypos / height;
 
-			Locator::getInputSystem().setCursorPosition(Vector2{ static_cast<float>(xpos), static_cast<float>(ypos) });
+			Locator::getLocator().getInputSystem().setCursorPosition(Vector2{ static_cast<float>(xpos), static_cast<float>(ypos) });
 		};
 		glfwSetCursorPosCallback(m_Window, cursor_callback);
 
@@ -82,7 +82,7 @@ namespace TwoDE
 			x = x / width;
 			y = 1-y / height;
 
-			Locator::getInputSystem().mouseScroll(Vector2{ static_cast<float>(x), static_cast<float>(y) },
+			Locator::getLocator().getInputSystem().mouseScroll(Vector2{ static_cast<float>(x), static_cast<float>(y) },
 				Vector2{ static_cast<float>(xoffset), static_cast<float>(yoffset) });
 		};
 		glfwSetScrollCallback(m_Window, scroll_callback);
