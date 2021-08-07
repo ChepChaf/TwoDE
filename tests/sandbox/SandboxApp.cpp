@@ -19,7 +19,7 @@ void SandboxApp::start()
 	renderer->drawSprite(tile, { { 30.f, 0.f, 0.f } });
 	renderer->drawSprite(tile, { { 40.f, 0.f, 0.f } });
 
-	onEvent("mouse_click", TwoDE::Event(std::function([=](TwoDE::Input::MouseEventInfo& params)
+	onEvent("mouse_click", TwoDE::Event(std::function([=, this](TwoDE::Input::MouseEventInfo& params)
 		{
 			if (params.button == TwoDE::Input::MOUSE_BUTTON::LEFT_BUTTON)
 			{
@@ -35,14 +35,14 @@ void SandboxApp::start()
 		}
 	)));
 
-	onEvent("mouse_release", TwoDE::Event(std::function([=](TwoDE::Input::MouseEventInfo& params)
+	onEvent("mouse_release", TwoDE::Event(std::function([=, this](TwoDE::Input::MouseEventInfo& params)
 		{
 			if (params.button == TwoDE::Input::MOUSE_BUTTON::LEFT_BUTTON)
 				dragging = false;
 		}
 	)));
 
-	onEvent("mouse_scroll", TwoDE::Event(std::function([=](TwoDE::Input::ScrollEventInfo& params)
+	onEvent("mouse_scroll", TwoDE::Event(std::function([=, this](TwoDE::Input::ScrollEventInfo& params)
 		{
 			TwoDE::Vector2 scale = TwoDE::Vector2{ params.offset.getY(), params.offset.getY() };
 
