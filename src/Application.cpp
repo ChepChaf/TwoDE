@@ -20,16 +20,17 @@ namespace TwoDE
         PubSub pubsub;
         ResourceManager resourceManager;
         Scene sceneManager;
+        SystemRegistry systemRegistry;
 
-        Locator::getLocator().init(inputSystem, pubsub, resourceManager, sceneManager);
+        Locator::getLocator().init(inputSystem, pubsub, resourceManager, sceneManager, systemRegistry);
 
         TWODE_CORE_INFO("Hello from Application init");
-        
+
         camera = Locator::getLocator().getSceneManagerSystem().CreateEntity();
 
         Transform trans;
-        trans.setScale({ 8.f, 8.f });
-        trans.setPosition({ 590.f, 120.f, 0.f });
+        trans.setScale({8.f, 8.f});
+        trans.setPosition({590.f, 120.f, 0.f});
         Locator::getLocator().getSceneManagerSystem().AddComponent<Transform>(camera, trans);
 
         window = Window::createWindow();
@@ -37,23 +38,23 @@ namespace TwoDE
         int width = 800;
         int height = 640;
 
-        if (window->init("TwoDEngine", &width, &height) < 0)
-        {
+        if (window->init("TwoDEngine", &width, &height) < 0) {
             // TODO: Log error
             TWODE_CORE_ERROR("Error initializing window");
         }
 
         renderer = Renderer::createRenderer();
 
-        if (renderer->init(width, height) < 0)
-        {
+        if (renderer->init(width, height) < 0) {
             TWODE_CORE_ERROR("Error initializing renderer");
         }
     }
+
     bool Application::shouldClose()
     {
         return window->shouldClose();
     }
+
     void Application::update()
     {
         auto current = std::clock();
@@ -62,12 +63,22 @@ namespace TwoDE
 
         elapsed = current;
 
+        for (auto&[_, system] : Locator::getLocator().getSystemRegistry().getActiveSystems()) {
+            system->update();
+        }
+
         renderer->draw(getEntityRegistry()->get<Transform>(camera));
         window->swapBuffers();
     }
-    EntityRegistry* Application::getEntityRegistry()
+
+    EntityRegistry *Application::getEntityRegistry()
     {
         return Locator::getLocator().getSceneManagerSystem().GetRegistry();
+    }
+
+    SystemRegistry *Application::getSystemRegistry()
+    {
+        return &Locator::getLocator().getSystemRegistry();
     }
 }
 

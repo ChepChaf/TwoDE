@@ -56,11 +56,11 @@ tests/primitives/CMakeFiles/Primitives.dir/Primitives.cpp.o: \
  /home/chep/.conan/data/entt/3.8.0/_/_/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/include/entt/signal/dispatcher.hpp \
  /home/chep/.conan/data/entt/3.8.0/_/_/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/include/entt/signal/emitter.hpp \
  /home/chep/.conan/data/entt/3.8.0/_/_/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/include/entt/signal/sigh.hpp \
- /home/chep/.conan/data/fmt/8.0.1/_/_/package/30a9781670e6fb2f17b8355b17a15cf916045317/include/fmt/core.h \
- /home/chep/.conan/data/fmt/8.0.1/_/_/package/30a9781670e6fb2f17b8355b17a15cf916045317/include/fmt/format-inl.h \
- /home/chep/.conan/data/fmt/8.0.1/_/_/package/30a9781670e6fb2f17b8355b17a15cf916045317/include/fmt/format.h \
- /home/chep/.conan/data/fmt/8.0.1/_/_/package/30a9781670e6fb2f17b8355b17a15cf916045317/include/fmt/ostream.h \
- /home/chep/.conan/data/fmt/8.0.1/_/_/package/30a9781670e6fb2f17b8355b17a15cf916045317/include/fmt/xchar.h \
+ /home/chep/.conan/data/fmt/8.0.1/_/_/package/db123017807f5c094e7ffe64463018510e127133/include/fmt/core.h \
+ /home/chep/.conan/data/fmt/8.0.1/_/_/package/db123017807f5c094e7ffe64463018510e127133/include/fmt/format-inl.h \
+ /home/chep/.conan/data/fmt/8.0.1/_/_/package/db123017807f5c094e7ffe64463018510e127133/include/fmt/format.h \
+ /home/chep/.conan/data/fmt/8.0.1/_/_/package/db123017807f5c094e7ffe64463018510e127133/include/fmt/ostream.h \
+ /home/chep/.conan/data/fmt/8.0.1/_/_/package/db123017807f5c094e7ffe64463018510e127133/include/fmt/xchar.h \
  /home/chep/.conan/data/glfw/3.3.4/_/_/package/6340505dafa41af473a127b95b9c69164d638b69/include/GLFW/glfw3.h \
  /home/chep/.conan/data/glm/0.9.9.8/_/_/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/include/glm/common.hpp \
  /home/chep/.conan/data/glm/0.9.9.8/_/_/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/include/glm/detail/_fixes.hpp \
@@ -212,44 +212,44 @@ tests/primitives/CMakeFiles/Primitives.dir/Primitives.cpp.o: \
  /home/chep/.conan/data/glm/0.9.9.8/_/_/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/include/glm/vec3.hpp \
  /home/chep/.conan/data/glm/0.9.9.8/_/_/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/include/glm/vec4.hpp \
  /home/chep/.conan/data/glm/0.9.9.8/_/_/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/include/glm/vector_relational.hpp \
- /home/chep/.conan/data/spdlog/1.9.1/_/_/package/cbf0d92fc1015167964a97a399fe91de4ffd209f/include/spdlog/common-inl.h \
- /home/chep/.conan/data/spdlog/1.9.1/_/_/package/cbf0d92fc1015167964a97a399fe91de4ffd209f/include/spdlog/common.h \
- /home/chep/.conan/data/spdlog/1.9.1/_/_/package/cbf0d92fc1015167964a97a399fe91de4ffd209f/include/spdlog/details/backtracer-inl.h \
- /home/chep/.conan/data/spdlog/1.9.1/_/_/package/cbf0d92fc1015167964a97a399fe91de4ffd209f/include/spdlog/details/backtracer.h \
- /home/chep/.conan/data/spdlog/1.9.1/_/_/package/cbf0d92fc1015167964a97a399fe91de4ffd209f/include/spdlog/details/circular_q.h \
- /home/chep/.conan/data/spdlog/1.9.1/_/_/package/cbf0d92fc1015167964a97a399fe91de4ffd209f/include/spdlog/details/console_globals.h \
- /home/chep/.conan/data/spdlog/1.9.1/_/_/package/cbf0d92fc1015167964a97a399fe91de4ffd209f/include/spdlog/details/fmt_helper.h \
- /home/chep/.conan/data/spdlog/1.9.1/_/_/package/cbf0d92fc1015167964a97a399fe91de4ffd209f/include/spdlog/details/log_msg-inl.h \
- /home/chep/.conan/data/spdlog/1.9.1/_/_/package/cbf0d92fc1015167964a97a399fe91de4ffd209f/include/spdlog/details/log_msg.h \
- /home/chep/.conan/data/spdlog/1.9.1/_/_/package/cbf0d92fc1015167964a97a399fe91de4ffd209f/include/spdlog/details/log_msg_buffer-inl.h \
- /home/chep/.conan/data/spdlog/1.9.1/_/_/package/cbf0d92fc1015167964a97a399fe91de4ffd209f/include/spdlog/details/log_msg_buffer.h \
- /home/chep/.conan/data/spdlog/1.9.1/_/_/package/cbf0d92fc1015167964a97a399fe91de4ffd209f/include/spdlog/details/null_mutex.h \
- /home/chep/.conan/data/spdlog/1.9.1/_/_/package/cbf0d92fc1015167964a97a399fe91de4ffd209f/include/spdlog/details/os-inl.h \
- /home/chep/.conan/data/spdlog/1.9.1/_/_/package/cbf0d92fc1015167964a97a399fe91de4ffd209f/include/spdlog/details/os.h \
- /home/chep/.conan/data/spdlog/1.9.1/_/_/package/cbf0d92fc1015167964a97a399fe91de4ffd209f/include/spdlog/details/periodic_worker-inl.h \
- /home/chep/.conan/data/spdlog/1.9.1/_/_/package/cbf0d92fc1015167964a97a399fe91de4ffd209f/include/spdlog/details/periodic_worker.h \
- /home/chep/.conan/data/spdlog/1.9.1/_/_/package/cbf0d92fc1015167964a97a399fe91de4ffd209f/include/spdlog/details/registry-inl.h \
- /home/chep/.conan/data/spdlog/1.9.1/_/_/package/cbf0d92fc1015167964a97a399fe91de4ffd209f/include/spdlog/details/registry.h \
- /home/chep/.conan/data/spdlog/1.9.1/_/_/package/cbf0d92fc1015167964a97a399fe91de4ffd209f/include/spdlog/details/synchronous_factory.h \
- /home/chep/.conan/data/spdlog/1.9.1/_/_/package/cbf0d92fc1015167964a97a399fe91de4ffd209f/include/spdlog/details/windows_include.h \
- /home/chep/.conan/data/spdlog/1.9.1/_/_/package/cbf0d92fc1015167964a97a399fe91de4ffd209f/include/spdlog/fmt/fmt.h \
- /home/chep/.conan/data/spdlog/1.9.1/_/_/package/cbf0d92fc1015167964a97a399fe91de4ffd209f/include/spdlog/fmt/ostr.h \
- /home/chep/.conan/data/spdlog/1.9.1/_/_/package/cbf0d92fc1015167964a97a399fe91de4ffd209f/include/spdlog/fmt/xchar.h \
- /home/chep/.conan/data/spdlog/1.9.1/_/_/package/cbf0d92fc1015167964a97a399fe91de4ffd209f/include/spdlog/formatter.h \
- /home/chep/.conan/data/spdlog/1.9.1/_/_/package/cbf0d92fc1015167964a97a399fe91de4ffd209f/include/spdlog/logger-inl.h \
- /home/chep/.conan/data/spdlog/1.9.1/_/_/package/cbf0d92fc1015167964a97a399fe91de4ffd209f/include/spdlog/logger.h \
- /home/chep/.conan/data/spdlog/1.9.1/_/_/package/cbf0d92fc1015167964a97a399fe91de4ffd209f/include/spdlog/pattern_formatter-inl.h \
- /home/chep/.conan/data/spdlog/1.9.1/_/_/package/cbf0d92fc1015167964a97a399fe91de4ffd209f/include/spdlog/pattern_formatter.h \
- /home/chep/.conan/data/spdlog/1.9.1/_/_/package/cbf0d92fc1015167964a97a399fe91de4ffd209f/include/spdlog/sinks/ansicolor_sink-inl.h \
- /home/chep/.conan/data/spdlog/1.9.1/_/_/package/cbf0d92fc1015167964a97a399fe91de4ffd209f/include/spdlog/sinks/ansicolor_sink.h \
- /home/chep/.conan/data/spdlog/1.9.1/_/_/package/cbf0d92fc1015167964a97a399fe91de4ffd209f/include/spdlog/sinks/sink-inl.h \
- /home/chep/.conan/data/spdlog/1.9.1/_/_/package/cbf0d92fc1015167964a97a399fe91de4ffd209f/include/spdlog/sinks/sink.h \
- /home/chep/.conan/data/spdlog/1.9.1/_/_/package/cbf0d92fc1015167964a97a399fe91de4ffd209f/include/spdlog/sinks/wincolor_sink-inl.h \
- /home/chep/.conan/data/spdlog/1.9.1/_/_/package/cbf0d92fc1015167964a97a399fe91de4ffd209f/include/spdlog/sinks/wincolor_sink.h \
- /home/chep/.conan/data/spdlog/1.9.1/_/_/package/cbf0d92fc1015167964a97a399fe91de4ffd209f/include/spdlog/spdlog-inl.h \
- /home/chep/.conan/data/spdlog/1.9.1/_/_/package/cbf0d92fc1015167964a97a399fe91de4ffd209f/include/spdlog/spdlog.h \
- /home/chep/.conan/data/spdlog/1.9.1/_/_/package/cbf0d92fc1015167964a97a399fe91de4ffd209f/include/spdlog/tweakme.h \
- /home/chep/.conan/data/spdlog/1.9.1/_/_/package/cbf0d92fc1015167964a97a399fe91de4ffd209f/include/spdlog/version.h \
+ /home/chep/.conan/data/spdlog/1.9.1/_/_/package/c2473343b93c984d1dc6f8dc53695396ffbb17cd/include/spdlog/common-inl.h \
+ /home/chep/.conan/data/spdlog/1.9.1/_/_/package/c2473343b93c984d1dc6f8dc53695396ffbb17cd/include/spdlog/common.h \
+ /home/chep/.conan/data/spdlog/1.9.1/_/_/package/c2473343b93c984d1dc6f8dc53695396ffbb17cd/include/spdlog/details/backtracer-inl.h \
+ /home/chep/.conan/data/spdlog/1.9.1/_/_/package/c2473343b93c984d1dc6f8dc53695396ffbb17cd/include/spdlog/details/backtracer.h \
+ /home/chep/.conan/data/spdlog/1.9.1/_/_/package/c2473343b93c984d1dc6f8dc53695396ffbb17cd/include/spdlog/details/circular_q.h \
+ /home/chep/.conan/data/spdlog/1.9.1/_/_/package/c2473343b93c984d1dc6f8dc53695396ffbb17cd/include/spdlog/details/console_globals.h \
+ /home/chep/.conan/data/spdlog/1.9.1/_/_/package/c2473343b93c984d1dc6f8dc53695396ffbb17cd/include/spdlog/details/fmt_helper.h \
+ /home/chep/.conan/data/spdlog/1.9.1/_/_/package/c2473343b93c984d1dc6f8dc53695396ffbb17cd/include/spdlog/details/log_msg-inl.h \
+ /home/chep/.conan/data/spdlog/1.9.1/_/_/package/c2473343b93c984d1dc6f8dc53695396ffbb17cd/include/spdlog/details/log_msg.h \
+ /home/chep/.conan/data/spdlog/1.9.1/_/_/package/c2473343b93c984d1dc6f8dc53695396ffbb17cd/include/spdlog/details/log_msg_buffer-inl.h \
+ /home/chep/.conan/data/spdlog/1.9.1/_/_/package/c2473343b93c984d1dc6f8dc53695396ffbb17cd/include/spdlog/details/log_msg_buffer.h \
+ /home/chep/.conan/data/spdlog/1.9.1/_/_/package/c2473343b93c984d1dc6f8dc53695396ffbb17cd/include/spdlog/details/null_mutex.h \
+ /home/chep/.conan/data/spdlog/1.9.1/_/_/package/c2473343b93c984d1dc6f8dc53695396ffbb17cd/include/spdlog/details/os-inl.h \
+ /home/chep/.conan/data/spdlog/1.9.1/_/_/package/c2473343b93c984d1dc6f8dc53695396ffbb17cd/include/spdlog/details/os.h \
+ /home/chep/.conan/data/spdlog/1.9.1/_/_/package/c2473343b93c984d1dc6f8dc53695396ffbb17cd/include/spdlog/details/periodic_worker-inl.h \
+ /home/chep/.conan/data/spdlog/1.9.1/_/_/package/c2473343b93c984d1dc6f8dc53695396ffbb17cd/include/spdlog/details/periodic_worker.h \
+ /home/chep/.conan/data/spdlog/1.9.1/_/_/package/c2473343b93c984d1dc6f8dc53695396ffbb17cd/include/spdlog/details/registry-inl.h \
+ /home/chep/.conan/data/spdlog/1.9.1/_/_/package/c2473343b93c984d1dc6f8dc53695396ffbb17cd/include/spdlog/details/registry.h \
+ /home/chep/.conan/data/spdlog/1.9.1/_/_/package/c2473343b93c984d1dc6f8dc53695396ffbb17cd/include/spdlog/details/synchronous_factory.h \
+ /home/chep/.conan/data/spdlog/1.9.1/_/_/package/c2473343b93c984d1dc6f8dc53695396ffbb17cd/include/spdlog/details/windows_include.h \
+ /home/chep/.conan/data/spdlog/1.9.1/_/_/package/c2473343b93c984d1dc6f8dc53695396ffbb17cd/include/spdlog/fmt/fmt.h \
+ /home/chep/.conan/data/spdlog/1.9.1/_/_/package/c2473343b93c984d1dc6f8dc53695396ffbb17cd/include/spdlog/fmt/ostr.h \
+ /home/chep/.conan/data/spdlog/1.9.1/_/_/package/c2473343b93c984d1dc6f8dc53695396ffbb17cd/include/spdlog/fmt/xchar.h \
+ /home/chep/.conan/data/spdlog/1.9.1/_/_/package/c2473343b93c984d1dc6f8dc53695396ffbb17cd/include/spdlog/formatter.h \
+ /home/chep/.conan/data/spdlog/1.9.1/_/_/package/c2473343b93c984d1dc6f8dc53695396ffbb17cd/include/spdlog/logger-inl.h \
+ /home/chep/.conan/data/spdlog/1.9.1/_/_/package/c2473343b93c984d1dc6f8dc53695396ffbb17cd/include/spdlog/logger.h \
+ /home/chep/.conan/data/spdlog/1.9.1/_/_/package/c2473343b93c984d1dc6f8dc53695396ffbb17cd/include/spdlog/pattern_formatter-inl.h \
+ /home/chep/.conan/data/spdlog/1.9.1/_/_/package/c2473343b93c984d1dc6f8dc53695396ffbb17cd/include/spdlog/pattern_formatter.h \
+ /home/chep/.conan/data/spdlog/1.9.1/_/_/package/c2473343b93c984d1dc6f8dc53695396ffbb17cd/include/spdlog/sinks/ansicolor_sink-inl.h \
+ /home/chep/.conan/data/spdlog/1.9.1/_/_/package/c2473343b93c984d1dc6f8dc53695396ffbb17cd/include/spdlog/sinks/ansicolor_sink.h \
+ /home/chep/.conan/data/spdlog/1.9.1/_/_/package/c2473343b93c984d1dc6f8dc53695396ffbb17cd/include/spdlog/sinks/sink-inl.h \
+ /home/chep/.conan/data/spdlog/1.9.1/_/_/package/c2473343b93c984d1dc6f8dc53695396ffbb17cd/include/spdlog/sinks/sink.h \
+ /home/chep/.conan/data/spdlog/1.9.1/_/_/package/c2473343b93c984d1dc6f8dc53695396ffbb17cd/include/spdlog/sinks/wincolor_sink-inl.h \
+ /home/chep/.conan/data/spdlog/1.9.1/_/_/package/c2473343b93c984d1dc6f8dc53695396ffbb17cd/include/spdlog/sinks/wincolor_sink.h \
+ /home/chep/.conan/data/spdlog/1.9.1/_/_/package/c2473343b93c984d1dc6f8dc53695396ffbb17cd/include/spdlog/spdlog-inl.h \
+ /home/chep/.conan/data/spdlog/1.9.1/_/_/package/c2473343b93c984d1dc6f8dc53695396ffbb17cd/include/spdlog/spdlog.h \
+ /home/chep/.conan/data/spdlog/1.9.1/_/_/package/c2473343b93c984d1dc6f8dc53695396ffbb17cd/include/spdlog/tweakme.h \
+ /home/chep/.conan/data/spdlog/1.9.1/_/_/package/c2473343b93c984d1dc6f8dc53695396ffbb17cd/include/spdlog/version.h \
  tests/primitives/Primitives.cpp \
  tests/primitives/Primitives.h \
  src/Application.h \
@@ -259,15 +259,18 @@ tests/primitives/CMakeFiles/Primitives.dir/Primitives.cpp.o: \
  src/EngineTime.h \
  src/Entrypoint.h \
  src/Event.h \
+ src/ISystem.h \
  src/Input.h \
  src/Locator.h \
  src/Logger.h \
  src/Matrix4.h \
  src/PubSub.h \
+ src/Random.h \
  src/Renderer.h \
  src/ResourceManager.h \
  src/Scene.h \
  src/Sprite.h \
+ src/SystemRegistry.h \
  src/Transform.h \
  src/TwoDE.h \
  src/Vector2.h \

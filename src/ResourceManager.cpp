@@ -43,11 +43,12 @@ namespace TwoDE
         tex.m_Channels = 4;
 
         tex.data = new unsigned char[4];
-        tex.data[0] = color.r() * 255;
-        tex.data[1] = color.g() * 255;
-        tex.data[2] = color.b() * 255;
-        tex.data[3] = color.alpha() * 255;
-          
+        tex.data[0] = 255;
+        tex.data[1] = 255;
+        tex.data[2] = 255;
+        tex.data[3] = 255;
+
+        tex.color = color;
 
         colorTextures[colorHash] = tex;
 
@@ -71,17 +72,13 @@ namespace TwoDE
 
         int n = static_cast<int>(tex.m_Width * tex.m_Height * tex.m_Channels);
         tex.data = new unsigned char[n];
-
-        unsigned char red = static_cast<unsigned char>(color.r() * 255);
-        unsigned char green= static_cast<unsigned char>(color.g() * 255);
-        unsigned char blue = static_cast<unsigned char>(color.b() * 255);
         
         for (int i = 0; i < n; i += 4)
         {
             int index = i;
-            *(tex.data + index++) = red;
-            *(tex.data + index++) = green;
-            *(tex.data + index++) = blue;
+            *(tex.data + index++) = 255;
+            *(tex.data + index++) = 255;
+            *(tex.data + index++) = 255;
 
             float y = static_cast<int>(i / (radius * 2)) / 4 - radius;
             int x = (i / 4) % static_cast<int>(radius * 2) - radius;
@@ -100,7 +97,8 @@ namespace TwoDE
 
             *(tex.data + index) = alpha;
         }
-        
+
+        tex.color = color;
 
         circleTextures[colorHash] = tex;
 

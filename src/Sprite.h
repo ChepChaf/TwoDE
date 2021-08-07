@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Core.h"
+#include "Color.h"
 
 #include <string>
 #include <array>
@@ -15,7 +16,8 @@ namespace TwoDE
 		int m_Width{ 0 }; 
 		int m_Height{ 0 };
 		int m_Channels{ 0 };
-		
+		Color color { 1.0f, 1.0f, 1.0f, 1.0f };
+
 		unsigned char* data = nullptr;
 
 		Sprite() = default;

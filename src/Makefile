@@ -319,6 +319,30 @@ GLFWWindow.cpp.s:
 	cd /media/chep/Shared/Code/Games/TwoDE && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/TwoDE.dir/build.make src/CMakeFiles/TwoDE.dir/GLFWWindow.cpp.s
 .PHONY : GLFWWindow.cpp.s
 
+ISystem.o: ISystem.cpp.o
+.PHONY : ISystem.o
+
+# target to build an object file
+ISystem.cpp.o:
+	cd /media/chep/Shared/Code/Games/TwoDE && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/TwoDE.dir/build.make src/CMakeFiles/TwoDE.dir/ISystem.cpp.o
+.PHONY : ISystem.cpp.o
+
+ISystem.i: ISystem.cpp.i
+.PHONY : ISystem.i
+
+# target to preprocess a source file
+ISystem.cpp.i:
+	cd /media/chep/Shared/Code/Games/TwoDE && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/TwoDE.dir/build.make src/CMakeFiles/TwoDE.dir/ISystem.cpp.i
+.PHONY : ISystem.cpp.i
+
+ISystem.s: ISystem.cpp.s
+.PHONY : ISystem.s
+
+# target to generate assembly for a file
+ISystem.cpp.s:
+	cd /media/chep/Shared/Code/Games/TwoDE && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/TwoDE.dir/build.make src/CMakeFiles/TwoDE.dir/ISystem.cpp.s
+.PHONY : ISystem.cpp.s
+
 Input.o: Input.cpp.o
 .PHONY : Input.o
 
@@ -607,6 +631,30 @@ Square.cpp.s:
 	cd /media/chep/Shared/Code/Games/TwoDE && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/TwoDE.dir/build.make src/CMakeFiles/TwoDE.dir/Square.cpp.s
 .PHONY : Square.cpp.s
 
+SystemRegistry.o: SystemRegistry.cpp.o
+.PHONY : SystemRegistry.o
+
+# target to build an object file
+SystemRegistry.cpp.o:
+	cd /media/chep/Shared/Code/Games/TwoDE && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/TwoDE.dir/build.make src/CMakeFiles/TwoDE.dir/SystemRegistry.cpp.o
+.PHONY : SystemRegistry.cpp.o
+
+SystemRegistry.i: SystemRegistry.cpp.i
+.PHONY : SystemRegistry.i
+
+# target to preprocess a source file
+SystemRegistry.cpp.i:
+	cd /media/chep/Shared/Code/Games/TwoDE && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/TwoDE.dir/build.make src/CMakeFiles/TwoDE.dir/SystemRegistry.cpp.i
+.PHONY : SystemRegistry.cpp.i
+
+SystemRegistry.s: SystemRegistry.cpp.s
+.PHONY : SystemRegistry.s
+
+# target to generate assembly for a file
+SystemRegistry.cpp.s:
+	cd /media/chep/Shared/Code/Games/TwoDE && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/TwoDE.dir/build.make src/CMakeFiles/TwoDE.dir/SystemRegistry.cpp.s
+.PHONY : SystemRegistry.cpp.s
+
 Transform.o: Transform.cpp.o
 .PHONY : Transform.o
 
@@ -782,6 +830,9 @@ help:
 	@echo "... GLFWWindow.o"
 	@echo "... GLFWWindow.i"
 	@echo "... GLFWWindow.s"
+	@echo "... ISystem.o"
+	@echo "... ISystem.i"
+	@echo "... ISystem.s"
 	@echo "... Input.o"
 	@echo "... Input.i"
 	@echo "... Input.s"
@@ -818,6 +869,9 @@ help:
 	@echo "... Square.o"
 	@echo "... Square.i"
 	@echo "... Square.s"
+	@echo "... SystemRegistry.o"
+	@echo "... SystemRegistry.i"
+	@echo "... SystemRegistry.s"
 	@echo "... Transform.o"
 	@echo "... Transform.i"
 	@echo "... Transform.s"

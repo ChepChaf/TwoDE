@@ -200,6 +200,19 @@ Primitives/fast:
 	$(MAKE) $(MAKESILENT) -f tests/primitives/CMakeFiles/Primitives.dir/build.make tests/primitives/CMakeFiles/Primitives.dir/build
 .PHONY : Primitives/fast
 
+#=============================================================================
+# Target rules for targets named Graphs
+
+# Build rule for target.
+Graphs: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Graphs
+.PHONY : Graphs
+
+# fast build rule for target.
+Graphs/fast:
+	$(MAKE) $(MAKESILENT) -f tests/graphs/CMakeFiles/Graphs.dir/build.make tests/graphs/CMakeFiles/Graphs.dir/build
+.PHONY : Graphs/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -212,6 +225,7 @@ help:
 	@echo "... install/strip"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
+	@echo "... Graphs"
 	@echo "... Primitives"
 	@echo "... Sandbox"
 	@echo "... TwoDE"

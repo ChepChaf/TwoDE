@@ -21,6 +21,7 @@ namespace TwoDE
         void setInt(const std::string& name, int value) const;
         void setFloat(const std::string& name, float value) const;
         void setFloat2(const std::string& name, float x, float y) const;
+        void setFloat3(const std::string& name, float x, float y, float z) const;
         void setFloat4(const std::string& name, float x, float y, float z, float w) const;
         void setVector2(const std::string& name, Vector2 value) const;
         void setMatrix4(const std::string& name, Matrix4 value) const;

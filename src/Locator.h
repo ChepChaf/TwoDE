@@ -6,21 +6,25 @@
 #include "PubSub.h"
 #include "ResourceManager.h"
 #include "Scene.h"
+#include "SystemRegistry.h"
 
 #include <memory>
 
-namespace TwoDE {
+namespace TwoDE
+{
     class TWO_DLL Locator
     {
         Input inputSystem;
         PubSub eventSystem;
         ResourceManager resourceManagerSystem;
         Scene sceneManagerSystem;
+        SystemRegistry systemRegistry;
 
     public:
-        inline static void init(Input &input, PubSub &pubsub, ResourceManager &rm, Scene &scene)
+        inline static void
+        init(Input &input, PubSub &pubsub, ResourceManager &rm, Scene &scene, SystemRegistry &systemRegistry)
         {
-            getLocator().initLocator(input, pubsub, rm, scene);
+            getLocator().initLocator(input, pubsub, rm, scene, systemRegistry);
         }
 
         inline static Locator &getLocator()
@@ -29,7 +33,7 @@ namespace TwoDE {
             return locator;
         }
 
-        void initLocator(Input &, PubSub &, ResourceManager &, Scene &);
+        void initLocator(Input &, PubSub &, ResourceManager &, Scene &, SystemRegistry &);
 
         Input &getInputSystem();
 
@@ -38,6 +42,8 @@ namespace TwoDE {
         ResourceManager &getResourceManagerSystem();
 
         Scene &getSceneManagerSystem();
+
+        SystemRegistry &getSystemRegistry();
     };
 }
 

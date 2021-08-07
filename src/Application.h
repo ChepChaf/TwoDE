@@ -7,6 +7,7 @@
 #include "Renderer.h"
 #include "Scene.h"
 #include "Locator.h"
+#include "SystemRegistry.h"
 
 #include <memory>
 #include <ctime>
@@ -28,6 +29,7 @@ namespace TwoDE
 		virtual void start() = 0;
 		virtual void update();
 		EntityRegistry* getEntityRegistry();
+		SystemRegistry* getSystemRegistry();
 	};
 
 	Application* createApplication();
