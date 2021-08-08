@@ -7,6 +7,7 @@
 #include "ResourceManager.h"
 #include "Scene.h"
 #include "SystemRegistry.h"
+#include "Transform.h"
 
 #include <memory>
 
@@ -20,6 +21,7 @@ namespace TwoDE
         Scene sceneManagerSystem;
         SystemRegistry systemRegistry;
 
+        Entity camera;
     public:
         inline static void
         init(Input &input, PubSub &pubsub, ResourceManager &rm, Scene &scene, SystemRegistry &systemRegistry)
@@ -44,6 +46,9 @@ namespace TwoDE
         Scene &getSceneManagerSystem();
 
         SystemRegistry &getSystemRegistry();
+
+        Transform &getCamera();
+        Entity &getCameraEntity();
     };
 }
 

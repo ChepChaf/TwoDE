@@ -9,6 +9,7 @@
 #include <iostream>
 #include <memory>
 #include <ctime>
+#include <Systems/OnClickSystem.h>
 
 namespace TwoDE
 {
@@ -26,7 +27,7 @@ namespace TwoDE
 
         TWODE_CORE_INFO("Hello from Application init");
 
-        camera = Locator::getLocator().getSceneManagerSystem().CreateEntity();
+        camera = Locator::getLocator().getCameraEntity();
 
         Transform trans;
         trans.setScale({8.f, 8.f});
@@ -48,6 +49,8 @@ namespace TwoDE
         if (renderer->init(width, height) < 0) {
             TWODE_CORE_ERROR("Error initializing renderer");
         }
+
+        systemRegistry.subscribe<OnClickSystem>();
     }
 
     bool Application::shouldClose()

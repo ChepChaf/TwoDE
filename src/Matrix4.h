@@ -11,10 +11,10 @@ namespace TwoDE
 	class TWO_DLL Matrix4
 	{
 	public:
-		glm::mat4 m_Mat{ 1.f };
+		glm::mat4 mat{ 1.f };
 
 		Matrix4(){}
-		Matrix4(float val) : m_Mat(glm::mat4(val)) {}
+		Matrix4(float val) : mat(glm::mat4(val)) {}
 
 		const float* value_ptr();
 

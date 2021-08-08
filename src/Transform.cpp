@@ -8,10 +8,10 @@ namespace TwoDE
 	void Transform::recalculateMatrix()
 	{
 		// TODO: do this without glm
-		m_Matrix = Matrix4(1.f);
-		m_Matrix.translate(m_Position);
-		m_Matrix.rotate(m_Rotation);
-		m_Matrix.scale(m_Scale);
+		matrix = Matrix4(1.f);
+		matrix.translate(m_Position);
+		matrix.rotate(m_Rotation);
+		matrix.scale(m_Scale);
 	}
 	Transform::Transform(Vector3 position, float rotation, Vector2 scale) : m_Position(position), m_Rotation(rotation), m_Scale(scale)
 	{
@@ -77,6 +77,6 @@ namespace TwoDE
 
 	const Matrix4 Transform::getMatrix() const
 	{
-		return m_Matrix;
+		return matrix;
 	}
 }

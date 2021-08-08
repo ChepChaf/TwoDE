@@ -158,6 +158,7 @@ preinstall/fast:
 
 # clear depends
 depend:
+	cd /media/chep/Shared/Code/Games/TwoDE && $(CMAKE_COMMAND) -P /media/chep/Shared/Code/Games/TwoDE/CMakeFiles/VerifyGlobs.cmake
 	cd /media/chep/Shared/Code/Games/TwoDE && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
@@ -184,6 +185,7 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
+	cd /media/chep/Shared/Code/Games/TwoDE && $(CMAKE_COMMAND) -P /media/chep/Shared/Code/Games/TwoDE/CMakeFiles/VerifyGlobs.cmake
 	cd /media/chep/Shared/Code/Games/TwoDE && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

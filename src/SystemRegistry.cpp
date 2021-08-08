@@ -1,6 +1,6 @@
 #include "SystemRegistry.h"
 
-#include "ISystem.h"
+#include "Systems/ISystem.h"
 
 namespace TwoDE
 {

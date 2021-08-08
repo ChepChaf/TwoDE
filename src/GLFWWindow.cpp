@@ -1,6 +1,9 @@
+#include <glm/gtc/matrix_transform.hpp>
+
 #include "GLFWWindow.h"
 #include "Locator.h"
 #include "Logger.h"
+#include "Transform.h"
 
 namespace TwoDE
 {
@@ -53,9 +56,9 @@ namespace TwoDE
 			y = 1-y / height;
 
 			if (action == GLFW_PRESS)
-				Locator::getLocator().getInputSystem().mouseClick(button, Vector2{ static_cast<float>(x), static_cast<float>(y) });
+			    Locator::getLocator().getInputSystem().mouseClick(button, Vector2{ static_cast<float>(x), static_cast<float>(y) });
 			if (action == GLFW_RELEASE)
-				Locator::getLocator().getInputSystem().mouseRelease(button, Vector2{ static_cast<float>(x), static_cast<float>(y) });
+			    Locator::getLocator().getInputSystem().mouseRelease(button, Vector2{ static_cast<float>(x), static_cast<float>(y) });
 		};
 		glfwSetMouseButtonCallback(m_Window, mouse_callback);
 

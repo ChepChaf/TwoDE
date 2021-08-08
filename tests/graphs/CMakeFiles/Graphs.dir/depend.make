@@ -256,12 +256,14 @@ tests/graphs/CMakeFiles/Graphs.dir/Graphs.cpp.o: \
  tests/graphs/Systems/NodeSystem.h \
  src/Application.h \
  src/Color.h \
+ src/Components/CircleColliderComponent2D.h \
+ src/Components/ClickableComponent.h \
+ src/Components/ColliderComponent2D.h \
  src/Core.h \
  src/EngineMath.h \
  src/EngineTime.h \
  src/Entrypoint.h \
  src/Event.h \
- src/ISystem.h \
  src/Input.h \
  src/Locator.h \
  src/Logger.h \
@@ -273,6 +275,7 @@ tests/graphs/CMakeFiles/Graphs.dir/Graphs.cpp.o: \
  src/Scene.h \
  src/Sprite.h \
  src/SystemRegistry.h \
+ src/Systems/ISystem.h \
  src/Transform.h \
  src/TwoDE.h \
  src/Vector2.h \

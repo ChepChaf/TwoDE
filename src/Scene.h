@@ -5,8 +5,8 @@
 
 namespace TwoDE
 {
-	typedef TWO_DLL entt::entity Entity;
-	typedef TWO_DLL entt::registry EntityRegistry;
+	typedef entt::entity Entity;
+	typedef entt::registry EntityRegistry;
 
 	class TWO_DLL Scene
 	{

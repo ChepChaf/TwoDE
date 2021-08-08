@@ -12,7 +12,7 @@ namespace TwoDE
 	{
 		void recalculateMatrix();
 	public:
-		Matrix4 m_Matrix;
+		Matrix4 matrix;
 		Vector3 m_Position;
 		Vector2 m_Scale;
 		float m_Rotation;

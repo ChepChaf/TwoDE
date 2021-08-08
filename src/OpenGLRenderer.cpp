@@ -175,7 +175,7 @@ namespace TwoDE
 
         glm::mat4 ortho = glm::ortho(0.0f, m_Width, 0.0f, m_Height, -10.0f, 10.0f);
         Matrix4 projection;
-        projection.m_Mat = ortho;
+        projection.mat = ortho;
 
         OpenGLRenderer::defaultShader.setMatrix4("projection", projection);
         OpenGLRenderer::defaultShader.setMatrix4("view", viewport.getMatrix());

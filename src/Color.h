@@ -11,8 +11,8 @@ namespace TwoDE
     public:
         float r, g, b, alpha;
 
-        Color(float r, float g, float b, float a) : r(r), g(g), b(b), alpha(a)
-        {}
+        Color(float r, float g, float b, float a) : r(r), g(g), b(b), alpha(a){}
+        bool operator==(const Color& other);
     };
 }
 

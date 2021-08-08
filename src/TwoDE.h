@@ -13,6 +13,8 @@
 #include "Locator.h"
 #include "Scene.h"
 
+#include "Systems/ISystem.h"
+
 #define onEvent(...) TwoDE::Locator::getLocator().getEventSystem().subscribe(__VA_ARGS__)
 
 #include "Input.h"

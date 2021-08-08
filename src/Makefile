@@ -158,6 +158,7 @@ preinstall/fast:
 
 # clear depends
 depend:
+	cd /media/chep/Shared/Code/Games/TwoDE && $(CMAKE_COMMAND) -P /media/chep/Shared/Code/Games/TwoDE/CMakeFiles/VerifyGlobs.cmake
 	cd /media/chep/Shared/Code/Games/TwoDE && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
@@ -318,30 +319,6 @@ GLFWWindow.s: GLFWWindow.cpp.s
 GLFWWindow.cpp.s:
 	cd /media/chep/Shared/Code/Games/TwoDE && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/TwoDE.dir/build.make src/CMakeFiles/TwoDE.dir/GLFWWindow.cpp.s
 .PHONY : GLFWWindow.cpp.s
-
-ISystem.o: ISystem.cpp.o
-.PHONY : ISystem.o
-
-# target to build an object file
-ISystem.cpp.o:
-	cd /media/chep/Shared/Code/Games/TwoDE && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/TwoDE.dir/build.make src/CMakeFiles/TwoDE.dir/ISystem.cpp.o
-.PHONY : ISystem.cpp.o
-
-ISystem.i: ISystem.cpp.i
-.PHONY : ISystem.i
-
-# target to preprocess a source file
-ISystem.cpp.i:
-	cd /media/chep/Shared/Code/Games/TwoDE && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/TwoDE.dir/build.make src/CMakeFiles/TwoDE.dir/ISystem.cpp.i
-.PHONY : ISystem.cpp.i
-
-ISystem.s: ISystem.cpp.s
-.PHONY : ISystem.s
-
-# target to generate assembly for a file
-ISystem.cpp.s:
-	cd /media/chep/Shared/Code/Games/TwoDE && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/TwoDE.dir/build.make src/CMakeFiles/TwoDE.dir/ISystem.cpp.s
-.PHONY : ISystem.cpp.s
 
 Input.o: Input.cpp.o
 .PHONY : Input.o
@@ -655,6 +632,54 @@ SystemRegistry.cpp.s:
 	cd /media/chep/Shared/Code/Games/TwoDE && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/TwoDE.dir/build.make src/CMakeFiles/TwoDE.dir/SystemRegistry.cpp.s
 .PHONY : SystemRegistry.cpp.s
 
+Systems/ISystem.o: Systems/ISystem.cpp.o
+.PHONY : Systems/ISystem.o
+
+# target to build an object file
+Systems/ISystem.cpp.o:
+	cd /media/chep/Shared/Code/Games/TwoDE && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/TwoDE.dir/build.make src/CMakeFiles/TwoDE.dir/Systems/ISystem.cpp.o
+.PHONY : Systems/ISystem.cpp.o
+
+Systems/ISystem.i: Systems/ISystem.cpp.i
+.PHONY : Systems/ISystem.i
+
+# target to preprocess a source file
+Systems/ISystem.cpp.i:
+	cd /media/chep/Shared/Code/Games/TwoDE && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/TwoDE.dir/build.make src/CMakeFiles/TwoDE.dir/Systems/ISystem.cpp.i
+.PHONY : Systems/ISystem.cpp.i
+
+Systems/ISystem.s: Systems/ISystem.cpp.s
+.PHONY : Systems/ISystem.s
+
+# target to generate assembly for a file
+Systems/ISystem.cpp.s:
+	cd /media/chep/Shared/Code/Games/TwoDE && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/TwoDE.dir/build.make src/CMakeFiles/TwoDE.dir/Systems/ISystem.cpp.s
+.PHONY : Systems/ISystem.cpp.s
+
+Systems/OnClickSystem.o: Systems/OnClickSystem.cpp.o
+.PHONY : Systems/OnClickSystem.o
+
+# target to build an object file
+Systems/OnClickSystem.cpp.o:
+	cd /media/chep/Shared/Code/Games/TwoDE && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/TwoDE.dir/build.make src/CMakeFiles/TwoDE.dir/Systems/OnClickSystem.cpp.o
+.PHONY : Systems/OnClickSystem.cpp.o
+
+Systems/OnClickSystem.i: Systems/OnClickSystem.cpp.i
+.PHONY : Systems/OnClickSystem.i
+
+# target to preprocess a source file
+Systems/OnClickSystem.cpp.i:
+	cd /media/chep/Shared/Code/Games/TwoDE && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/TwoDE.dir/build.make src/CMakeFiles/TwoDE.dir/Systems/OnClickSystem.cpp.i
+.PHONY : Systems/OnClickSystem.cpp.i
+
+Systems/OnClickSystem.s: Systems/OnClickSystem.cpp.s
+.PHONY : Systems/OnClickSystem.s
+
+# target to generate assembly for a file
+Systems/OnClickSystem.cpp.s:
+	cd /media/chep/Shared/Code/Games/TwoDE && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/TwoDE.dir/build.make src/CMakeFiles/TwoDE.dir/Systems/OnClickSystem.cpp.s
+.PHONY : Systems/OnClickSystem.cpp.s
+
 Transform.o: Transform.cpp.o
 .PHONY : Transform.o
 
@@ -830,9 +855,6 @@ help:
 	@echo "... GLFWWindow.o"
 	@echo "... GLFWWindow.i"
 	@echo "... GLFWWindow.s"
-	@echo "... ISystem.o"
-	@echo "... ISystem.i"
-	@echo "... ISystem.s"
 	@echo "... Input.o"
 	@echo "... Input.i"
 	@echo "... Input.s"
@@ -872,6 +894,12 @@ help:
 	@echo "... SystemRegistry.o"
 	@echo "... SystemRegistry.i"
 	@echo "... SystemRegistry.s"
+	@echo "... Systems/ISystem.o"
+	@echo "... Systems/ISystem.i"
+	@echo "... Systems/ISystem.s"
+	@echo "... Systems/OnClickSystem.o"
+	@echo "... Systems/OnClickSystem.i"
+	@echo "... Systems/OnClickSystem.s"
 	@echo "... Transform.o"
 	@echo "... Transform.i"
 	@echo "... Transform.s"
@@ -901,6 +929,7 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
+	cd /media/chep/Shared/Code/Games/TwoDE && $(CMAKE_COMMAND) -P /media/chep/Shared/Code/Games/TwoDE/CMakeFiles/VerifyGlobs.cmake
 	cd /media/chep/Shared/Code/Games/TwoDE && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

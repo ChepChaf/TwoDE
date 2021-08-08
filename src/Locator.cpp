@@ -16,6 +16,8 @@ namespace TwoDE
         resourceManagerSystem.init();
         sceneManagerSystem.init();
         systemRegistry.init();
+
+        this->camera = sceneManagerSystem.CreateEntity();
     }
 
     Input &Locator::getInputSystem()
@@ -41,5 +43,17 @@ namespace TwoDE
     SystemRegistry &Locator::getSystemRegistry()
     {
         return systemRegistry;
+    }
+
+    Transform &Locator::getCamera()
+    {
+        auto registry = TwoDE::Locator::getLocator().getSceneManagerSystem().GetRegistry();
+
+        return registry->get<Transform>(camera);
+    }
+
+    Entity &Locator::getCameraEntity()
+    {
+        return camera;
     }
 }

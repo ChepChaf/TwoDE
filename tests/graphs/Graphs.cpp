@@ -3,6 +3,7 @@
 #include "Systems/NodeSystem.h"
 
 #include <iostream>
+#include <Components/CircleColliderComponent2D.h>
 
 void GraphsApp::start()
 {
@@ -11,6 +12,7 @@ void GraphsApp::start()
         for (int x = 0; x < 10; x++) {
             auto circle = renderer->drawCircle({x * size, y * size, 0}, size, {0.2f, 0.2f, 0.2f, 1.0f});
             TwoDE::Locator::getLocator().getSceneManagerSystem().AddComponent<NodeComponent>(circle);
+            TwoDE::Locator::getLocator().getSceneManagerSystem().AddComponent<TwoDE::CircleColliderComponent2D>(circle, 2.0);
         }
     }
 
