@@ -23,9 +23,13 @@ yay -S cmake libxcb libfontenc libice libsm libxaw libxcomposite libxcursor libx
 ```
 
 `pip install conan`
+
 `mkdir bin`
+
 `cd bin`
-`conan install .. --build=missing
+
+`conan install .. --build=missing`
+
 `cmake .. -DCMAKE_TOOLCHAIN_FILE=conan_toolchain.cmake`
   
 ## Usage:
