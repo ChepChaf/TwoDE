@@ -1,0 +1,4 @@
+{
+    "name": "Conan",
+    "toolchainFile": "./bin/conan_toolchain.cmake"
+}

@@ -15,12 +15,18 @@ it probably won't be usable on a productive environment.
 
 ## Building:
 - Windows:
-  - cmake .
-  - Open Visual Studio and build
+	TBD
 - Linux:
-  - mkdir bin
-  - cd bin && conan install ..
-  - cmake ..
+If arch based:
+```
+yay -S cmake libxcb libfontenc libice libsm libxaw libxcomposite libxcursor libxdamage libxdmcp libxtst libxinerama libxkbfile libxrandr libxres libxss libxvmc xtrans xcb-util-wm xcb-util-image xcb-util-keysyms xcb-util-renderutil libxxf86vm libxv xkeyboard-config xcb-util util-linux-libs
+```
+
+`pip install conan`
+`mkdir bin`
+`cd bin`
+`conan install .. --build=missing
+`cmake .. -DCMAKE_TOOLCHAIN_FILE=conan_toolchain.cmake`
   
 ## Usage:
 

@@ -14,14 +14,14 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${TWODE_BIN})
 
 set_property(TARGET Primitives PROPERTY FOLDER "tests")
 set_target_properties(Primitives PROPERTIES
-                      RUNTIME_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/bin)
+                      RUNTIME_OUTPUT_DIRECTORY ${TWODE_BIN})
 
 install (TARGETS Primitives
-    RUNTIME DESTINATION ${PROJECT_SOURCE_DIR}/_install)
+    RUNTIME DESTINATION ${TWODE_BIN}/_install)
 
 if (IS_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/resources)
 add_custom_command(TARGET Primitives POST_BUILD
     COMMAND ${CMAKE_COMMAND} -E copy_directory
         ${CMAKE_CURRENT_SOURCE_DIR}/resources
-        ${TWODE_BIN}/$\(Configuration\)/resources)
+        ${TWODE_BIN}/resources)
 endif()

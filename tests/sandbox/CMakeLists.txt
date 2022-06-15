@@ -11,10 +11,10 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${TWODE_BIN})
 
 set_property(TARGET Sandbox PROPERTY FOLDER "tests")
 set_target_properties(Sandbox PROPERTIES
-                      RUNTIME_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/bin)
+                      RUNTIME_OUTPUT_DIRECTORY ${TWODE_BIN})
 
 install (TARGETS Sandbox
-    RUNTIME DESTINATION ${PROJECT_SOURCE_DIR}/_install)
+    RUNTIME DESTINATION ${TWODE_BIN}/_install)
 
 add_custom_command(TARGET Sandbox POST_BUILD
     COMMAND ${CMAKE_COMMAND} -E copy_directory
