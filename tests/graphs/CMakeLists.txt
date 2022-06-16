@@ -26,9 +26,9 @@ install(TARGETS Graphs
         RUNTIME DESTINATION ${PROJECT_SOURCE_DIR}/_install)
 
 if (IS_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/resources)
-    message(DEBUG "Copying resources to ${CMAKE_CURRENT_SOURCE_DIR}/resources")
+    message(DEBUG "Copying resources to ${CMAKE_CURRENT_BINARY_DIR}/resources")
     add_custom_command(TARGET Graphs POST_BUILD
             COMMAND ${CMAKE_COMMAND} -E copy_directory
             ${CMAKE_CURRENT_SOURCE_DIR}/resources
-            ${TWODE_BIN}/resources)
+            ${CMAKE_CURRENT_BINARY_DIR}/bin/resources)
 endif ()

@@ -24,7 +24,9 @@ target_compile_definitions(TwoDE PRIVATE TWODE_DLL)
 target_include_directories(TwoDE PRIVATE ${CONAN_INCLUDE_DIRS})
 
 find_package(spdlog)
-target_link_libraries(TwoDE PRIVATE ${CONAN_LIBS} spdlog::spdlog)
+find_package(glew)
+
+target_link_libraries(TwoDE PRIVATE ${CONAN_LIBS} spdlog::spdlog GLEW::GLEW)
 
 set_target_properties(TwoDE PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${TWODE_BIN})
 set_target_properties(TwoDE PROPERTIES LIBRARY_OUTPUT_DIRECTORY ${TWODE_BIN})
@@ -32,8 +34,3 @@ set_target_properties(TwoDE PROPERTIES LIBRARY_OUTPUT_DIRECTORY ${TWODE_BIN})
 install (TARGETS TwoDE
          RUNTIME DESTINATION ${TWODE_BIN}/_install
          LIBRARY DESTINATION ${TWODE_BIN}/_install)
-
-add_custom_command(TARGET TwoDE POST_BUILD
-    COMMAND ${CMAKE_COMMAND} -E copy_directory
-        ${PROJECT_SOURCE_DIR}/resources
-        ${TWODE_BIN}/resources)

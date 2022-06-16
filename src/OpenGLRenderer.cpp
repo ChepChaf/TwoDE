@@ -1,9 +1,9 @@
+#include <GL/glew.h>
+
 #include "Logger.h"
 #include "OpenGLRenderer.h"
 #include "Locator.h"
 #include "EngineMath.h"
-
-#include "glad/glad.h"
 
 #include <glm/gtc/matrix_transform.hpp>
 
@@ -104,7 +104,8 @@ namespace TwoDE
     int OpenGLRenderer::init(int width, int height)
     {
         // TODO: Find way to abstract this so it's not dependent on glfw
-        if (!gladLoadGL())
+        GLenum err = glewInit();
+        if (GLEW_OK != err)
             return -1;
 
         m_Width = width;

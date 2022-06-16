@@ -1,7 +1,5 @@
 #pragma once
 
-#include "glad/glad.h"
-
 #include "Renderer.h"
 #include "Sprite.h"
 #include "Color.h"

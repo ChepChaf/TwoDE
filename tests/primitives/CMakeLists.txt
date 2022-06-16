@@ -23,5 +23,5 @@ if (IS_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/resources)
 add_custom_command(TARGET Primitives POST_BUILD
     COMMAND ${CMAKE_COMMAND} -E copy_directory
         ${CMAKE_CURRENT_SOURCE_DIR}/resources
-        ${TWODE_BIN}/resources)
+        ${CMAKE_CURRENT_BINARY_DIR}/bin/resources)
 endif()

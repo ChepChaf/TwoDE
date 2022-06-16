@@ -19,4 +19,4 @@ install (TARGETS Sandbox
 add_custom_command(TARGET Sandbox POST_BUILD
     COMMAND ${CMAKE_COMMAND} -E copy_directory
         ${CMAKE_CURRENT_SOURCE_DIR}/resources
-        ${TWODE_BIN}/$\(Configuration\)/resources)
+        ${CMAKE_CURRENT_BINARY_DIR}/bin/resources)

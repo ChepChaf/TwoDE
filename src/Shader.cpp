@@ -1,7 +1,7 @@
 #include "Logger.h"
 #include "Shader.h"
 
-#include <glad/glad.h>
+#include <GL/glew.h>
 
 #include <fstream>
 #include <sstream>
@@ -23,7 +23,7 @@ namespace TwoDE
 
         vShaderFile.exceptions(std::ifstream::failbit | std::ifstream::badbit);
         fShaderFile.exceptions(std::ifstream::failbit | std::ifstream::badbit);
-
+        
         try
         {
             vShaderFile.open(vertexPath);
