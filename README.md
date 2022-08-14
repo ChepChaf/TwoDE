@@ -16,16 +16,15 @@ it probably won't be usable on a productive environment.
 ## Dependencies:
 	- glew
 	- GLFW
+	- spdlog
 
 ## Building:
 - Windows:
 	TBD
-- Linux:
-If arch based:
-	
-MacOS:
-	- brew install spdlog
-
+- Linux & MacOS
+	- mkdir build && cd build
+	- cmake "Unix Makefiles" ..
+	- make
 ## Usage:
 
 ### Basic structure
