@@ -379,3 +379,5 @@ CMakeCache.txt
 
 *.so
 .vscode/
+.DS_Store
+build/
