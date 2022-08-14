@@ -1,0 +1,29 @@
+\hypertarget{_registry_8h_source}{}\doxysection{Registry.\+h}
+\label{_registry_8h_source}\index{src/Registry.h@{src/Registry.h}}
+\mbox{\hyperlink{_registry_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include <entt/entt.hpp>}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_two_d_e}{TwoDE}}}
+\DoxyCodeLine{6 \{}
+\DoxyCodeLine{7     \textcolor{keyword}{typedef} entt::entity \mbox{\hyperlink{namespace_two_d_e_a8aa8b3db724f82b64d04d692529308c1}{Entity}};}
+\DoxyCodeLine{8     \textcolor{keyword}{class }\mbox{\hyperlink{class_two_d_e_1_1_registry}{Registry}}}
+\DoxyCodeLine{9     \{}
+\DoxyCodeLine{10         \textcolor{keyword}{public}:}
+\DoxyCodeLine{11         \mbox{\hyperlink{class_two_d_e_1_1_registry_ab00989ba11cc82c6ded0b43529fc9c4f}{Registry}}();}
+\DoxyCodeLine{12         entt::registry* \mbox{\hyperlink{class_two_d_e_1_1_registry_a2009f88357c21050435e7a5306af52a2}{registry}};}
+\DoxyCodeLine{13         \mbox{\hyperlink{namespace_two_d_e_a8aa8b3db724f82b64d04d692529308c1}{Entity}} \mbox{\hyperlink{class_two_d_e_1_1_registry_a78675d30f04658cc6d8c93290339769e}{CreateEntity}}();}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15         \textcolor{keyword}{template} <\textcolor{keyword}{typename} T, \textcolor{keyword}{typename}... Args>}
+\DoxyCodeLine{16         T \mbox{\hyperlink{class_two_d_e_1_1_registry_ac1c9c7d24e4367894683fc80e2647e1b}{AddComponent}}(\mbox{\hyperlink{namespace_two_d_e_a8aa8b3db724f82b64d04d692529308c1}{Entity}}, Args \&\&...);}
+\DoxyCodeLine{17     \};}
+\DoxyCodeLine{18     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T, \textcolor{keyword}{typename}... Args>}
+\DoxyCodeLine{19     \textcolor{keyword}{inline} T \mbox{\hyperlink{class_two_d_e_1_1_registry_ac1c9c7d24e4367894683fc80e2647e1b}{Registry::AddComponent}}(\mbox{\hyperlink{namespace_two_d_e_a8aa8b3db724f82b64d04d692529308c1}{Entity}} ent, Args \&\&...args)}
+\DoxyCodeLine{20     \{}
+\DoxyCodeLine{21         \textcolor{keywordflow}{return} \mbox{\hyperlink{class_two_d_e_1_1_registry_a2009f88357c21050435e7a5306af52a2}{registry}}-\/>emplace<T>(ent, args...);}
+\DoxyCodeLine{22     \}}
+\DoxyCodeLine{23 \}}
+
+\end{DoxyCode}

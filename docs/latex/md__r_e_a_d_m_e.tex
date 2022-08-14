@@ -1,0 +1,93 @@
+Disclaimer\+: This is an educational project, I\textquotesingle{}m working on it with the intention of learning how game engines work, it probably won\textquotesingle{}t be usable on a productive environment.\hypertarget{md__r_e_a_d_m_e_autotoc_md1}{}\doxysection{Planned functionality\+:}\label{md__r_e_a_d_m_e_autotoc_md1}
+
+\begin{DoxyItemize}
+\item \mbox{[} \mbox{]} Full 2D renderer with GLSL support
+\item \mbox{[} \mbox{]} Support for some AI algorithms\+:
+\begin{DoxyItemize}
+\item \mbox{[} \mbox{]} FSM
+\item \mbox{[} \mbox{]} Planning
+\item \mbox{[} \mbox{]} Pathfinding
+\item \mbox{[} \mbox{]} Behaviour Trees
+\end{DoxyItemize}
+\item \mbox{[} \mbox{]} Lua Scripting
+\item \mbox{[} \mbox{]} ECS system
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md2}{}\doxysection{Dependencies\+:}\label{md__r_e_a_d_m_e_autotoc_md2}
+
+\begin{DoxyItemize}
+\item glew
+\item GLFW
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md3}{}\doxysection{Building\+:}\label{md__r_e_a_d_m_e_autotoc_md3}
+
+\begin{DoxyItemize}
+\item Windows\+: TBD
+\item Linux\+: If arch based\+:
+\end{DoxyItemize}
+
+Mac\+OS\+:
+\begin{DoxyItemize}
+\item brew install spdlog
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md4}{}\doxysection{Usage\+:}\label{md__r_e_a_d_m_e_autotoc_md4}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md5}{}\doxysubsection{Basic structure}\label{md__r_e_a_d_m_e_autotoc_md5}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{// Include TwoDE Header.}
+\DoxyCodeLine{\#include "{}TwoDE.h"{}}
+\DoxyCodeLine{}
+\DoxyCodeLine{// Create class inheriting from TwoDE::Application}
+\DoxyCodeLine{class MyApp : public TwoDE::Application}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    public:}
+\DoxyCodeLine{    // override start and update}
+\DoxyCodeLine{    void start() override;}
+\DoxyCodeLine{    void update() override;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md6}{}\doxysubsection{Loading sprites}\label{md__r_e_a_d_m_e_autotoc_md6}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{...}
+\DoxyCodeLine{// Read file from disk and save it in the ResourceManager}
+\DoxyCodeLine{player = TwoDE::Locator::getLocator().getSceneManagerSystem().CreateEntity();}
+\DoxyCodeLine{renderer-\/>drawSprite(player, TwoDE::Sprite("{}resources/sprites/Character01.png"{}), TwoDE::Vector3\{ 0.0f, 0.0f, 1.0f \});}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md7}{}\doxysubsection{events}\label{md__r_e_a_d_m_e_autotoc_md7}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{onEvent("{}mouse\_click"{}, TwoDE::Event(std::function([=](TwoDE::Input::MouseEventInfo\& params)}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{        if (params.button == TwoDE::Input::MOUSE\_BUTTON::LEFT\_BUTTON)}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            // Log to console}
+\DoxyCodeLine{            TWODE\_INFO("{}Mouse x position: \{\}"{}, params.position.getX());}
+\DoxyCodeLine{            TWODE\_INFO("{}Mouse y position: \{\}"{}, params.position.getY());}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{        if (params.button == TwoDE::Input::MOUSE\_BUTTON::RIGHT\_BUTTON)}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            // Get Transform component and rotate}
+\DoxyCodeLine{            auto\& transform = getEntityRegistry()-\/>get<TwoDE::Transform>(player);}
+\DoxyCodeLine{            transform.rotate(-\/1);}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{)));}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md8}{}\doxysubsection{Draw 2\+D Primitives}\label{md__r_e_a_d_m_e_autotoc_md8}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{...}
+\DoxyCodeLine{// Lines}
+\DoxyCodeLine{// origin -\/ end -\/ color -\/ width}
+\DoxyCodeLine{auto line = renderer-\/>drawLine(Vector3\{ 0.f, 0.f, 0.f \}, Vector3\{ 100.f, 100.f, 0.f \}, Color\{ 0.2f, 0.8f, 0.2f, 1.0f \}, 1);}
+\DoxyCodeLine{}
+\DoxyCodeLine{// Rects}
+\DoxyCodeLine{// origin (lower-\/left corner) -\/ size -\/ color}
+\DoxyCodeLine{auto rect = renderer-\/>drawRect(\{ 0.f, 0.f, 0.f \}, \{ 10.f, 10.f \}, \{ 0.6f, 0.2f, 0.2f, 1.0f \});}
+\DoxyCodeLine{}
+\DoxyCodeLine{// Circles}
+\DoxyCodeLine{// center -\/ radius -\/ color}
+\DoxyCodeLine{auto cirle = renderer-\/>drawCircle(\{ 0.f, 0.f, 0.f \}, 50.f, \{ 0.2f, 0.2f, 0.6f, 1.0f \});}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md9}{}\doxysubsection{$<$a href=\char`\"{}../master/tests\char`\"{} $>$\+More examples$<$/a$>$}\label{md__r_e_a_d_m_e_autotoc_md9}

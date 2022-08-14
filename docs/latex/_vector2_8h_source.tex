@@ -1,0 +1,45 @@
+\hypertarget{_vector2_8h_source}{}\doxysection{Vector2.\+h}
+\label{_vector2_8h_source}\index{src/Vector2.h@{src/Vector2.h}}
+\mbox{\hyperlink{_vector2_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_core_8h}{Core.h}}"{}}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_two_d_e}{TwoDE}}}
+\DoxyCodeLine{6 \{}
+\DoxyCodeLine{7     \textcolor{keyword}{class }\mbox{\hyperlink{_core_8h_a441750824a16f7ae56bd40c3a3346197}{TWO\_DLL}} \mbox{\hyperlink{class_two_d_e_1_1_vector2}{Vector2}}}
+\DoxyCodeLine{8     \{}
+\DoxyCodeLine{9         \textcolor{keywordtype}{float} x, y;}
+\DoxyCodeLine{10     \textcolor{keyword}{public}:}
+\DoxyCodeLine{11         \mbox{\hyperlink{class_two_d_e_1_1_vector2_a5a681f73e0297185afa9dab3a1e100f7}{Vector2}}() : x(0), y(0) \{\}}
+\DoxyCodeLine{12         \mbox{\hyperlink{class_two_d_e_1_1_vector2}{Vector2}}(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y);}
+\DoxyCodeLine{13         \mbox{\hyperlink{class_two_d_e_1_1_vector2}{Vector2}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_two_d_e_1_1_vector2}{Vector2}}\& other);}
+\DoxyCodeLine{14         \textcolor{keywordtype}{float} dot(\textcolor{keyword}{const} \mbox{\hyperlink{class_two_d_e_1_1_vector2}{Vector2}}\& other);}
+\DoxyCodeLine{15         \textcolor{keyword}{inline} \textcolor{keywordtype}{float} \mbox{\hyperlink{class_two_d_e_1_1_vector2_a953536c3ddade53f13d2724377b1dfcd}{getX}}() \{ \textcolor{keywordflow}{return} x; \}}
+\DoxyCodeLine{16         \textcolor{keyword}{inline} \textcolor{keywordtype}{float} \mbox{\hyperlink{class_two_d_e_1_1_vector2_a4f21c38626b7714b72c98edb951ce00a}{getY}}() \{ \textcolor{keywordflow}{return} y; \}}
+\DoxyCodeLine{17         \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_two_d_e_1_1_vector2_a96e41124dcb3f0868a8bea447fa48a98}{setX}}(\textcolor{keywordtype}{float} x) \{ this-\/>x = x; \}}
+\DoxyCodeLine{18         \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_two_d_e_1_1_vector2_a3475ec2787fc6e1b1e2118195e07626e}{setY}}(\textcolor{keywordtype}{float} y) \{ this-\/>y = y; \}}
+\DoxyCodeLine{19         }
+\DoxyCodeLine{20         \mbox{\hyperlink{class_two_d_e_1_1_vector2}{Vector2}} normalized();}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22         \textcolor{keywordtype}{float} magnitude();}
+\DoxyCodeLine{23         \textcolor{keywordtype}{float} angle(\mbox{\hyperlink{class_two_d_e_1_1_vector2}{Vector2}}\& other);}
+\DoxyCodeLine{24         }
+\DoxyCodeLine{25         \textcolor{keywordtype}{void} operator+=(\textcolor{keyword}{const} \mbox{\hyperlink{class_two_d_e_1_1_vector2}{Vector2}}\& other);}
+\DoxyCodeLine{26         \textcolor{keywordtype}{void} operator+=(\textcolor{keywordtype}{float} scalar);}
+\DoxyCodeLine{27         \mbox{\hyperlink{class_two_d_e_1_1_vector2}{Vector2}} operator+(\textcolor{keywordtype}{float} scalar);}
+\DoxyCodeLine{28         \mbox{\hyperlink{class_two_d_e_1_1_vector2}{Vector2}} operator+(\mbox{\hyperlink{class_two_d_e_1_1_vector2}{Vector2}} other);}
+\DoxyCodeLine{29         \mbox{\hyperlink{class_two_d_e_1_1_vector2}{Vector2}} operator-\/(\mbox{\hyperlink{class_two_d_e_1_1_vector2}{Vector2}} other);}
+\DoxyCodeLine{30         \textcolor{keywordtype}{void} operator*=(\textcolor{keywordtype}{float} scalar);}
+\DoxyCodeLine{31     \};}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33     \textcolor{keyword}{inline} \mbox{\hyperlink{class_two_d_e_1_1_vector2}{Vector2}} \mbox{\hyperlink{namespace_two_d_e_ab0a4fe48657730e2a32875c1ab6f033b}{operator*}}(\mbox{\hyperlink{class_two_d_e_1_1_vector2}{Vector2}} vec, \textcolor{keywordtype}{float} scalar)}
+\DoxyCodeLine{34     \{}
+\DoxyCodeLine{35         \textcolor{keywordflow}{return} \mbox{\hyperlink{class_two_d_e_1_1_vector2}{Vector2}}\{ vec.\mbox{\hyperlink{class_two_d_e_1_1_vector2_a953536c3ddade53f13d2724377b1dfcd}{getX}}() * scalar, vec.\mbox{\hyperlink{class_two_d_e_1_1_vector2_a4f21c38626b7714b72c98edb951ce00a}{getY}}() * scalar \};}
+\DoxyCodeLine{36     \}}
+\DoxyCodeLine{37 \}}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 }
+
+\end{DoxyCode}

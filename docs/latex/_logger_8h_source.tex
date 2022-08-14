@@ -1,0 +1,43 @@
+\hypertarget{_logger_8h_source}{}\doxysection{Logger.\+h}
+\label{_logger_8h_source}\index{src/Logger.h@{src/Logger.h}}
+\mbox{\hyperlink{_logger_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_core_8h}{Core.h}}"{}}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_logger_8h}{Logger.h}}"{}}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <memory>}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <spdlog/spdlog.h>}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <spdlog/fmt/ostr.h>}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_two_d_e}{TwoDE}}}
+\DoxyCodeLine{12 \{}
+\DoxyCodeLine{13     \textcolor{keyword}{class }\mbox{\hyperlink{_core_8h_a441750824a16f7ae56bd40c3a3346197}{TWO\_DLL}} \mbox{\hyperlink{class_two_d_e_1_1_logger}{Logger}}}
+\DoxyCodeLine{14     \{}
+\DoxyCodeLine{15         \textcolor{keyword}{public}:}
+\DoxyCodeLine{16             \textcolor{keyword}{static} \textcolor{keywordtype}{void} init();}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18             \textcolor{keyword}{inline} \textcolor{keyword}{static} std::shared\_ptr<spdlog::logger>\& \mbox{\hyperlink{class_two_d_e_1_1_logger_ac46b19cbfc87ed3d8754702e28c5107a}{getCoreLogger}}() \{ \textcolor{keywordflow}{return} s\_CoreLogger; \}}
+\DoxyCodeLine{19             \textcolor{keyword}{inline} \textcolor{keyword}{static} std::shared\_ptr<spdlog::logger>\& \mbox{\hyperlink{class_two_d_e_1_1_logger_a360db38d173f049b660ee80bfcf12374}{getClientLogger}}() \{ \textcolor{keywordflow}{return} s\_ClientLogger; \}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21         \textcolor{keyword}{private}:}
+\DoxyCodeLine{22             \textcolor{keyword}{static} std::shared\_ptr<spdlog::logger> s\_CoreLogger;}
+\DoxyCodeLine{23             \textcolor{keyword}{static} std::shared\_ptr<spdlog::logger> s\_ClientLogger;}
+\DoxyCodeLine{24     \};}
+\DoxyCodeLine{25 \}}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#define TWODE\_CORE\_TRACE(...) ::TwoDE::Logger::getCoreLogger()-\/>trace(\_\_VA\_ARGS\_\_)}}
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#define TWODE\_CORE\_INFO(...) ::TwoDE::Logger::getCoreLogger()-\/>info(\_\_VA\_ARGS\_\_)}}
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#define TWODE\_CORE\_WARN(...) ::TwoDE::Logger::getCoreLogger()-\/>warn(\_\_VA\_ARGS\_\_)}}
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#define TWODE\_CORE\_ERROR(...) ::TwoDE::Logger::getCoreLogger()-\/>error(\_\_VA\_ARGS\_\_)}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#define TWODE\_CORE\_FATAL(...) ::TwoDE::Logger::getCoreLogger()-\/>fatal(\_\_VA\_ARGS\_\_)}}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#define TWODE\_TRACE(...) ::TwoDE::Logger::getClientLogger()-\/>trace(\_\_VA\_ARGS\_\_)}}
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#define TWODE\_INFO(...) ::TwoDE::Logger::getClientLogger()-\/>info(\_\_VA\_ARGS\_\_)}}
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#define TWODE\_WARN(...) ::TwoDE::Logger::getClientLogger()-\/>warn(\_\_VA\_ARGS\_\_)}}
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#define TWODE\_ERROR(...) ::TwoDE::Logger::getClientLogger()-\/>error(\_\_VA\_ARGS\_\_)}}
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#define TWODE\_FATAL(...) ::TwoDE::Logger::getClientLogger()-\/>fatal(\_\_VA\_ARGS\_\_)}}
+
+\end{DoxyCode}

@@ -1,0 +1,25 @@
+\hypertarget{_random_8h_source}{}\doxysection{Random.\+h}
+\label{_random_8h_source}\index{src/Random.h@{src/Random.h}}
+\mbox{\hyperlink{_random_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include <cstdlib>}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <ctime>}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_two_d_e}{TwoDE}}}
+\DoxyCodeLine{7 \{}
+\DoxyCodeLine{8     \textcolor{keyword}{constexpr} \textcolor{keywordtype}{int} \mbox{\hyperlink{namespace_two_d_e_af78f9f0dcbe9ea61bb248a167e3ca309}{numDecimals}} = 8;}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10     \textcolor{keywordtype}{void} \mbox{\hyperlink{namespace_two_d_e_a17a44bfb62f6d31c46d39db8f9f2301c}{SetSeed}}()}
+\DoxyCodeLine{11     \{}
+\DoxyCodeLine{12         std::srand(std::time(\textcolor{keyword}{nullptr}));}
+\DoxyCodeLine{13     \}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15     \textcolor{keywordtype}{float} \mbox{\hyperlink{namespace_two_d_e_a5372b02b6123ae278d54b93f2a483e44}{Random}}()}
+\DoxyCodeLine{16     \{}
+\DoxyCodeLine{17         \textcolor{keywordflow}{return} \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(rand()) / RAND\_MAX;}
+\DoxyCodeLine{18     \}}
+\DoxyCodeLine{19 \}}
+
+\end{DoxyCode}

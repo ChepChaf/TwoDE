@@ -1,0 +1,21 @@
+\hypertarget{_core_8h_source}{}\doxysection{Core.\+h}
+\label{_core_8h_source}\index{src/Core.h@{src/Core.h}}
+\mbox{\hyperlink{_core_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{preprocessor}{\# if defined(\_WIN32) \&\& !defined(\_\_GNUC\_\_)}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{    \#ifdef TWODE\_DLL}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{    \#define TWO\_DLL \_\_declspec(dllexport)}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{    \#else}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{    \#define TWO\_DLL \_\_declspec(dllimport)}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{    \#endif}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\# else}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{    \#ifdef TWODE\_DLL}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{    \#define TWO\_DLL \_\_attribute\_\_((visibility("{}default"{}})))}
+\DoxyCodeLine{12 \textcolor{preprocessor}{    \#else}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{    \#define TWO\_DLL}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{    \#endif}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

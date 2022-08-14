@@ -1,0 +1,45 @@
+\hypertarget{_transform_8h_source}{}\doxysection{Transform.\+h}
+\label{_transform_8h_source}\index{src/Transform.h@{src/Transform.h}}
+\mbox{\hyperlink{_transform_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_core_8h}{Core.h}}"{}}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_vector2_8h}{Vector2.h}}"{}}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_vector3_8h}{Vector3.h}}"{}}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_matrix4_8h}{Matrix4.h}}"{}}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_two_d_e}{TwoDE}}}
+\DoxyCodeLine{10 \{}
+\DoxyCodeLine{11     \textcolor{keyword}{class }\mbox{\hyperlink{_core_8h_a441750824a16f7ae56bd40c3a3346197}{TWO\_DLL}} \mbox{\hyperlink{class_two_d_e_1_1_transform}{Transform}}}
+\DoxyCodeLine{12     \{}
+\DoxyCodeLine{13         \textcolor{keywordtype}{void} recalculateMatrix();}
+\DoxyCodeLine{14     \textcolor{keyword}{public}:}
+\DoxyCodeLine{15         \mbox{\hyperlink{class_two_d_e_1_1_matrix4}{Matrix4}} \mbox{\hyperlink{class_two_d_e_1_1_transform_a7b67a716e435651b16f6e84eadce1f80}{matrix}};}
+\DoxyCodeLine{16         \mbox{\hyperlink{class_two_d_e_1_1_vector3}{Vector3}} \mbox{\hyperlink{class_two_d_e_1_1_transform_a2d42d66d75cca7c132cca24f7239d950}{m\_Position}};}
+\DoxyCodeLine{17         \mbox{\hyperlink{class_two_d_e_1_1_vector2}{Vector2}} \mbox{\hyperlink{class_two_d_e_1_1_transform_aef6dcfae8baf5a40a0362161b78709f3}{m\_Scale}};}
+\DoxyCodeLine{18         \textcolor{keywordtype}{float} \mbox{\hyperlink{class_two_d_e_1_1_transform_a57fea71d02e3aacb2e118705cdfa4366}{m\_Rotation}};}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20         \mbox{\hyperlink{class_two_d_e_1_1_transform}{Transform}}(\mbox{\hyperlink{class_two_d_e_1_1_vector3}{Vector3}} position = \{ 0.0f, 0.0f, 0.0f \}, \textcolor{keywordtype}{float} rotation = \{ 0.0f \}, Vector2 scale = \{ 10.0f, 10.0f \});}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22         \textcolor{keywordtype}{void} translate(Vector2 translation);}
+\DoxyCodeLine{23         \textcolor{keywordtype}{void} translate(Vector3 translation);}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25         \textcolor{keywordtype}{void} rotate(\textcolor{keywordtype}{float} rotation);}
+\DoxyCodeLine{26         \textcolor{keywordtype}{void} scale(Vector2 scale);}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28         \textcolor{keywordtype}{void} setRotation(\textcolor{keywordtype}{float} rotation);}
+\DoxyCodeLine{29         \textcolor{keywordtype}{void} setScale(Vector2 scale);}
+\DoxyCodeLine{30         \textcolor{keywordtype}{void} setZ(\textcolor{keywordtype}{int} z);}
+\DoxyCodeLine{31         \textcolor{keywordtype}{void} setPosition(Vector3 pos);}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33         Vector3 getPosition();}
+\DoxyCodeLine{34         Vector2 getPositionv2();}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36         \textcolor{keyword}{const} Matrix4 getMatrix() \textcolor{keyword}{const};}
+\DoxyCodeLine{37     \};}
+\DoxyCodeLine{38 \}}
+\DoxyCodeLine{39 }
+
+\end{DoxyCode}

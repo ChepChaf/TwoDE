@@ -1,0 +1,35 @@
+\hypertarget{_shader_8h_source}{}\doxysection{Shader.\+h}
+\label{_shader_8h_source}\index{src/Shader.h@{src/Shader.h}}
+\mbox{\hyperlink{_shader_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_vector2_8h}{Vector2.h}}"{}}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_matrix4_8h}{Matrix4.h}}"{}}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_two_d_e}{TwoDE}}}
+\DoxyCodeLine{9 \{}
+\DoxyCodeLine{10     \textcolor{keyword}{class }\mbox{\hyperlink{class_two_d_e_1_1_shader}{Shader}}}
+\DoxyCodeLine{11     \{}
+\DoxyCodeLine{12     \textcolor{keyword}{public}:}
+\DoxyCodeLine{13         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_two_d_e_1_1_shader_a1b0146f94ea21d9bf59a85a8506abdc3}{ID}} = 0;}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15         \mbox{\hyperlink{class_two_d_e_1_1_shader_a19a894080a0863ddd5a8a8d5ee7b20a8}{Shader}}()\{\}}
+\DoxyCodeLine{16         \mbox{\hyperlink{class_two_d_e_1_1_shader_a19a894080a0863ddd5a8a8d5ee7b20a8}{Shader}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* vertexPath, \textcolor{keyword}{const} \textcolor{keywordtype}{char}* fragmentPath);}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_two_d_e_1_1_shader_a8fed1a91e92589378cb642e729cbaf80}{use}}();}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_two_d_e_1_1_shader_a0865e7d74dc8490d691a360c6916d553}{setBool}}(\textcolor{keyword}{const} std::string\& name, \textcolor{keywordtype}{bool} value) \textcolor{keyword}{const};}
+\DoxyCodeLine{21         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_two_d_e_1_1_shader_ac5697bd9e7f5524f2b7c1cbda97748f3}{setInt}}(\textcolor{keyword}{const} std::string\& name, \textcolor{keywordtype}{int} value) \textcolor{keyword}{const};}
+\DoxyCodeLine{22         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_two_d_e_1_1_shader_af3fc5b264c2a8c58ab41bd42d99b609f}{setFloat}}(\textcolor{keyword}{const} std::string\& name, \textcolor{keywordtype}{float} value) \textcolor{keyword}{const};}
+\DoxyCodeLine{23         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_two_d_e_1_1_shader_a26de66a32d21c05dfdc46c937c904f75}{setFloat2}}(\textcolor{keyword}{const} std::string\& name, \textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y) \textcolor{keyword}{const};}
+\DoxyCodeLine{24         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_two_d_e_1_1_shader_a445328817e8c9a1a71e55ce76af048af}{setFloat3}}(\textcolor{keyword}{const} std::string\& name, \textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} z) \textcolor{keyword}{const};}
+\DoxyCodeLine{25         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_two_d_e_1_1_shader_aed87ff863fede0b0254923f947c491ce}{setFloat4}}(\textcolor{keyword}{const} std::string\& name, \textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} z, \textcolor{keywordtype}{float} w) \textcolor{keyword}{const};}
+\DoxyCodeLine{26         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_two_d_e_1_1_shader_aad4463aca2a20b0887df51c03e167f4a}{setVector2}}(\textcolor{keyword}{const} std::string\& name, \mbox{\hyperlink{class_two_d_e_1_1_vector2}{Vector2}} value) \textcolor{keyword}{const};}
+\DoxyCodeLine{27         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_two_d_e_1_1_shader_a72944dddcf233b4bc88d30d3a7bb7638}{setMatrix4}}(\textcolor{keyword}{const} std::string\& name, \mbox{\hyperlink{class_two_d_e_1_1_matrix4}{Matrix4}} value) \textcolor{keyword}{const};}
+\DoxyCodeLine{28     \};}
+\DoxyCodeLine{29 \}}
+
+\end{DoxyCode}

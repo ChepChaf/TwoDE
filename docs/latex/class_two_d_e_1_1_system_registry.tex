@@ -1,0 +1,61 @@
+\hypertarget{class_two_d_e_1_1_system_registry}{}\doxysection{Two\+DE\+::System\+Registry Class Reference}
+\label{class_two_d_e_1_1_system_registry}\index{TwoDE::SystemRegistry@{TwoDE::SystemRegistry}}
+
+
+{\ttfamily \#include $<$System\+Registry.\+h$>$}
+
+
+
+Collaboration diagram for Two\+DE\+::System\+Registry\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=208pt]{class_two_d_e_1_1_system_registry__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+const std\+::unordered\+\_\+map$<$ std\+::type\+\_\+index, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_two_d_e_1_1_i_system}{ISystem}} $>$ $>$ \& \mbox{\hyperlink{class_two_d_e_1_1_system_registry_a8c9321fc4ebb0339ea33c31e9d698211}{get\+Active\+Systems}} () const
+\item 
+void \mbox{\hyperlink{class_two_d_e_1_1_system_registry_a6a205b974d0fbb6faee48c80c7ff32ec}{init}} ()
+\item 
+{\footnotesize template$<$typename T , typename ... TArgs$>$ }\\void \mbox{\hyperlink{class_two_d_e_1_1_system_registry_a23b7a8bdf13bd3c06eefebccbb98f040}{subscribe}} (TArgs \&\&... args)
+\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{class_two_d_e_1_1_system_registry_a3866837e5c3b17096e5d7fa909d6128e}{unsubscribe}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_two_d_e_1_1_system_registry_a8c9321fc4ebb0339ea33c31e9d698211}\label{class_two_d_e_1_1_system_registry_a8c9321fc4ebb0339ea33c31e9d698211}} 
+\index{TwoDE::SystemRegistry@{TwoDE::SystemRegistry}!getActiveSystems@{getActiveSystems}}
+\index{getActiveSystems@{getActiveSystems}!TwoDE::SystemRegistry@{TwoDE::SystemRegistry}}
+\doxysubsubsection{\texorpdfstring{getActiveSystems()}{getActiveSystems()}}
+{\footnotesize\ttfamily const std\+::unordered\+\_\+map$<$ std\+::type\+\_\+index, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_two_d_e_1_1_i_system}{ISystem}} $>$ $>$ \& Two\+DE\+::\+System\+Registry\+::get\+Active\+Systems (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_two_d_e_1_1_system_registry_a6a205b974d0fbb6faee48c80c7ff32ec}\label{class_two_d_e_1_1_system_registry_a6a205b974d0fbb6faee48c80c7ff32ec}} 
+\index{TwoDE::SystemRegistry@{TwoDE::SystemRegistry}!init@{init}}
+\index{init@{init}!TwoDE::SystemRegistry@{TwoDE::SystemRegistry}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily void Two\+DE\+::\+System\+Registry\+::init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_two_d_e_1_1_system_registry_a23b7a8bdf13bd3c06eefebccbb98f040}\label{class_two_d_e_1_1_system_registry_a23b7a8bdf13bd3c06eefebccbb98f040}} 
+\index{TwoDE::SystemRegistry@{TwoDE::SystemRegistry}!subscribe@{subscribe}}
+\index{subscribe@{subscribe}!TwoDE::SystemRegistry@{TwoDE::SystemRegistry}}
+\doxysubsubsection{\texorpdfstring{subscribe()}{subscribe()}}
+{\footnotesize\ttfamily template$<$typename T , typename ... TArgs$>$ \\
+void Two\+DE\+::\+System\+Registry\+::subscribe (\begin{DoxyParamCaption}\item[{TArgs \&\&...}]{args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_two_d_e_1_1_system_registry_a3866837e5c3b17096e5d7fa909d6128e}\label{class_two_d_e_1_1_system_registry_a3866837e5c3b17096e5d7fa909d6128e}} 
+\index{TwoDE::SystemRegistry@{TwoDE::SystemRegistry}!unsubscribe@{unsubscribe}}
+\index{unsubscribe@{unsubscribe}!TwoDE::SystemRegistry@{TwoDE::SystemRegistry}}
+\doxysubsubsection{\texorpdfstring{unsubscribe()}{unsubscribe()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void Two\+DE\+::\+System\+Registry\+::unsubscribe (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{_system_registry_8h}{System\+Registry.\+h}}\item 
+src/\mbox{\hyperlink{_system_registry_8cpp}{System\+Registry.\+cpp}}\end{DoxyCompactItemize}

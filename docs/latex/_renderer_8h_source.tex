@@ -1,0 +1,32 @@
+\hypertarget{_renderer_8h_source}{}\doxysection{Renderer.\+h}
+\label{_renderer_8h_source}\index{src/Renderer.h@{src/Renderer.h}}
+\mbox{\hyperlink{_renderer_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_sprite_8h}{Sprite.h}}"{}}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_transform_8h}{Transform.h}}"{}}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_color_8h}{Color.h}}"{}}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_vector3_8h}{Vector3.h}}"{}}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_scene_8h}{Scene.h}}"{}}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_two_d_e}{TwoDE}}}
+\DoxyCodeLine{10 \{}
+\DoxyCodeLine{11     \textcolor{keyword}{class }\mbox{\hyperlink{class_two_d_e_1_1_renderer}{Renderer}}}
+\DoxyCodeLine{12     \{}
+\DoxyCodeLine{13     \textcolor{keyword}{public}:}
+\DoxyCodeLine{14         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_two_d_e_1_1_renderer_a9d3199c0325ff4bcc6e2684ada370085}{drawSprite}}(\mbox{\hyperlink{namespace_two_d_e_a8aa8b3db724f82b64d04d692529308c1}{Entity}}\& entity, \mbox{\hyperlink{class_two_d_e_1_1_sprite}{Sprite}} \textcolor{keyword}{const}\& sprite, \mbox{\hyperlink{class_two_d_e_1_1_transform}{Transform}} \textcolor{keyword}{const}\& transform) = 0;}
+\DoxyCodeLine{15         \textcolor{keyword}{virtual} \mbox{\hyperlink{namespace_two_d_e_a8aa8b3db724f82b64d04d692529308c1}{Entity}} \mbox{\hyperlink{class_two_d_e_1_1_renderer_adac510d013d19d35d2afa055bd490ff9}{drawSprite}}(\mbox{\hyperlink{class_two_d_e_1_1_sprite}{Sprite}} \textcolor{keyword}{const}\& sprite, \mbox{\hyperlink{class_two_d_e_1_1_transform}{Transform}} \textcolor{keyword}{const}\& transform) = 0;}
+\DoxyCodeLine{16         \textcolor{keyword}{virtual} \mbox{\hyperlink{namespace_two_d_e_a8aa8b3db724f82b64d04d692529308c1}{Entity}} \mbox{\hyperlink{class_two_d_e_1_1_renderer_a74e963738c9e6c8bd20c81fd103b1b65}{drawLine}}(\mbox{\hyperlink{class_two_d_e_1_1_vector3}{Vector3}} origin, \mbox{\hyperlink{class_two_d_e_1_1_vector3}{Vector3}} end, \mbox{\hyperlink{class_two_d_e_1_1_color}{Color}} color, \textcolor{keywordtype}{int} width) = 0;}
+\DoxyCodeLine{17         \textcolor{keyword}{virtual} \mbox{\hyperlink{namespace_two_d_e_a8aa8b3db724f82b64d04d692529308c1}{Entity}} \mbox{\hyperlink{class_two_d_e_1_1_renderer_a3e5590e4daf2c0c2f84f0fe7f50145f4}{drawRect}}(\mbox{\hyperlink{class_two_d_e_1_1_vector3}{Vector3}} origin, \mbox{\hyperlink{class_two_d_e_1_1_vector2}{Vector2}} size, \mbox{\hyperlink{class_two_d_e_1_1_color}{Color}} color) = 0;}
+\DoxyCodeLine{18         \textcolor{keyword}{virtual} \mbox{\hyperlink{namespace_two_d_e_a8aa8b3db724f82b64d04d692529308c1}{Entity}} \mbox{\hyperlink{class_two_d_e_1_1_renderer_ad6833345765bf77e46345a1c788e9281}{drawCircle}}(\mbox{\hyperlink{class_two_d_e_1_1_vector3}{Vector3}} center, \textcolor{keywordtype}{float} radius, \mbox{\hyperlink{class_two_d_e_1_1_color}{Color}} color, \textcolor{keywordtype}{float} quality=512.f) = 0;}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_two_d_e_1_1_renderer_a866f8ba5b20c15b23833a3daab0cd9da}{draw}}(\mbox{\hyperlink{class_two_d_e_1_1_transform}{Transform}}\& viewport) = 0;}
+\DoxyCodeLine{21         \textcolor{keyword}{virtual} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_two_d_e_1_1_renderer_a7ba657b4564b7dda6d4726a796e03006}{init}}(\textcolor{keywordtype}{int} width, \textcolor{keywordtype}{int} height) = 0;}
+\DoxyCodeLine{22         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_two_d_e_1_1_renderer_ab3e26aa6285cc9649b523e3ce8cc4df3}{clear}}(\mbox{\hyperlink{class_two_d_e_1_1_color}{Color}} clearColor) = 0;}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24         \textcolor{keyword}{static} \mbox{\hyperlink{class_two_d_e_1_1_renderer}{Renderer}}* \mbox{\hyperlink{class_two_d_e_1_1_renderer_a0f1ee862acf795ca28e6efed1897677e}{createRenderer}}();}
+\DoxyCodeLine{25     \};}
+\DoxyCodeLine{26 \}}
+
+\end{DoxyCode}

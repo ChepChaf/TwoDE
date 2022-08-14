@@ -1,0 +1,98 @@
+\hypertarget{class_two_d_e_1_1_application}{}\doxysection{Two\+DE\+::Application Class Reference}
+\label{class_two_d_e_1_1_application}\index{TwoDE::Application@{TwoDE::Application}}
+
+
+{\ttfamily \#include $<$Application.\+h$>$}
+
+
+
+Collaboration diagram for Two\+DE\+::Application\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=240pt]{class_two_d_e_1_1_application__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_two_d_e_1_1_application_aeb89aaa5d0b942abdf8a5512736481c4}{init}} ()
+\item 
+bool \mbox{\hyperlink{class_two_d_e_1_1_application_a9f38ea1f2ec71156f666daf99931343f}{should\+Close}} ()
+\item 
+virtual void \mbox{\hyperlink{class_two_d_e_1_1_application_a9722c3330e33872ed03401069da57634}{start}} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_two_d_e_1_1_application_ad925a156b22c89b795e57906d3cec81d}{update}} ()
+\item 
+\mbox{\hyperlink{namespace_two_d_e_a4837278abc6c1cbb94bb666a581dcce8}{Entity\+Registry}} $\ast$ \mbox{\hyperlink{class_two_d_e_1_1_application_a81dbfc015eba42f8b50bf8cabbad6192}{get\+Entity\+Registry}} ()
+\item 
+\mbox{\hyperlink{class_two_d_e_1_1_system_registry}{System\+Registry}} $\ast$ \mbox{\hyperlink{class_two_d_e_1_1_application_ad1b2b8afb34ce783a893618d74d914b7}{get\+System\+Registry}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespace_two_d_e_a8aa8b3db724f82b64d04d692529308c1}{Entity}} \mbox{\hyperlink{class_two_d_e_1_1_application_a1f80afd30148d945f6f366a18e801587}{camera}}
+\item 
+\mbox{\hyperlink{class_two_d_e_1_1_renderer}{Renderer}} $\ast$ \mbox{\hyperlink{class_two_d_e_1_1_application_a52b13d453e2a356794d0410af40947b3}{renderer}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_two_d_e_1_1_application_a81dbfc015eba42f8b50bf8cabbad6192}\label{class_two_d_e_1_1_application_a81dbfc015eba42f8b50bf8cabbad6192}} 
+\index{TwoDE::Application@{TwoDE::Application}!getEntityRegistry@{getEntityRegistry}}
+\index{getEntityRegistry@{getEntityRegistry}!TwoDE::Application@{TwoDE::Application}}
+\doxysubsubsection{\texorpdfstring{getEntityRegistry()}{getEntityRegistry()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespace_two_d_e_a4837278abc6c1cbb94bb666a581dcce8}{Entity\+Registry}} $\ast$ Two\+DE\+::\+Application\+::get\+Entity\+Registry (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_two_d_e_1_1_application_ad1b2b8afb34ce783a893618d74d914b7}\label{class_two_d_e_1_1_application_ad1b2b8afb34ce783a893618d74d914b7}} 
+\index{TwoDE::Application@{TwoDE::Application}!getSystemRegistry@{getSystemRegistry}}
+\index{getSystemRegistry@{getSystemRegistry}!TwoDE::Application@{TwoDE::Application}}
+\doxysubsubsection{\texorpdfstring{getSystemRegistry()}{getSystemRegistry()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_two_d_e_1_1_system_registry}{System\+Registry}} $\ast$ Two\+DE\+::\+Application\+::get\+System\+Registry (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_two_d_e_1_1_application_aeb89aaa5d0b942abdf8a5512736481c4}\label{class_two_d_e_1_1_application_aeb89aaa5d0b942abdf8a5512736481c4}} 
+\index{TwoDE::Application@{TwoDE::Application}!init@{init}}
+\index{init@{init}!TwoDE::Application@{TwoDE::Application}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily void Two\+DE\+::\+Application\+::init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_two_d_e_1_1_application_a9f38ea1f2ec71156f666daf99931343f}\label{class_two_d_e_1_1_application_a9f38ea1f2ec71156f666daf99931343f}} 
+\index{TwoDE::Application@{TwoDE::Application}!shouldClose@{shouldClose}}
+\index{shouldClose@{shouldClose}!TwoDE::Application@{TwoDE::Application}}
+\doxysubsubsection{\texorpdfstring{shouldClose()}{shouldClose()}}
+{\footnotesize\ttfamily bool Two\+DE\+::\+Application\+::should\+Close (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_two_d_e_1_1_application_a9722c3330e33872ed03401069da57634}\label{class_two_d_e_1_1_application_a9722c3330e33872ed03401069da57634}} 
+\index{TwoDE::Application@{TwoDE::Application}!start@{start}}
+\index{start@{start}!TwoDE::Application@{TwoDE::Application}}
+\doxysubsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily virtual void Two\+DE\+::\+Application\+::start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+\mbox{\Hypertarget{class_two_d_e_1_1_application_ad925a156b22c89b795e57906d3cec81d}\label{class_two_d_e_1_1_application_ad925a156b22c89b795e57906d3cec81d}} 
+\index{TwoDE::Application@{TwoDE::Application}!update@{update}}
+\index{update@{update}!TwoDE::Application@{TwoDE::Application}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Two\+DE\+::\+Application\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_two_d_e_1_1_application_a1f80afd30148d945f6f366a18e801587}\label{class_two_d_e_1_1_application_a1f80afd30148d945f6f366a18e801587}} 
+\index{TwoDE::Application@{TwoDE::Application}!camera@{camera}}
+\index{camera@{camera}!TwoDE::Application@{TwoDE::Application}}
+\doxysubsubsection{\texorpdfstring{camera}{camera}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespace_two_d_e_a8aa8b3db724f82b64d04d692529308c1}{Entity}} Two\+DE\+::\+Application\+::camera\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_two_d_e_1_1_application_a52b13d453e2a356794d0410af40947b3}\label{class_two_d_e_1_1_application_a52b13d453e2a356794d0410af40947b3}} 
+\index{TwoDE::Application@{TwoDE::Application}!renderer@{renderer}}
+\index{renderer@{renderer}!TwoDE::Application@{TwoDE::Application}}
+\doxysubsubsection{\texorpdfstring{renderer}{renderer}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_two_d_e_1_1_renderer}{Renderer}}$\ast$ Two\+DE\+::\+Application\+::renderer\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{_application_8h}{Application.\+h}}\item 
+src/\mbox{\hyperlink{_application_8cpp}{Application.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,34 @@
+\hypertarget{_sprite_8h_source}{}\doxysection{Sprite.\+h}
+\label{_sprite_8h_source}\index{src/Sprite.h@{src/Sprite.h}}
+\mbox{\hyperlink{_sprite_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_core_8h}{Core.h}}"{}}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_color_8h}{Color.h}}"{}}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <array>}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_two_d_e}{TwoDE}}}
+\DoxyCodeLine{10 \{}
+\DoxyCodeLine{11     \textcolor{keyword}{class }\mbox{\hyperlink{_core_8h_a441750824a16f7ae56bd40c3a3346197}{TWO\_DLL}} \mbox{\hyperlink{class_two_d_e_1_1_sprite}{Sprite}}}
+\DoxyCodeLine{12     \{}
+\DoxyCodeLine{13     \textcolor{keyword}{public}:}
+\DoxyCodeLine{14         \textcolor{keywordtype}{bool} binded\{ \textcolor{keyword}{false} \};}
+\DoxyCodeLine{15         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} ID\{ 0 \};}
+\DoxyCodeLine{16         \textcolor{keywordtype}{int} m\_Width\{ 0 \}; }
+\DoxyCodeLine{17         \textcolor{keywordtype}{int} m\_Height\{ 0 \};}
+\DoxyCodeLine{18         \textcolor{keywordtype}{int} m\_Channels\{ 0 \};}
+\DoxyCodeLine{19         \mbox{\hyperlink{class_two_d_e_1_1_color}{Color}} color \{ 1.0f, 1.0f, 1.0f, 1.0f \};}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char}* data = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23         \mbox{\hyperlink{class_two_d_e_1_1_sprite_a0c91cefab93c3096abdb8c1850b50c8a}{Sprite}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{24         \mbox{\hyperlink{class_two_d_e_1_1_sprite}{Sprite}}(std::string \textcolor{keyword}{const}\& path);}
+\DoxyCodeLine{25         \mbox{\hyperlink{class_two_d_e_1_1_sprite_ae098ed0ac169061c0dc66b8c55c44fb7}{\string~Sprite}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{26     \};}
+\DoxyCodeLine{27 \}}
+\DoxyCodeLine{28 }
+
+\end{DoxyCode}

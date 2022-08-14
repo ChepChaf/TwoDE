@@ -1,0 +1,32 @@
+\hypertarget{_custom_formatters_8h_source}{}\doxysection{Custom\+Formatters.\+h}
+\label{_custom_formatters_8h_source}\index{src/CustomFormatters.h@{src/CustomFormatters.h}}
+\mbox{\hyperlink{_custom_formatters_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#include <fmt/format.h>}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{_vector3_8h}{Vector3.h}}>}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{keyword}{template} <>}
+\DoxyCodeLine{6 \textcolor{keyword}{struct }fmt::formatter<\mbox{\hyperlink{namespace_two_d_e}{TwoDE}}::Vector3> \{}
+\DoxyCodeLine{7     }
+\DoxyCodeLine{8     \textcolor{keywordtype}{char} presentation = \textcolor{charliteral}{'f'};}
+\DoxyCodeLine{9 \textcolor{keyword}{constexpr} \textcolor{keyword}{auto} \mbox{\hyperlink{structfmt_1_1formatter_3_01_two_d_e_1_1_vector3_01_4_ae77a22fb513e9653af1d626add9a7141}{parse}}(format\_parse\_context\& ctx) \{}
+\DoxyCodeLine{10         \textcolor{keyword}{auto} it = ctx.begin(), end = ctx.end();}
+\DoxyCodeLine{11         \textcolor{keywordflow}{if} (it != end \&\& (*it == \textcolor{charliteral}{'f'} || *it == \textcolor{charliteral}{'e'})) presentation = *it++;}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13         \textcolor{keywordflow}{if} (it != end \&\& *it != \textcolor{charliteral}{'\}'})}
+\DoxyCodeLine{14             \textcolor{keywordflow}{throw} format\_error(\textcolor{stringliteral}{"{}invalid format"{}});}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16         \textcolor{keywordflow}{return} it;}
+\DoxyCodeLine{17     \}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19     \textcolor{keyword}{template} <\textcolor{keyword}{typename} FormatContext>}
+\DoxyCodeLine{20     \textcolor{keyword}{auto} \mbox{\hyperlink{structfmt_1_1formatter_3_01_two_d_e_1_1_vector3_01_4_a78f6ca5f9c8834cc03095c7c7cc49888}{format}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_two_d_e_1_1_vector3}{TwoDE::Vector3}}\& v, FormatContext\& ctx) \{}
+\DoxyCodeLine{21         \textcolor{keywordflow}{return} format\_to(}
+\DoxyCodeLine{22             ctx.out(),}
+\DoxyCodeLine{23             presentation == \textcolor{charliteral}{'f'} ? \textcolor{stringliteral}{"{}(\{:.1f\}, \{:.1f\})"{}} : \textcolor{stringliteral}{"{}(\{:.1e\}, \{:.1e\})"{}},}
+\DoxyCodeLine{24             v.\mbox{\hyperlink{class_two_d_e_1_1_vector3_a328173cd6736570ea19b4a05b3b040cc}{x}}, v.\mbox{\hyperlink{class_two_d_e_1_1_vector3_aa6691ca573cbecdcb8fef2655a1d87c7}{y}}, v.\mbox{\hyperlink{class_two_d_e_1_1_vector3_a0ab5a9cc16bae2cca1f52135c738c7c6}{z}});}
+\DoxyCodeLine{25     \}}
+\DoxyCodeLine{26 \};}
+
+\end{DoxyCode}

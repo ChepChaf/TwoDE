@@ -1,0 +1,143 @@
+\hypertarget{class_two_d_e_1_1_renderer}{}\doxysection{Two\+DE\+::Renderer Class Reference}
+\label{class_two_d_e_1_1_renderer}\index{TwoDE::Renderer@{TwoDE::Renderer}}
+
+
+{\ttfamily \#include $<$Renderer.\+h$>$}
+
+
+
+Inheritance diagram for Two\+DE\+::Renderer\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=214pt]{class_two_d_e_1_1_renderer__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Two\+DE\+::Renderer\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=178pt]{class_two_d_e_1_1_renderer__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_two_d_e_1_1_renderer_a9d3199c0325ff4bcc6e2684ada370085}{draw\+Sprite}} (\mbox{\hyperlink{namespace_two_d_e_a8aa8b3db724f82b64d04d692529308c1}{Entity}} \&entity, \mbox{\hyperlink{class_two_d_e_1_1_sprite}{Sprite}} const \&sprite, \mbox{\hyperlink{class_two_d_e_1_1_transform}{Transform}} const \&transform)=0
+\item 
+virtual \mbox{\hyperlink{namespace_two_d_e_a8aa8b3db724f82b64d04d692529308c1}{Entity}} \mbox{\hyperlink{class_two_d_e_1_1_renderer_adac510d013d19d35d2afa055bd490ff9}{draw\+Sprite}} (\mbox{\hyperlink{class_two_d_e_1_1_sprite}{Sprite}} const \&sprite, \mbox{\hyperlink{class_two_d_e_1_1_transform}{Transform}} const \&transform)=0
+\item 
+virtual \mbox{\hyperlink{namespace_two_d_e_a8aa8b3db724f82b64d04d692529308c1}{Entity}} \mbox{\hyperlink{class_two_d_e_1_1_renderer_a74e963738c9e6c8bd20c81fd103b1b65}{draw\+Line}} (\mbox{\hyperlink{class_two_d_e_1_1_vector3}{Vector3}} origin, \mbox{\hyperlink{class_two_d_e_1_1_vector3}{Vector3}} end, \mbox{\hyperlink{class_two_d_e_1_1_color}{Color}} color, int width)=0
+\item 
+virtual \mbox{\hyperlink{namespace_two_d_e_a8aa8b3db724f82b64d04d692529308c1}{Entity}} \mbox{\hyperlink{class_two_d_e_1_1_renderer_a3e5590e4daf2c0c2f84f0fe7f50145f4}{draw\+Rect}} (\mbox{\hyperlink{class_two_d_e_1_1_vector3}{Vector3}} origin, \mbox{\hyperlink{class_two_d_e_1_1_vector2}{Vector2}} size, \mbox{\hyperlink{class_two_d_e_1_1_color}{Color}} color)=0
+\item 
+virtual \mbox{\hyperlink{namespace_two_d_e_a8aa8b3db724f82b64d04d692529308c1}{Entity}} \mbox{\hyperlink{class_two_d_e_1_1_renderer_ad6833345765bf77e46345a1c788e9281}{draw\+Circle}} (\mbox{\hyperlink{class_two_d_e_1_1_vector3}{Vector3}} center, float radius, \mbox{\hyperlink{class_two_d_e_1_1_color}{Color}} color, float quality=512.f)=0
+\item 
+virtual void \mbox{\hyperlink{class_two_d_e_1_1_renderer_a866f8ba5b20c15b23833a3daab0cd9da}{draw}} (\mbox{\hyperlink{class_two_d_e_1_1_transform}{Transform}} \&viewport)=0
+\item 
+virtual int \mbox{\hyperlink{class_two_d_e_1_1_renderer_a7ba657b4564b7dda6d4726a796e03006}{init}} (int width, int height)=0
+\item 
+virtual void \mbox{\hyperlink{class_two_d_e_1_1_renderer_ab3e26aa6285cc9649b523e3ce8cc4df3}{clear}} (\mbox{\hyperlink{class_two_d_e_1_1_color}{Color}} clear\+Color)=0
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_two_d_e_1_1_renderer}{Renderer}} $\ast$ \mbox{\hyperlink{class_two_d_e_1_1_renderer_a0f1ee862acf795ca28e6efed1897677e}{create\+Renderer}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_two_d_e_1_1_renderer_ab3e26aa6285cc9649b523e3ce8cc4df3}\label{class_two_d_e_1_1_renderer_ab3e26aa6285cc9649b523e3ce8cc4df3}} 
+\index{TwoDE::Renderer@{TwoDE::Renderer}!clear@{clear}}
+\index{clear@{clear}!TwoDE::Renderer@{TwoDE::Renderer}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily virtual void Two\+DE\+::\+Renderer\+::clear (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_two_d_e_1_1_color}{Color}}}]{clear\+Color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_two_d_e_1_1_open_g_l_renderer_a4d37e290a18fa4fb7c237aacfaf45a61}{Two\+DE\+::\+Open\+GLRenderer}}.
+
+\mbox{\Hypertarget{class_two_d_e_1_1_renderer_a0f1ee862acf795ca28e6efed1897677e}\label{class_two_d_e_1_1_renderer_a0f1ee862acf795ca28e6efed1897677e}} 
+\index{TwoDE::Renderer@{TwoDE::Renderer}!createRenderer@{createRenderer}}
+\index{createRenderer@{createRenderer}!TwoDE::Renderer@{TwoDE::Renderer}}
+\doxysubsubsection{\texorpdfstring{createRenderer()}{createRenderer()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_two_d_e_1_1_renderer}{Renderer}} $\ast$ Two\+DE\+::\+Renderer\+::create\+Renderer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_two_d_e_1_1_renderer_a866f8ba5b20c15b23833a3daab0cd9da}\label{class_two_d_e_1_1_renderer_a866f8ba5b20c15b23833a3daab0cd9da}} 
+\index{TwoDE::Renderer@{TwoDE::Renderer}!draw@{draw}}
+\index{draw@{draw}!TwoDE::Renderer@{TwoDE::Renderer}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily virtual void Two\+DE\+::\+Renderer\+::draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_two_d_e_1_1_transform}{Transform}} \&}]{viewport }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_two_d_e_1_1_open_g_l_renderer_a207a870015199e0768281294975ce2fc}{Two\+DE\+::\+Open\+GLRenderer}}.
+
+\mbox{\Hypertarget{class_two_d_e_1_1_renderer_ad6833345765bf77e46345a1c788e9281}\label{class_two_d_e_1_1_renderer_ad6833345765bf77e46345a1c788e9281}} 
+\index{TwoDE::Renderer@{TwoDE::Renderer}!drawCircle@{drawCircle}}
+\index{drawCircle@{drawCircle}!TwoDE::Renderer@{TwoDE::Renderer}}
+\doxysubsubsection{\texorpdfstring{drawCircle()}{drawCircle()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{namespace_two_d_e_a8aa8b3db724f82b64d04d692529308c1}{Entity}} Two\+DE\+::\+Renderer\+::draw\+Circle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_two_d_e_1_1_vector3}{Vector3}}}]{center,  }\item[{float}]{radius,  }\item[{\mbox{\hyperlink{class_two_d_e_1_1_color}{Color}}}]{color,  }\item[{float}]{quality = {\ttfamily 512.f} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_two_d_e_1_1_open_g_l_renderer_a13b70f65e047c6a6c0180ecbaa476b65}{Two\+DE\+::\+Open\+GLRenderer}}.
+
+\mbox{\Hypertarget{class_two_d_e_1_1_renderer_a74e963738c9e6c8bd20c81fd103b1b65}\label{class_two_d_e_1_1_renderer_a74e963738c9e6c8bd20c81fd103b1b65}} 
+\index{TwoDE::Renderer@{TwoDE::Renderer}!drawLine@{drawLine}}
+\index{drawLine@{drawLine}!TwoDE::Renderer@{TwoDE::Renderer}}
+\doxysubsubsection{\texorpdfstring{drawLine()}{drawLine()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{namespace_two_d_e_a8aa8b3db724f82b64d04d692529308c1}{Entity}} Two\+DE\+::\+Renderer\+::draw\+Line (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_two_d_e_1_1_vector3}{Vector3}}}]{origin,  }\item[{\mbox{\hyperlink{class_two_d_e_1_1_vector3}{Vector3}}}]{end,  }\item[{\mbox{\hyperlink{class_two_d_e_1_1_color}{Color}}}]{color,  }\item[{int}]{width }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_two_d_e_1_1_open_g_l_renderer_a88549c0e9d154edbd2e3148ce5ef3d38}{Two\+DE\+::\+Open\+GLRenderer}}.
+
+\mbox{\Hypertarget{class_two_d_e_1_1_renderer_a3e5590e4daf2c0c2f84f0fe7f50145f4}\label{class_two_d_e_1_1_renderer_a3e5590e4daf2c0c2f84f0fe7f50145f4}} 
+\index{TwoDE::Renderer@{TwoDE::Renderer}!drawRect@{drawRect}}
+\index{drawRect@{drawRect}!TwoDE::Renderer@{TwoDE::Renderer}}
+\doxysubsubsection{\texorpdfstring{drawRect()}{drawRect()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{namespace_two_d_e_a8aa8b3db724f82b64d04d692529308c1}{Entity}} Two\+DE\+::\+Renderer\+::draw\+Rect (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_two_d_e_1_1_vector3}{Vector3}}}]{origin,  }\item[{\mbox{\hyperlink{class_two_d_e_1_1_vector2}{Vector2}}}]{size,  }\item[{\mbox{\hyperlink{class_two_d_e_1_1_color}{Color}}}]{color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_two_d_e_1_1_open_g_l_renderer_a38a736b31444cebbb329ac0aa9018c4d}{Two\+DE\+::\+Open\+GLRenderer}}.
+
+\mbox{\Hypertarget{class_two_d_e_1_1_renderer_a9d3199c0325ff4bcc6e2684ada370085}\label{class_two_d_e_1_1_renderer_a9d3199c0325ff4bcc6e2684ada370085}} 
+\index{TwoDE::Renderer@{TwoDE::Renderer}!drawSprite@{drawSprite}}
+\index{drawSprite@{drawSprite}!TwoDE::Renderer@{TwoDE::Renderer}}
+\doxysubsubsection{\texorpdfstring{drawSprite()}{drawSprite()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual void Two\+DE\+::\+Renderer\+::draw\+Sprite (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_two_d_e_a8aa8b3db724f82b64d04d692529308c1}{Entity}} \&}]{entity,  }\item[{\mbox{\hyperlink{class_two_d_e_1_1_sprite}{Sprite}} const \&}]{sprite,  }\item[{\mbox{\hyperlink{class_two_d_e_1_1_transform}{Transform}} const \&}]{transform }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_two_d_e_1_1_open_g_l_renderer_ae96548cc53def76c34de227e78445190}{Two\+DE\+::\+Open\+GLRenderer}}.
+
+\mbox{\Hypertarget{class_two_d_e_1_1_renderer_adac510d013d19d35d2afa055bd490ff9}\label{class_two_d_e_1_1_renderer_adac510d013d19d35d2afa055bd490ff9}} 
+\index{TwoDE::Renderer@{TwoDE::Renderer}!drawSprite@{drawSprite}}
+\index{drawSprite@{drawSprite}!TwoDE::Renderer@{TwoDE::Renderer}}
+\doxysubsubsection{\texorpdfstring{drawSprite()}{drawSprite()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{namespace_two_d_e_a8aa8b3db724f82b64d04d692529308c1}{Entity}} Two\+DE\+::\+Renderer\+::draw\+Sprite (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_two_d_e_1_1_sprite}{Sprite}} const \&}]{sprite,  }\item[{\mbox{\hyperlink{class_two_d_e_1_1_transform}{Transform}} const \&}]{transform }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_two_d_e_1_1_open_g_l_renderer_ad9bb6056aac84ea74874618166271058}{Two\+DE\+::\+Open\+GLRenderer}}.
+
+\mbox{\Hypertarget{class_two_d_e_1_1_renderer_a7ba657b4564b7dda6d4726a796e03006}\label{class_two_d_e_1_1_renderer_a7ba657b4564b7dda6d4726a796e03006}} 
+\index{TwoDE::Renderer@{TwoDE::Renderer}!init@{init}}
+\index{init@{init}!TwoDE::Renderer@{TwoDE::Renderer}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily virtual int Two\+DE\+::\+Renderer\+::init (\begin{DoxyParamCaption}\item[{int}]{width,  }\item[{int}]{height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_two_d_e_1_1_open_g_l_renderer_a4a700ee46e14ea9a3a0ff2c4a7349df4}{Two\+DE\+::\+Open\+GLRenderer}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{_renderer_8h}{Renderer.\+h}}\item 
+src/\mbox{\hyperlink{_renderer_8cpp}{Renderer.\+cpp}}\end{DoxyCompactItemize}

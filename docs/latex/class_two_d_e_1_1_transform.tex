@@ -1,0 +1,164 @@
+\hypertarget{class_two_d_e_1_1_transform}{}\doxysection{Two\+DE\+::Transform Class Reference}
+\label{class_two_d_e_1_1_transform}\index{TwoDE::Transform@{TwoDE::Transform}}
+
+
+{\ttfamily \#include $<$Transform.\+h$>$}
+
+
+
+Collaboration diagram for Two\+DE\+::Transform\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_two_d_e_1_1_transform__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_two_d_e_1_1_transform_aa0ad9c08b8e7b4b04f2547cee4cac0b6}{Transform}} (\mbox{\hyperlink{class_two_d_e_1_1_vector3}{Vector3}} position=\{ 0.\+0f, 0.\+0f, 0.\+0f \}, float rotation=\{ 0.\+0f \}, \mbox{\hyperlink{class_two_d_e_1_1_vector2}{Vector2}} \mbox{\hyperlink{class_two_d_e_1_1_transform_a87c8de49910732d02a9fc495264f69dc}{scale}}=\{ 10.\+0f, 10.\+0f \})
+\item 
+void \mbox{\hyperlink{class_two_d_e_1_1_transform_aab83d05af2eda99323e0d159f4bdb1ba}{translate}} (\mbox{\hyperlink{class_two_d_e_1_1_vector2}{Vector2}} translation)
+\item 
+void \mbox{\hyperlink{class_two_d_e_1_1_transform_afc0ad8e0aa2333a55240b02ddd14d475}{translate}} (\mbox{\hyperlink{class_two_d_e_1_1_vector3}{Vector3}} translation)
+\item 
+void \mbox{\hyperlink{class_two_d_e_1_1_transform_a0ab8a99b4958053a106c58699f0a42c0}{rotate}} (float rotation)
+\item 
+void \mbox{\hyperlink{class_two_d_e_1_1_transform_a87c8de49910732d02a9fc495264f69dc}{scale}} (\mbox{\hyperlink{class_two_d_e_1_1_vector2}{Vector2}} scale)
+\item 
+void \mbox{\hyperlink{class_two_d_e_1_1_transform_a755d21d51f6ef6ca5ea1ddf4681ec39b}{set\+Rotation}} (float rotation)
+\item 
+void \mbox{\hyperlink{class_two_d_e_1_1_transform_a7a305a10d9dde52874e93c6463bec294}{set\+Scale}} (\mbox{\hyperlink{class_two_d_e_1_1_vector2}{Vector2}} \mbox{\hyperlink{class_two_d_e_1_1_transform_a87c8de49910732d02a9fc495264f69dc}{scale}})
+\item 
+void \mbox{\hyperlink{class_two_d_e_1_1_transform_a9c20c2ca27a918ca2ca2fb186d1dbd13}{setZ}} (int z)
+\item 
+void \mbox{\hyperlink{class_two_d_e_1_1_transform_ac431cf3227fe7baf5158f5f5c7cac3fd}{set\+Position}} (\mbox{\hyperlink{class_two_d_e_1_1_vector3}{Vector3}} pos)
+\item 
+\mbox{\hyperlink{class_two_d_e_1_1_vector3}{Vector3}} \mbox{\hyperlink{class_two_d_e_1_1_transform_ada5c5482f7967436ca70b84d9134db53}{get\+Position}} ()
+\item 
+\mbox{\hyperlink{class_two_d_e_1_1_vector2}{Vector2}} \mbox{\hyperlink{class_two_d_e_1_1_transform_ad396ee4b346ce6e97a712bf8bd0d9ede}{get\+Positionv2}} ()
+\item 
+const \mbox{\hyperlink{class_two_d_e_1_1_matrix4}{Matrix4}} \mbox{\hyperlink{class_two_d_e_1_1_transform_a1545ee5eac5abb9d28dbbd4206083660}{get\+Matrix}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_two_d_e_1_1_matrix4}{Matrix4}} \mbox{\hyperlink{class_two_d_e_1_1_transform_a7b67a716e435651b16f6e84eadce1f80}{matrix}}
+\item 
+\mbox{\hyperlink{class_two_d_e_1_1_vector3}{Vector3}} \mbox{\hyperlink{class_two_d_e_1_1_transform_a2d42d66d75cca7c132cca24f7239d950}{m\+\_\+\+Position}}
+\item 
+\mbox{\hyperlink{class_two_d_e_1_1_vector2}{Vector2}} \mbox{\hyperlink{class_two_d_e_1_1_transform_aef6dcfae8baf5a40a0362161b78709f3}{m\+\_\+\+Scale}}
+\item 
+float \mbox{\hyperlink{class_two_d_e_1_1_transform_a57fea71d02e3aacb2e118705cdfa4366}{m\+\_\+\+Rotation}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_two_d_e_1_1_transform_aa0ad9c08b8e7b4b04f2547cee4cac0b6}\label{class_two_d_e_1_1_transform_aa0ad9c08b8e7b4b04f2547cee4cac0b6}} 
+\index{TwoDE::Transform@{TwoDE::Transform}!Transform@{Transform}}
+\index{Transform@{Transform}!TwoDE::Transform@{TwoDE::Transform}}
+\doxysubsubsection{\texorpdfstring{Transform()}{Transform()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_two_d_e_1_1_transform}{Two\+DE\+::\+Transform\+::\+Transform}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_two_d_e_1_1_vector3}{Vector3}}}]{position = {\ttfamily \{~0.0f,~0.0f,~0.0f~\}},  }\item[{float}]{rotation = {\ttfamily \{~0.0f~\}},  }\item[{\mbox{\hyperlink{class_two_d_e_1_1_vector2}{Vector2}}}]{scale = {\ttfamily \{~10.0f,~10.0f~\}} }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_two_d_e_1_1_transform_a1545ee5eac5abb9d28dbbd4206083660}\label{class_two_d_e_1_1_transform_a1545ee5eac5abb9d28dbbd4206083660}} 
+\index{TwoDE::Transform@{TwoDE::Transform}!getMatrix@{getMatrix}}
+\index{getMatrix@{getMatrix}!TwoDE::Transform@{TwoDE::Transform}}
+\doxysubsubsection{\texorpdfstring{getMatrix()}{getMatrix()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{class_two_d_e_1_1_matrix4}{Matrix4}} Two\+DE\+::\+Transform\+::get\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_two_d_e_1_1_transform_ada5c5482f7967436ca70b84d9134db53}\label{class_two_d_e_1_1_transform_ada5c5482f7967436ca70b84d9134db53}} 
+\index{TwoDE::Transform@{TwoDE::Transform}!getPosition@{getPosition}}
+\index{getPosition@{getPosition}!TwoDE::Transform@{TwoDE::Transform}}
+\doxysubsubsection{\texorpdfstring{getPosition()}{getPosition()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_two_d_e_1_1_vector3}{Vector3}} Two\+DE\+::\+Transform\+::get\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_two_d_e_1_1_transform_ad396ee4b346ce6e97a712bf8bd0d9ede}\label{class_two_d_e_1_1_transform_ad396ee4b346ce6e97a712bf8bd0d9ede}} 
+\index{TwoDE::Transform@{TwoDE::Transform}!getPositionv2@{getPositionv2}}
+\index{getPositionv2@{getPositionv2}!TwoDE::Transform@{TwoDE::Transform}}
+\doxysubsubsection{\texorpdfstring{getPositionv2()}{getPositionv2()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_two_d_e_1_1_vector2}{Vector2}} Two\+DE\+::\+Transform\+::get\+Positionv2 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_two_d_e_1_1_transform_a0ab8a99b4958053a106c58699f0a42c0}\label{class_two_d_e_1_1_transform_a0ab8a99b4958053a106c58699f0a42c0}} 
+\index{TwoDE::Transform@{TwoDE::Transform}!rotate@{rotate}}
+\index{rotate@{rotate}!TwoDE::Transform@{TwoDE::Transform}}
+\doxysubsubsection{\texorpdfstring{rotate()}{rotate()}}
+{\footnotesize\ttfamily void Two\+DE\+::\+Transform\+::rotate (\begin{DoxyParamCaption}\item[{float}]{rotation }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_two_d_e_1_1_transform_a87c8de49910732d02a9fc495264f69dc}\label{class_two_d_e_1_1_transform_a87c8de49910732d02a9fc495264f69dc}} 
+\index{TwoDE::Transform@{TwoDE::Transform}!scale@{scale}}
+\index{scale@{scale}!TwoDE::Transform@{TwoDE::Transform}}
+\doxysubsubsection{\texorpdfstring{scale()}{scale()}}
+{\footnotesize\ttfamily void Two\+DE\+::\+Transform\+::scale (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_two_d_e_1_1_vector2}{Vector2}}}]{scale }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_two_d_e_1_1_transform_ac431cf3227fe7baf5158f5f5c7cac3fd}\label{class_two_d_e_1_1_transform_ac431cf3227fe7baf5158f5f5c7cac3fd}} 
+\index{TwoDE::Transform@{TwoDE::Transform}!setPosition@{setPosition}}
+\index{setPosition@{setPosition}!TwoDE::Transform@{TwoDE::Transform}}
+\doxysubsubsection{\texorpdfstring{setPosition()}{setPosition()}}
+{\footnotesize\ttfamily void Two\+DE\+::\+Transform\+::set\+Position (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_two_d_e_1_1_vector3}{Vector3}}}]{pos }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_two_d_e_1_1_transform_a755d21d51f6ef6ca5ea1ddf4681ec39b}\label{class_two_d_e_1_1_transform_a755d21d51f6ef6ca5ea1ddf4681ec39b}} 
+\index{TwoDE::Transform@{TwoDE::Transform}!setRotation@{setRotation}}
+\index{setRotation@{setRotation}!TwoDE::Transform@{TwoDE::Transform}}
+\doxysubsubsection{\texorpdfstring{setRotation()}{setRotation()}}
+{\footnotesize\ttfamily void Two\+DE\+::\+Transform\+::set\+Rotation (\begin{DoxyParamCaption}\item[{float}]{rotation }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_two_d_e_1_1_transform_a7a305a10d9dde52874e93c6463bec294}\label{class_two_d_e_1_1_transform_a7a305a10d9dde52874e93c6463bec294}} 
+\index{TwoDE::Transform@{TwoDE::Transform}!setScale@{setScale}}
+\index{setScale@{setScale}!TwoDE::Transform@{TwoDE::Transform}}
+\doxysubsubsection{\texorpdfstring{setScale()}{setScale()}}
+{\footnotesize\ttfamily void Two\+DE\+::\+Transform\+::set\+Scale (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_two_d_e_1_1_vector2}{Vector2}}}]{scale }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_two_d_e_1_1_transform_a9c20c2ca27a918ca2ca2fb186d1dbd13}\label{class_two_d_e_1_1_transform_a9c20c2ca27a918ca2ca2fb186d1dbd13}} 
+\index{TwoDE::Transform@{TwoDE::Transform}!setZ@{setZ}}
+\index{setZ@{setZ}!TwoDE::Transform@{TwoDE::Transform}}
+\doxysubsubsection{\texorpdfstring{setZ()}{setZ()}}
+{\footnotesize\ttfamily void Two\+DE\+::\+Transform\+::setZ (\begin{DoxyParamCaption}\item[{int}]{z }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_two_d_e_1_1_transform_aab83d05af2eda99323e0d159f4bdb1ba}\label{class_two_d_e_1_1_transform_aab83d05af2eda99323e0d159f4bdb1ba}} 
+\index{TwoDE::Transform@{TwoDE::Transform}!translate@{translate}}
+\index{translate@{translate}!TwoDE::Transform@{TwoDE::Transform}}
+\doxysubsubsection{\texorpdfstring{translate()}{translate()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Two\+DE\+::\+Transform\+::translate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_two_d_e_1_1_vector2}{Vector2}}}]{translation }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_two_d_e_1_1_transform_afc0ad8e0aa2333a55240b02ddd14d475}\label{class_two_d_e_1_1_transform_afc0ad8e0aa2333a55240b02ddd14d475}} 
+\index{TwoDE::Transform@{TwoDE::Transform}!translate@{translate}}
+\index{translate@{translate}!TwoDE::Transform@{TwoDE::Transform}}
+\doxysubsubsection{\texorpdfstring{translate()}{translate()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Two\+DE\+::\+Transform\+::translate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_two_d_e_1_1_vector3}{Vector3}}}]{translation }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_two_d_e_1_1_transform_a2d42d66d75cca7c132cca24f7239d950}\label{class_two_d_e_1_1_transform_a2d42d66d75cca7c132cca24f7239d950}} 
+\index{TwoDE::Transform@{TwoDE::Transform}!m\_Position@{m\_Position}}
+\index{m\_Position@{m\_Position}!TwoDE::Transform@{TwoDE::Transform}}
+\doxysubsubsection{\texorpdfstring{m\_Position}{m\_Position}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_two_d_e_1_1_vector3}{Vector3}} Two\+DE\+::\+Transform\+::m\+\_\+\+Position}
+
+\mbox{\Hypertarget{class_two_d_e_1_1_transform_a57fea71d02e3aacb2e118705cdfa4366}\label{class_two_d_e_1_1_transform_a57fea71d02e3aacb2e118705cdfa4366}} 
+\index{TwoDE::Transform@{TwoDE::Transform}!m\_Rotation@{m\_Rotation}}
+\index{m\_Rotation@{m\_Rotation}!TwoDE::Transform@{TwoDE::Transform}}
+\doxysubsubsection{\texorpdfstring{m\_Rotation}{m\_Rotation}}
+{\footnotesize\ttfamily float Two\+DE\+::\+Transform\+::m\+\_\+\+Rotation}
+
+\mbox{\Hypertarget{class_two_d_e_1_1_transform_aef6dcfae8baf5a40a0362161b78709f3}\label{class_two_d_e_1_1_transform_aef6dcfae8baf5a40a0362161b78709f3}} 
+\index{TwoDE::Transform@{TwoDE::Transform}!m\_Scale@{m\_Scale}}
+\index{m\_Scale@{m\_Scale}!TwoDE::Transform@{TwoDE::Transform}}
+\doxysubsubsection{\texorpdfstring{m\_Scale}{m\_Scale}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_two_d_e_1_1_vector2}{Vector2}} Two\+DE\+::\+Transform\+::m\+\_\+\+Scale}
+
+\mbox{\Hypertarget{class_two_d_e_1_1_transform_a7b67a716e435651b16f6e84eadce1f80}\label{class_two_d_e_1_1_transform_a7b67a716e435651b16f6e84eadce1f80}} 
+\index{TwoDE::Transform@{TwoDE::Transform}!matrix@{matrix}}
+\index{matrix@{matrix}!TwoDE::Transform@{TwoDE::Transform}}
+\doxysubsubsection{\texorpdfstring{matrix}{matrix}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_two_d_e_1_1_matrix4}{Matrix4}} Two\+DE\+::\+Transform\+::matrix}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{_transform_8h}{Transform.\+h}}\item 
+src/\mbox{\hyperlink{_transform_8cpp}{Transform.\+cpp}}\end{DoxyCompactItemize}

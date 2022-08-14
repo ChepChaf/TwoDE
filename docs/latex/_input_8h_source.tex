@@ -1,0 +1,75 @@
+\hypertarget{_input_8h_source}{}\doxysection{Input.\+h}
+\label{_input_8h_source}\index{src/Input.h@{src/Input.h}}
+\mbox{\hyperlink{_input_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_core_8h}{Core.h}}"{}}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_vector2_8h}{Vector2.h}}"{}}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <GLFW/glfw3.h>}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <map>}}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_two_d_e}{TwoDE}}}
+\DoxyCodeLine{11 \{}
+\DoxyCodeLine{12     \textcolor{keyword}{class }\mbox{\hyperlink{_core_8h_a441750824a16f7ae56bd40c3a3346197}{TWO\_DLL}} \mbox{\hyperlink{class_two_d_e_1_1_input}{Input}}}
+\DoxyCodeLine{13     \{}
+\DoxyCodeLine{14     \textcolor{keyword}{public}:}
+\DoxyCodeLine{15         \textcolor{comment}{// TODO: make this glfw agnostic}}
+\DoxyCodeLine{16         \textcolor{keyword}{enum class} \mbox{\hyperlink{class_two_d_e_1_1_input_affb5b6f2780f04eda866bec2d200b726}{BUTTON}}}
+\DoxyCodeLine{17         \{}
+\DoxyCodeLine{18             RIGHT\_KEY = GLFW\_KEY\_RIGHT,}
+\DoxyCodeLine{19             LEFT\_KEY = GLFW\_KEY\_LEFT,}
+\DoxyCodeLine{20             UP\_KEY = GLFW\_KEY\_UP,}
+\DoxyCodeLine{21             DOWN\_KEY = GLFW\_KEY\_DOWN,}
+\DoxyCodeLine{22             SPACE\_KEY = GLFW\_KEY\_SPACE}
+\DoxyCodeLine{23         \};}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25         \textcolor{keyword}{enum class} \mbox{\hyperlink{class_two_d_e_1_1_input_addb3f892164e2a86f3bc0d76f940fdc7}{MOUSE\_BUTTON}}}
+\DoxyCodeLine{26         \{}
+\DoxyCodeLine{27             LEFT\_BUTTON = GLFW\_MOUSE\_BUTTON\_LEFT,}
+\DoxyCodeLine{28             RIGHT\_BUTTON = GLFW\_MOUSE\_BUTTON\_RIGHT,}
+\DoxyCodeLine{29             MIDDLE\_BUTTON = GLFW\_MOUSE\_BUTTON\_MIDDLE}
+\DoxyCodeLine{30         \};}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32         \textcolor{keyword}{struct }\mbox{\hyperlink{struct_two_d_e_1_1_input_1_1_button_event_info}{ButtonEventInfo}}}
+\DoxyCodeLine{33         \{}
+\DoxyCodeLine{34             \mbox{\hyperlink{class_two_d_e_1_1_input_affb5b6f2780f04eda866bec2d200b726}{BUTTON}} \mbox{\hyperlink{struct_two_d_e_1_1_input_1_1_button_event_info_ac3f07a0ebb338f986cb5833cffd07680}{button}};}
+\DoxyCodeLine{35         \};}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37         \textcolor{keyword}{struct }\mbox{\hyperlink{struct_two_d_e_1_1_input_1_1_mouse_event_info}{MouseEventInfo}}}
+\DoxyCodeLine{38         \{}
+\DoxyCodeLine{39             \mbox{\hyperlink{class_two_d_e_1_1_vector2}{Vector2}} \mbox{\hyperlink{struct_two_d_e_1_1_input_1_1_mouse_event_info_a926ac8942e2fcb62ae1ba2ad79803a6a}{position}};}
+\DoxyCodeLine{40             \mbox{\hyperlink{class_two_d_e_1_1_input_addb3f892164e2a86f3bc0d76f940fdc7}{MOUSE\_BUTTON}} \mbox{\hyperlink{struct_two_d_e_1_1_input_1_1_mouse_event_info_a759bc65eda2d921875b794495e8a238f}{button}};}
+\DoxyCodeLine{41         \};}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43         \textcolor{keyword}{struct }\mbox{\hyperlink{struct_two_d_e_1_1_input_1_1_scroll_event_info}{ScrollEventInfo}}}
+\DoxyCodeLine{44         \{}
+\DoxyCodeLine{45             \mbox{\hyperlink{class_two_d_e_1_1_vector2}{Vector2}} \mbox{\hyperlink{struct_two_d_e_1_1_input_1_1_scroll_event_info_ae4334f3b908b5878356ddbabda5a81ca}{position}};}
+\DoxyCodeLine{46             \mbox{\hyperlink{class_two_d_e_1_1_vector2}{Vector2}} \mbox{\hyperlink{struct_two_d_e_1_1_input_1_1_scroll_event_info_a5d463cd2a4ce35deee2c733f7f1d2d82}{offset}};}
+\DoxyCodeLine{47         \};}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49         \textcolor{keywordtype}{void} init();}
+\DoxyCodeLine{50         \textcolor{keywordtype}{void} buttonClicked(\textcolor{keywordtype}{int} button);}
+\DoxyCodeLine{51         \textcolor{keywordtype}{void} buttonReleased(\textcolor{keywordtype}{int} button);}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53         \textcolor{keywordtype}{void} mouseClick(\textcolor{keywordtype}{int} button, \mbox{\hyperlink{class_two_d_e_1_1_vector2}{Vector2}} position);}
+\DoxyCodeLine{54         \textcolor{keywordtype}{void} mouseRelease(\textcolor{keywordtype}{int} button, \mbox{\hyperlink{class_two_d_e_1_1_vector2}{Vector2}} position);}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56         \textcolor{keywordtype}{void} mouseScroll(\mbox{\hyperlink{class_two_d_e_1_1_vector2}{Vector2}} position, \mbox{\hyperlink{class_two_d_e_1_1_vector2}{Vector2}} offset);}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58         \textcolor{keywordtype}{bool} buttonPressed(\mbox{\hyperlink{class_two_d_e_1_1_input_affb5b6f2780f04eda866bec2d200b726}{BUTTON}} button);}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61         \textcolor{keywordtype}{void} setCursorPosition(\mbox{\hyperlink{class_two_d_e_1_1_vector2}{Vector2}} position);}
+\DoxyCodeLine{62         \mbox{\hyperlink{class_two_d_e_1_1_vector2}{Vector2}} getCursorPosition();}
+\DoxyCodeLine{63     \textcolor{keyword}{private}:}
+\DoxyCodeLine{64         \mbox{\hyperlink{class_two_d_e_1_1_vector2}{Vector2}} currentMousePosition;}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66         std::map<BUTTON, bool> keyboardButtonsPressed;}
+\DoxyCodeLine{67     \};}
+\DoxyCodeLine{68 \}}
+\DoxyCodeLine{69 }
+
+\end{DoxyCode}

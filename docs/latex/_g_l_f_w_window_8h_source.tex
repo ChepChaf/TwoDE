@@ -1,0 +1,30 @@
+\hypertarget{_g_l_f_w_window_8h_source}{}\doxysection{GLFWWindow.\+h}
+\label{_g_l_f_w_window_8h_source}\index{src/GLFWWindow.h@{src/GLFWWindow.h}}
+\mbox{\hyperlink{_g_l_f_w_window_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_window_8h}{Window.h}}"{}}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <GLFW/glfw3.h>}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_two_d_e}{TwoDE}}}
+\DoxyCodeLine{8 \{}
+\DoxyCodeLine{9     \textcolor{keyword}{class }\mbox{\hyperlink{class_two_d_e_1_1_g_l_f_w_window}{GLFWWindow}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_two_d_e_1_1_window}{Window}}}
+\DoxyCodeLine{10     \{}
+\DoxyCodeLine{11         GLFWwindow* m\_Window;}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13     \textcolor{keyword}{public}:}
+\DoxyCodeLine{14         \textcolor{comment}{// Inherited via Window}}
+\DoxyCodeLine{15         \mbox{\hyperlink{class_two_d_e_1_1_g_l_f_w_window_af5b35a573c243129c68749cc0b00d859}{GLFWWindow}}();}
+\DoxyCodeLine{16         \textcolor{keyword}{virtual} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_two_d_e_1_1_g_l_f_w_window_ac145778898aaeea5e3bb7ad97f52a23a}{init}}(std::string windowName, \textcolor{keywordtype}{int}* width, \textcolor{keywordtype}{int}* height) \textcolor{keyword}{override};}
+\DoxyCodeLine{17         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_two_d_e_1_1_g_l_f_w_window_a51b1c1dcef48ed0bc962fb9c815336a1}{destroy}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{18         \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_two_d_e_1_1_g_l_f_w_window_a30f8d46b22c28af555d7ad8fdda74343}{shouldClose}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{19         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_two_d_e_1_1_g_l_f_w_window_a1bb5c78690e71bda589dda298eecc445}{swapBuffers}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{20     \textcolor{keyword}{private}:}
+\DoxyCodeLine{21         \textcolor{keyword}{static} \textcolor{keywordtype}{void} windowSizeCallback(GLFWwindow* window, \textcolor{keywordtype}{int} width, \textcolor{keywordtype}{int} height);}
+\DoxyCodeLine{22     \};}
+\DoxyCodeLine{23 \}}
+\DoxyCodeLine{24 }
+
+\end{DoxyCode}

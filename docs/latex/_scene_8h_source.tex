@@ -1,0 +1,37 @@
+\hypertarget{_scene_8h_source}{}\doxysection{Scene.\+h}
+\label{_scene_8h_source}\index{src/Scene.h@{src/Scene.h}}
+\mbox{\hyperlink{_scene_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_core_8h}{Core.h}}"{}}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <entt/entt.hpp>}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_two_d_e}{TwoDE}}}
+\DoxyCodeLine{7 \{}
+\DoxyCodeLine{8     \textcolor{keyword}{typedef} entt::entity \mbox{\hyperlink{namespace_two_d_e_a8aa8b3db724f82b64d04d692529308c1}{Entity}};}
+\DoxyCodeLine{9     \textcolor{keyword}{typedef} entt::registry \mbox{\hyperlink{namespace_two_d_e_a4837278abc6c1cbb94bb666a581dcce8}{EntityRegistry}};}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11     \textcolor{keyword}{class }\mbox{\hyperlink{_core_8h_a441750824a16f7ae56bd40c3a3346197}{TWO\_DLL}} \mbox{\hyperlink{class_two_d_e_1_1_scene}{Scene}}}
+\DoxyCodeLine{12     \{}
+\DoxyCodeLine{13         \mbox{\hyperlink{namespace_two_d_e_a4837278abc6c1cbb94bb666a581dcce8}{EntityRegistry}}* registry = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15     \textcolor{keyword}{public}:}
+\DoxyCodeLine{16         \mbox{\hyperlink{class_two_d_e_1_1_scene_a381dd4c7aecbf32883d1f75e0412f80d}{Scene}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{17         \textcolor{keywordtype}{void} init();}
+\DoxyCodeLine{18         \mbox{\hyperlink{namespace_two_d_e_a8aa8b3db724f82b64d04d692529308c1}{Entity}} CreateEntity();}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20         \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, \textcolor{keyword}{typename} ...Args>}
+\DoxyCodeLine{21         T \mbox{\hyperlink{class_two_d_e_1_1_scene_af7c880e41874f58971c246033e92c4f3}{AddComponent}}(\mbox{\hyperlink{namespace_two_d_e_a8aa8b3db724f82b64d04d692529308c1}{Entity}}, Args\&\& ...);}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23         \mbox{\hyperlink{namespace_two_d_e_a4837278abc6c1cbb94bb666a581dcce8}{EntityRegistry}}* GetRegistry();}
+\DoxyCodeLine{24     \};}
+\DoxyCodeLine{25     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, \textcolor{keyword}{typename} ...Args>}
+\DoxyCodeLine{26     \textcolor{keyword}{inline} T \mbox{\hyperlink{class_two_d_e_1_1_scene_af7c880e41874f58971c246033e92c4f3}{Scene::AddComponent}}(\mbox{\hyperlink{namespace_two_d_e_a8aa8b3db724f82b64d04d692529308c1}{Entity}} ent, Args\&\& ...args)}
+\DoxyCodeLine{27     \{}
+\DoxyCodeLine{28         \textcolor{keywordflow}{return} registry-\/>emplace<T>(ent, args...);}
+\DoxyCodeLine{29     \}}
+\DoxyCodeLine{30 \}}
+\DoxyCodeLine{31 }
+
+\end{DoxyCode}

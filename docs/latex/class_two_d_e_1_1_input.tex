@@ -1,0 +1,176 @@
+\hypertarget{class_two_d_e_1_1_input}{}\doxysection{Two\+DE\+::Input Class Reference}
+\label{class_two_d_e_1_1_input}\index{TwoDE::Input@{TwoDE::Input}}
+
+
+{\ttfamily \#include $<$Input.\+h$>$}
+
+
+
+Collaboration diagram for Two\+DE\+::Input\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=190pt]{class_two_d_e_1_1_input__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_two_d_e_1_1_input_1_1_button_event_info}{Button\+Event\+Info}}
+\item 
+struct \mbox{\hyperlink{struct_two_d_e_1_1_input_1_1_mouse_event_info}{Mouse\+Event\+Info}}
+\item 
+struct \mbox{\hyperlink{struct_two_d_e_1_1_input_1_1_scroll_event_info}{Scroll\+Event\+Info}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{class_two_d_e_1_1_input_affb5b6f2780f04eda866bec2d200b726}{BUTTON}} \{ \newline
+\mbox{\hyperlink{class_two_d_e_1_1_input_affb5b6f2780f04eda866bec2d200b726af57850b95ee901c8e5b2fb69153e1049}{RIGHT\+\_\+\+KEY}} = GLFW\+\_\+\+KEY\+\_\+\+RIGHT
+, \mbox{\hyperlink{class_two_d_e_1_1_input_affb5b6f2780f04eda866bec2d200b726ad1fcb2d7d9d9b741631a4ee0091289cf}{LEFT\+\_\+\+KEY}} = GLFW\+\_\+\+KEY\+\_\+\+LEFT
+, \mbox{\hyperlink{class_two_d_e_1_1_input_affb5b6f2780f04eda866bec2d200b726a581ca05ce37239e0ca1e9ccad84f81ac}{UP\+\_\+\+KEY}} = GLFW\+\_\+\+KEY\+\_\+\+UP
+, \mbox{\hyperlink{class_two_d_e_1_1_input_affb5b6f2780f04eda866bec2d200b726ae3058d2b91d2ed2e6bb744f6ecdc7ad8}{DOWN\+\_\+\+KEY}} = GLFW\+\_\+\+KEY\+\_\+\+DOWN
+, \newline
+\mbox{\hyperlink{class_two_d_e_1_1_input_affb5b6f2780f04eda866bec2d200b726a12a7bb20770da5404264b0a16e278230}{SPACE\+\_\+\+KEY}} = GLFW\+\_\+\+KEY\+\_\+\+SPACE
+ \}
+\item 
+enum class \mbox{\hyperlink{class_two_d_e_1_1_input_addb3f892164e2a86f3bc0d76f940fdc7}{MOUSE\+\_\+\+BUTTON}} \{ \mbox{\hyperlink{class_two_d_e_1_1_input_addb3f892164e2a86f3bc0d76f940fdc7ae783556d1c8908d349f457eaaa97eca7}{LEFT\+\_\+\+BUTTON}} = GLFW\+\_\+\+MOUSE\+\_\+\+BUTTON\+\_\+\+LEFT
+, \mbox{\hyperlink{class_two_d_e_1_1_input_addb3f892164e2a86f3bc0d76f940fdc7a8fb6e807dce52cde3b4e2343ac3f47e8}{RIGHT\+\_\+\+BUTTON}} = GLFW\+\_\+\+MOUSE\+\_\+\+BUTTON\+\_\+\+RIGHT
+, \mbox{\hyperlink{class_two_d_e_1_1_input_addb3f892164e2a86f3bc0d76f940fdc7a9ecf659a2e92bc5120f49c8c29897ce2}{MIDDLE\+\_\+\+BUTTON}} = GLFW\+\_\+\+MOUSE\+\_\+\+BUTTON\+\_\+\+MIDDLE
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_two_d_e_1_1_input_abe96ef02600015aa40f0c7d7a0934d34}{init}} ()
+\item 
+void \mbox{\hyperlink{class_two_d_e_1_1_input_aa44d81a3a2851bd91caa7ef4dcaf1130}{button\+Clicked}} (int button)
+\item 
+void \mbox{\hyperlink{class_two_d_e_1_1_input_abfa74705b761393caf74c131e8d82617}{button\+Released}} (int button)
+\item 
+void \mbox{\hyperlink{class_two_d_e_1_1_input_a31fc6a7cf1070b07f652017325bbfb5b}{mouse\+Click}} (int button, \mbox{\hyperlink{class_two_d_e_1_1_vector2}{Vector2}} position)
+\item 
+void \mbox{\hyperlink{class_two_d_e_1_1_input_ab7ea6c1a146f35c2c430dd0d2ef5bb91}{mouse\+Release}} (int button, \mbox{\hyperlink{class_two_d_e_1_1_vector2}{Vector2}} position)
+\item 
+void \mbox{\hyperlink{class_two_d_e_1_1_input_a981e09b391257036840c60c3b00df38c}{mouse\+Scroll}} (\mbox{\hyperlink{class_two_d_e_1_1_vector2}{Vector2}} position, \mbox{\hyperlink{class_two_d_e_1_1_vector2}{Vector2}} offset)
+\item 
+bool \mbox{\hyperlink{class_two_d_e_1_1_input_adf75172dc29f67bf4265b0f26cc88e3f}{button\+Pressed}} (\mbox{\hyperlink{class_two_d_e_1_1_input_affb5b6f2780f04eda866bec2d200b726}{BUTTON}} button)
+\item 
+void \mbox{\hyperlink{class_two_d_e_1_1_input_a82f3be532d640c097691559477105bb0}{set\+Cursor\+Position}} (\mbox{\hyperlink{class_two_d_e_1_1_vector2}{Vector2}} position)
+\item 
+\mbox{\hyperlink{class_two_d_e_1_1_vector2}{Vector2}} \mbox{\hyperlink{class_two_d_e_1_1_input_a8f3e056152c1147b724f30a3e985049d}{get\+Cursor\+Position}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_two_d_e_1_1_input_affb5b6f2780f04eda866bec2d200b726}\label{class_two_d_e_1_1_input_affb5b6f2780f04eda866bec2d200b726}} 
+\index{TwoDE::Input@{TwoDE::Input}!BUTTON@{BUTTON}}
+\index{BUTTON@{BUTTON}!TwoDE::Input@{TwoDE::Input}}
+\doxysubsubsection{\texorpdfstring{BUTTON}{BUTTON}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{class_two_d_e_1_1_input_affb5b6f2780f04eda866bec2d200b726}{Two\+DE\+::\+Input\+::\+BUTTON}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RIGHT\_KEY@{RIGHT\_KEY}!TwoDE::Input@{TwoDE::Input}}\index{TwoDE::Input@{TwoDE::Input}!RIGHT\_KEY@{RIGHT\_KEY}}}\mbox{\Hypertarget{class_two_d_e_1_1_input_affb5b6f2780f04eda866bec2d200b726af57850b95ee901c8e5b2fb69153e1049}\label{class_two_d_e_1_1_input_affb5b6f2780f04eda866bec2d200b726af57850b95ee901c8e5b2fb69153e1049}} 
+RIGHT\+\_\+\+KEY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LEFT\_KEY@{LEFT\_KEY}!TwoDE::Input@{TwoDE::Input}}\index{TwoDE::Input@{TwoDE::Input}!LEFT\_KEY@{LEFT\_KEY}}}\mbox{\Hypertarget{class_two_d_e_1_1_input_affb5b6f2780f04eda866bec2d200b726ad1fcb2d7d9d9b741631a4ee0091289cf}\label{class_two_d_e_1_1_input_affb5b6f2780f04eda866bec2d200b726ad1fcb2d7d9d9b741631a4ee0091289cf}} 
+LEFT\+\_\+\+KEY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UP\_KEY@{UP\_KEY}!TwoDE::Input@{TwoDE::Input}}\index{TwoDE::Input@{TwoDE::Input}!UP\_KEY@{UP\_KEY}}}\mbox{\Hypertarget{class_two_d_e_1_1_input_affb5b6f2780f04eda866bec2d200b726a581ca05ce37239e0ca1e9ccad84f81ac}\label{class_two_d_e_1_1_input_affb5b6f2780f04eda866bec2d200b726a581ca05ce37239e0ca1e9ccad84f81ac}} 
+UP\+\_\+\+KEY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DOWN\_KEY@{DOWN\_KEY}!TwoDE::Input@{TwoDE::Input}}\index{TwoDE::Input@{TwoDE::Input}!DOWN\_KEY@{DOWN\_KEY}}}\mbox{\Hypertarget{class_two_d_e_1_1_input_affb5b6f2780f04eda866bec2d200b726ae3058d2b91d2ed2e6bb744f6ecdc7ad8}\label{class_two_d_e_1_1_input_affb5b6f2780f04eda866bec2d200b726ae3058d2b91d2ed2e6bb744f6ecdc7ad8}} 
+DOWN\+\_\+\+KEY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SPACE\_KEY@{SPACE\_KEY}!TwoDE::Input@{TwoDE::Input}}\index{TwoDE::Input@{TwoDE::Input}!SPACE\_KEY@{SPACE\_KEY}}}\mbox{\Hypertarget{class_two_d_e_1_1_input_affb5b6f2780f04eda866bec2d200b726a12a7bb20770da5404264b0a16e278230}\label{class_two_d_e_1_1_input_affb5b6f2780f04eda866bec2d200b726a12a7bb20770da5404264b0a16e278230}} 
+SPACE\+\_\+\+KEY&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{class_two_d_e_1_1_input_addb3f892164e2a86f3bc0d76f940fdc7}\label{class_two_d_e_1_1_input_addb3f892164e2a86f3bc0d76f940fdc7}} 
+\index{TwoDE::Input@{TwoDE::Input}!MOUSE\_BUTTON@{MOUSE\_BUTTON}}
+\index{MOUSE\_BUTTON@{MOUSE\_BUTTON}!TwoDE::Input@{TwoDE::Input}}
+\doxysubsubsection{\texorpdfstring{MOUSE\_BUTTON}{MOUSE\_BUTTON}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{class_two_d_e_1_1_input_addb3f892164e2a86f3bc0d76f940fdc7}{Two\+DE\+::\+Input\+::\+MOUSE\+\_\+\+BUTTON}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LEFT\_BUTTON@{LEFT\_BUTTON}!TwoDE::Input@{TwoDE::Input}}\index{TwoDE::Input@{TwoDE::Input}!LEFT\_BUTTON@{LEFT\_BUTTON}}}\mbox{\Hypertarget{class_two_d_e_1_1_input_addb3f892164e2a86f3bc0d76f940fdc7ae783556d1c8908d349f457eaaa97eca7}\label{class_two_d_e_1_1_input_addb3f892164e2a86f3bc0d76f940fdc7ae783556d1c8908d349f457eaaa97eca7}} 
+LEFT\+\_\+\+BUTTON&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RIGHT\_BUTTON@{RIGHT\_BUTTON}!TwoDE::Input@{TwoDE::Input}}\index{TwoDE::Input@{TwoDE::Input}!RIGHT\_BUTTON@{RIGHT\_BUTTON}}}\mbox{\Hypertarget{class_two_d_e_1_1_input_addb3f892164e2a86f3bc0d76f940fdc7a8fb6e807dce52cde3b4e2343ac3f47e8}\label{class_two_d_e_1_1_input_addb3f892164e2a86f3bc0d76f940fdc7a8fb6e807dce52cde3b4e2343ac3f47e8}} 
+RIGHT\+\_\+\+BUTTON&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MIDDLE\_BUTTON@{MIDDLE\_BUTTON}!TwoDE::Input@{TwoDE::Input}}\index{TwoDE::Input@{TwoDE::Input}!MIDDLE\_BUTTON@{MIDDLE\_BUTTON}}}\mbox{\Hypertarget{class_two_d_e_1_1_input_addb3f892164e2a86f3bc0d76f940fdc7a9ecf659a2e92bc5120f49c8c29897ce2}\label{class_two_d_e_1_1_input_addb3f892164e2a86f3bc0d76f940fdc7a9ecf659a2e92bc5120f49c8c29897ce2}} 
+MIDDLE\+\_\+\+BUTTON&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_two_d_e_1_1_input_aa44d81a3a2851bd91caa7ef4dcaf1130}\label{class_two_d_e_1_1_input_aa44d81a3a2851bd91caa7ef4dcaf1130}} 
+\index{TwoDE::Input@{TwoDE::Input}!buttonClicked@{buttonClicked}}
+\index{buttonClicked@{buttonClicked}!TwoDE::Input@{TwoDE::Input}}
+\doxysubsubsection{\texorpdfstring{buttonClicked()}{buttonClicked()}}
+{\footnotesize\ttfamily void Two\+DE\+::\+Input\+::button\+Clicked (\begin{DoxyParamCaption}\item[{int}]{button }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_two_d_e_1_1_input_adf75172dc29f67bf4265b0f26cc88e3f}\label{class_two_d_e_1_1_input_adf75172dc29f67bf4265b0f26cc88e3f}} 
+\index{TwoDE::Input@{TwoDE::Input}!buttonPressed@{buttonPressed}}
+\index{buttonPressed@{buttonPressed}!TwoDE::Input@{TwoDE::Input}}
+\doxysubsubsection{\texorpdfstring{buttonPressed()}{buttonPressed()}}
+{\footnotesize\ttfamily bool Two\+DE\+::\+Input\+::button\+Pressed (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_two_d_e_1_1_input_affb5b6f2780f04eda866bec2d200b726}{BUTTON}}}]{button }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_two_d_e_1_1_input_abfa74705b761393caf74c131e8d82617}\label{class_two_d_e_1_1_input_abfa74705b761393caf74c131e8d82617}} 
+\index{TwoDE::Input@{TwoDE::Input}!buttonReleased@{buttonReleased}}
+\index{buttonReleased@{buttonReleased}!TwoDE::Input@{TwoDE::Input}}
+\doxysubsubsection{\texorpdfstring{buttonReleased()}{buttonReleased()}}
+{\footnotesize\ttfamily void Two\+DE\+::\+Input\+::button\+Released (\begin{DoxyParamCaption}\item[{int}]{button }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_two_d_e_1_1_input_a8f3e056152c1147b724f30a3e985049d}\label{class_two_d_e_1_1_input_a8f3e056152c1147b724f30a3e985049d}} 
+\index{TwoDE::Input@{TwoDE::Input}!getCursorPosition@{getCursorPosition}}
+\index{getCursorPosition@{getCursorPosition}!TwoDE::Input@{TwoDE::Input}}
+\doxysubsubsection{\texorpdfstring{getCursorPosition()}{getCursorPosition()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_two_d_e_1_1_vector2}{Vector2}} Two\+DE\+::\+Input\+::get\+Cursor\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_two_d_e_1_1_input_abe96ef02600015aa40f0c7d7a0934d34}\label{class_two_d_e_1_1_input_abe96ef02600015aa40f0c7d7a0934d34}} 
+\index{TwoDE::Input@{TwoDE::Input}!init@{init}}
+\index{init@{init}!TwoDE::Input@{TwoDE::Input}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily void Two\+DE\+::\+Input\+::init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_two_d_e_1_1_input_a31fc6a7cf1070b07f652017325bbfb5b}\label{class_two_d_e_1_1_input_a31fc6a7cf1070b07f652017325bbfb5b}} 
+\index{TwoDE::Input@{TwoDE::Input}!mouseClick@{mouseClick}}
+\index{mouseClick@{mouseClick}!TwoDE::Input@{TwoDE::Input}}
+\doxysubsubsection{\texorpdfstring{mouseClick()}{mouseClick()}}
+{\footnotesize\ttfamily void Two\+DE\+::\+Input\+::mouse\+Click (\begin{DoxyParamCaption}\item[{int}]{button,  }\item[{\mbox{\hyperlink{class_two_d_e_1_1_vector2}{Vector2}}}]{position }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_two_d_e_1_1_input_ab7ea6c1a146f35c2c430dd0d2ef5bb91}\label{class_two_d_e_1_1_input_ab7ea6c1a146f35c2c430dd0d2ef5bb91}} 
+\index{TwoDE::Input@{TwoDE::Input}!mouseRelease@{mouseRelease}}
+\index{mouseRelease@{mouseRelease}!TwoDE::Input@{TwoDE::Input}}
+\doxysubsubsection{\texorpdfstring{mouseRelease()}{mouseRelease()}}
+{\footnotesize\ttfamily void Two\+DE\+::\+Input\+::mouse\+Release (\begin{DoxyParamCaption}\item[{int}]{button,  }\item[{\mbox{\hyperlink{class_two_d_e_1_1_vector2}{Vector2}}}]{position }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_two_d_e_1_1_input_a981e09b391257036840c60c3b00df38c}\label{class_two_d_e_1_1_input_a981e09b391257036840c60c3b00df38c}} 
+\index{TwoDE::Input@{TwoDE::Input}!mouseScroll@{mouseScroll}}
+\index{mouseScroll@{mouseScroll}!TwoDE::Input@{TwoDE::Input}}
+\doxysubsubsection{\texorpdfstring{mouseScroll()}{mouseScroll()}}
+{\footnotesize\ttfamily void Two\+DE\+::\+Input\+::mouse\+Scroll (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_two_d_e_1_1_vector2}{Vector2}}}]{position,  }\item[{\mbox{\hyperlink{class_two_d_e_1_1_vector2}{Vector2}}}]{offset }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_two_d_e_1_1_input_a82f3be532d640c097691559477105bb0}\label{class_two_d_e_1_1_input_a82f3be532d640c097691559477105bb0}} 
+\index{TwoDE::Input@{TwoDE::Input}!setCursorPosition@{setCursorPosition}}
+\index{setCursorPosition@{setCursorPosition}!TwoDE::Input@{TwoDE::Input}}
+\doxysubsubsection{\texorpdfstring{setCursorPosition()}{setCursorPosition()}}
+{\footnotesize\ttfamily void Two\+DE\+::\+Input\+::set\+Cursor\+Position (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_two_d_e_1_1_vector2}{Vector2}}}]{position }\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{_input_8h}{Input.\+h}}\item 
+src/\mbox{\hyperlink{_input_8cpp}{Input.\+cpp}}\end{DoxyCompactItemize}

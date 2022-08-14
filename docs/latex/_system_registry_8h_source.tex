@@ -1,0 +1,41 @@
+\hypertarget{_system_registry_8h_source}{}\doxysection{System\+Registry.\+h}
+\label{_system_registry_8h_source}\index{src/SystemRegistry.h@{src/SystemRegistry.h}}
+\mbox{\hyperlink{_system_registry_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include <unordered\_map>}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <typeindex>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <memory>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_i_system_8h}{Systems/ISystem.h}}"{}}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_core_8h}{Core.h}}"{}}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_two_d_e}{TwoDE}}}
+\DoxyCodeLine{10 \{}
+\DoxyCodeLine{11     \textcolor{keyword}{class }\mbox{\hyperlink{_core_8h_a441750824a16f7ae56bd40c3a3346197}{TWO\_DLL}} \mbox{\hyperlink{class_two_d_e_1_1_system_registry}{SystemRegistry}}}
+\DoxyCodeLine{12     \{}
+\DoxyCodeLine{13         std::unordered\_map<std::type\_index, std::shared\_ptr<ISystem>> activeSystems;}
+\DoxyCodeLine{14     \textcolor{keyword}{public}:}
+\DoxyCodeLine{15         \textcolor{keyword}{const} std::unordered\_map<std::type\_index, std::shared\_ptr<ISystem>> \&getActiveSystems() \textcolor{keyword}{const};}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17     \textcolor{keyword}{public}:}
+\DoxyCodeLine{18         \textcolor{keywordtype}{void} init();}
+\DoxyCodeLine{19         \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, \textcolor{keyword}{typename} ...TArgs>}
+\DoxyCodeLine{20         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_two_d_e_1_1_system_registry_a23b7a8bdf13bd3c06eefebccbb98f040}{subscribe}}(TArgs \&\&... args)}
+\DoxyCodeLine{21         \{}
+\DoxyCodeLine{22             std::shared\_ptr<T> system = std::make\_shared<T>(std::forward<TArgs>(args)...);}
+\DoxyCodeLine{23             activeSystems.insert(std::make\_pair(std::type\_index(\textcolor{keyword}{typeid}(T)), system));}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25             system-\/>start();}
+\DoxyCodeLine{26         \}}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28         \textcolor{keyword}{template}<\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{29         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_two_d_e_1_1_system_registry_a3866837e5c3b17096e5d7fa909d6128e}{unsubscribe}}()}
+\DoxyCodeLine{30         \{}
+\DoxyCodeLine{31             \textcolor{keyword}{auto} system = activeSystems.find(std::type\_index(\textcolor{keyword}{typeid}(T)));}
+\DoxyCodeLine{32             activeSystems.erase(system);}
+\DoxyCodeLine{33         \}}
+\DoxyCodeLine{34     \};}
+\DoxyCodeLine{35 \}}
+
+\end{DoxyCode}

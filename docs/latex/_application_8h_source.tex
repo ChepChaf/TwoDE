@@ -1,0 +1,43 @@
+\hypertarget{_application_8h_source}{}\doxysection{Application.\+h}
+\label{_application_8h_source}\index{src/Application.h@{src/Application.h}}
+\mbox{\hyperlink{_application_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_core_8h}{Core.h}}"{}}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_resource_manager_8h}{ResourceManager.h}}"{}}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_window_8h}{Window.h}}"{}}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_renderer_8h}{Renderer.h}}"{}}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_scene_8h}{Scene.h}}"{}}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_locator_8h}{Locator.h}}"{}}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_system_registry_8h}{SystemRegistry.h}}"{}}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <memory>}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include <ctime>}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_two_d_e}{TwoDE}}}
+\DoxyCodeLine{16 \{}
+\DoxyCodeLine{17     \textcolor{keyword}{class }\mbox{\hyperlink{_core_8h_a441750824a16f7ae56bd40c3a3346197}{TWO\_DLL}} \mbox{\hyperlink{class_two_d_e_1_1_application}{Application}}}
+\DoxyCodeLine{18     \{}
+\DoxyCodeLine{19         \textcolor{keywordtype}{long} elapsed = 0;}
+\DoxyCodeLine{20         \mbox{\hyperlink{class_two_d_e_1_1_window}{Window}}* window = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{21     \textcolor{keyword}{protected}:}
+\DoxyCodeLine{22         \mbox{\hyperlink{namespace_two_d_e_a8aa8b3db724f82b64d04d692529308c1}{Entity}} \mbox{\hyperlink{class_two_d_e_1_1_application_a1f80afd30148d945f6f366a18e801587}{camera}};}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24         \mbox{\hyperlink{class_two_d_e_1_1_renderer}{Renderer}}* \mbox{\hyperlink{class_two_d_e_1_1_application_a52b13d453e2a356794d0410af40947b3}{renderer}};}
+\DoxyCodeLine{25     \textcolor{keyword}{public}:}
+\DoxyCodeLine{26         \textcolor{keywordtype}{void} init();}
+\DoxyCodeLine{27         \textcolor{keywordtype}{bool} shouldClose();}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_two_d_e_1_1_application_a9722c3330e33872ed03401069da57634}{start}}() = 0;}
+\DoxyCodeLine{30         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} update();}
+\DoxyCodeLine{31         \mbox{\hyperlink{namespace_two_d_e_a4837278abc6c1cbb94bb666a581dcce8}{EntityRegistry}}* getEntityRegistry();}
+\DoxyCodeLine{32         \mbox{\hyperlink{class_two_d_e_1_1_system_registry}{SystemRegistry}}* getSystemRegistry();}
+\DoxyCodeLine{33     \};}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35     \mbox{\hyperlink{class_two_d_e_1_1_application}{Application}}* \mbox{\hyperlink{namespace_two_d_e_a4857aeef5f1a6875c49dc31ffe4c8da1}{createApplication}}();}
+\DoxyCodeLine{36 \}}
+\DoxyCodeLine{37 }
+
+\end{DoxyCode}

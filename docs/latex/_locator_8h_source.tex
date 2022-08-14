@@ -1,0 +1,60 @@
+\hypertarget{_locator_8h_source}{}\doxysection{Locator.\+h}
+\label{_locator_8h_source}\index{src/Locator.h@{src/Locator.h}}
+\mbox{\hyperlink{_locator_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_core_8h}{Core.h}}"{}}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_input_8h}{Input.h}}"{}}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_pub_sub_8h}{PubSub.h}}"{}}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_resource_manager_8h}{ResourceManager.h}}"{}}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_scene_8h}{Scene.h}}"{}}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_system_registry_8h}{SystemRegistry.h}}"{}}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_transform_8h}{Transform.h}}"{}}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <memory>}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_two_d_e}{TwoDE}}}
+\DoxyCodeLine{15 \{}
+\DoxyCodeLine{16     \textcolor{keyword}{class }\mbox{\hyperlink{_core_8h_a441750824a16f7ae56bd40c3a3346197}{TWO\_DLL}} \mbox{\hyperlink{class_two_d_e_1_1_locator}{Locator}}}
+\DoxyCodeLine{17     \{}
+\DoxyCodeLine{18         \mbox{\hyperlink{class_two_d_e_1_1_input}{Input}} inputSystem;}
+\DoxyCodeLine{19         \mbox{\hyperlink{class_two_d_e_1_1_pub_sub}{PubSub}} eventSystem;}
+\DoxyCodeLine{20         \mbox{\hyperlink{class_two_d_e_1_1_resource_manager}{ResourceManager}} resourceManagerSystem;}
+\DoxyCodeLine{21         \mbox{\hyperlink{class_two_d_e_1_1_scene}{Scene}} sceneManagerSystem;}
+\DoxyCodeLine{22         \mbox{\hyperlink{class_two_d_e_1_1_system_registry}{SystemRegistry}} systemRegistry;}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24         \mbox{\hyperlink{namespace_two_d_e_a8aa8b3db724f82b64d04d692529308c1}{Entity}} camera;}
+\DoxyCodeLine{25     \textcolor{keyword}{public}:}
+\DoxyCodeLine{26         \textcolor{keyword}{inline} \textcolor{keyword}{static} \textcolor{keywordtype}{void}}
+\DoxyCodeLine{27         \mbox{\hyperlink{class_two_d_e_1_1_locator_aa022e2f747582cb41f7452775faa15df}{init}}(\mbox{\hyperlink{class_two_d_e_1_1_input}{Input}} \&input, \mbox{\hyperlink{class_two_d_e_1_1_pub_sub}{PubSub}} \&pubsub, \mbox{\hyperlink{class_two_d_e_1_1_resource_manager}{ResourceManager}} \&rm, \mbox{\hyperlink{class_two_d_e_1_1_scene}{Scene}} \&scene, \mbox{\hyperlink{class_two_d_e_1_1_system_registry}{SystemRegistry}} \&systemRegistry)}
+\DoxyCodeLine{28         \{}
+\DoxyCodeLine{29             getLocator().initLocator(input, pubsub, rm, scene, systemRegistry);}
+\DoxyCodeLine{30         \}}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32         \textcolor{keyword}{inline} \textcolor{keyword}{static} \mbox{\hyperlink{class_two_d_e_1_1_locator}{Locator}} \&\mbox{\hyperlink{class_two_d_e_1_1_locator_ac6c0218f0b8683603896a08824a04c25}{getLocator}}()}
+\DoxyCodeLine{33         \{}
+\DoxyCodeLine{34             \textcolor{keyword}{static} \mbox{\hyperlink{class_two_d_e_1_1_locator}{Locator}} locator;}
+\DoxyCodeLine{35             \textcolor{keywordflow}{return} locator;}
+\DoxyCodeLine{36         \}}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38         \textcolor{keywordtype}{void} initLocator(\mbox{\hyperlink{class_two_d_e_1_1_input}{Input}} \&, \mbox{\hyperlink{class_two_d_e_1_1_pub_sub}{PubSub}} \&, \mbox{\hyperlink{class_two_d_e_1_1_resource_manager}{ResourceManager}} \&, \mbox{\hyperlink{class_two_d_e_1_1_scene}{Scene}} \&, \mbox{\hyperlink{class_two_d_e_1_1_system_registry}{SystemRegistry}} \&);}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40         \mbox{\hyperlink{class_two_d_e_1_1_input}{Input}} \&getInputSystem();}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42         \mbox{\hyperlink{class_two_d_e_1_1_pub_sub}{PubSub}} \&getEventSystem();}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44         \mbox{\hyperlink{class_two_d_e_1_1_resource_manager}{ResourceManager}} \&getResourceManagerSystem();}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46         \mbox{\hyperlink{class_two_d_e_1_1_scene}{Scene}} \&getSceneManagerSystem();}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48         \mbox{\hyperlink{class_two_d_e_1_1_system_registry}{SystemRegistry}} \&getSystemRegistry();}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50         \mbox{\hyperlink{class_two_d_e_1_1_transform}{Transform}} \&getCamera();}
+\DoxyCodeLine{51         \mbox{\hyperlink{namespace_two_d_e_a8aa8b3db724f82b64d04d692529308c1}{Entity}} \&getCameraEntity();}
+\DoxyCodeLine{52     \};}
+\DoxyCodeLine{53 \}}
+\DoxyCodeLine{54 }
+
+\end{DoxyCode}

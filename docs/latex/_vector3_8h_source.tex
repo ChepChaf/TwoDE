@@ -1,0 +1,41 @@
+\hypertarget{_vector3_8h_source}{}\doxysection{Vector3.\+h}
+\label{_vector3_8h_source}\index{src/Vector3.h@{src/Vector3.h}}
+\mbox{\hyperlink{_vector3_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_core_8h}{Core.h}}"{}}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_vector2_8h}{Vector2.h}}"{}}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include "{}spdlog/fmt/ostr.h"{}}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_two_d_e}{TwoDE}}}
+\DoxyCodeLine{10 \{}
+\DoxyCodeLine{11     \textcolor{keyword}{class }\mbox{\hyperlink{_core_8h_a441750824a16f7ae56bd40c3a3346197}{TWO\_DLL}} \mbox{\hyperlink{class_two_d_e_1_1_vector3}{Vector3}}}
+\DoxyCodeLine{12     \{}
+\DoxyCodeLine{13     \textcolor{keyword}{public}:}
+\DoxyCodeLine{14         \textcolor{keywordtype}{float} x = 0, y = 0, z = 0;}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16         \mbox{\hyperlink{class_two_d_e_1_1_vector3_a57e95b718cab4d435bc57c9e30cf5854}{Vector3}}() \{\}}
+\DoxyCodeLine{17         \mbox{\hyperlink{class_two_d_e_1_1_vector3_a94ede3aa3e0e98e3ea10cf0a195b704c}{Vector3}}(\mbox{\hyperlink{class_two_d_e_1_1_vector2}{Vector2}} other) : x(other.getX()), y(other.getY()) \{\}}
+\DoxyCodeLine{18         \mbox{\hyperlink{class_two_d_e_1_1_vector3_ae44f0580fe2e2b4faaa03fb03954420a}{Vector3}}(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} z) : x(x), y(y), z(z) \{\}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20         \textcolor{keywordtype}{void} operator+=(\mbox{\hyperlink{class_two_d_e_1_1_vector3}{Vector3}} other);}
+\DoxyCodeLine{21         \textcolor{keywordtype}{void} operator+=(\mbox{\hyperlink{class_two_d_e_1_1_vector2}{Vector2}} other);}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23         \mbox{\hyperlink{class_two_d_e_1_1_vector3}{Vector3}} operator+(\mbox{\hyperlink{class_two_d_e_1_1_vector3}{Vector3}} other);}
+\DoxyCodeLine{24         \mbox{\hyperlink{class_two_d_e_1_1_vector3}{Vector3}} operator+(\textcolor{keywordtype}{float} scalar);}
+\DoxyCodeLine{25         \mbox{\hyperlink{class_two_d_e_1_1_vector3}{Vector3}} operator-\/(\mbox{\hyperlink{class_two_d_e_1_1_vector3}{Vector3}} other);}
+\DoxyCodeLine{26         \mbox{\hyperlink{class_two_d_e_1_1_vector3}{Vector3}} operator-\/(\textcolor{keywordtype}{float} scalar);}
+\DoxyCodeLine{27         \mbox{\hyperlink{class_two_d_e_1_1_vector3}{Vector3}} operator+(\mbox{\hyperlink{class_two_d_e_1_1_vector2}{Vector2}} other);}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29         \mbox{\hyperlink{class_two_d_e_1_1_vector3}{Vector3}} \mbox{\hyperlink{namespace_two_d_e_ab0a4fe48657730e2a32875c1ab6f033b}{operator*}}(\textcolor{keywordtype}{float} scalar);}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31         \textcolor{keywordtype}{float} dot(\mbox{\hyperlink{class_two_d_e_1_1_vector3}{Vector3}} other);}
+\DoxyCodeLine{32         \mbox{\hyperlink{class_two_d_e_1_1_vector3}{Vector3}} normalize();}
+\DoxyCodeLine{33         \textcolor{keywordtype}{float} magnitude();}
+\DoxyCodeLine{34     \};}
+\DoxyCodeLine{35 \}}
+
+\end{DoxyCode}

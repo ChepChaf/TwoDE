@@ -1,0 +1,26 @@
+\hypertarget{_circle_collider_component2_d_8h_source}{}\doxysection{Circle\+Collider\+Component2\+D.\+h}
+\label{_circle_collider_component2_d_8h_source}\index{src/Components/CircleColliderComponent2D.h@{src/Components/CircleColliderComponent2D.h}}
+\mbox{\hyperlink{_circle_collider_component2_d_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_collider_component2_d_8h}{ColliderComponent2D.h}}"{}}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_two_d_e}{TwoDE}}}
+\DoxyCodeLine{6 \{}
+\DoxyCodeLine{7     \textcolor{keyword}{class }\mbox{\hyperlink{class_two_d_e_1_1_circle_collider_component2_d}{CircleColliderComponent2D}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_two_d_e_1_1_collider_component2_d}{ColliderComponent2D}}}
+\DoxyCodeLine{8     \{}
+\DoxyCodeLine{9         \textcolor{keywordtype}{float} radius = 0.f;}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11     \textcolor{keyword}{public}:}
+\DoxyCodeLine{12         \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_two_d_e_1_1_circle_collider_component2_d_a8a5a56f834e60fdc1cca858f3c96de11}{collision}}(\mbox{\hyperlink{class_two_d_e_1_1_vector3}{Vector3}} position, \mbox{\hyperlink{class_two_d_e_1_1_vector3}{Vector3}} collisionPoint) \textcolor{keyword}{override};}
+\DoxyCodeLine{13         \mbox{\hyperlink{class_two_d_e_1_1_circle_collider_component2_d_ad1dc73e855f36dbf36f9d4287b83860a}{CircleColliderComponent2D}}(\textcolor{keywordtype}{float} radius) : radius(radius) \{\}}
+\DoxyCodeLine{14     \};}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_two_d_e_1_1_circle_collider_component2_d_a8a5a56f834e60fdc1cca858f3c96de11}{CircleColliderComponent2D::collision}}(\mbox{\hyperlink{class_two_d_e_1_1_vector3}{Vector3}} position, \mbox{\hyperlink{class_two_d_e_1_1_vector3}{Vector3}} collisionPoint)}
+\DoxyCodeLine{17     \{}
+\DoxyCodeLine{18         \textcolor{keywordflow}{return} (collisionPoint-\/position).magnitude() < radius;}
+\DoxyCodeLine{19     \}}
+\DoxyCodeLine{20 \}}
+
+\end{DoxyCode}

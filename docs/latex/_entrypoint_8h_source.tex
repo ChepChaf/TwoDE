@@ -1,0 +1,28 @@
+\hypertarget{_entrypoint_8h_source}{}\doxysection{Entrypoint.\+h}
+\label{_entrypoint_8h_source}\index{src/Entrypoint.h@{src/Entrypoint.h}}
+\mbox{\hyperlink{_entrypoint_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_two_d_e_8h}{TwoDE.h}}"{}}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_window_8h}{Window.h}}"{}}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_renderer_8h}{Renderer.h}}"{}}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{keyword}{extern} \mbox{\hyperlink{class_two_d_e_1_1_application}{TwoDE::Application}}* \mbox{\hyperlink{namespace_two_d_e_a4857aeef5f1a6875c49dc31ffe4c8da1}{TwoDE::createApplication}}();}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{keywordtype}{int} \mbox{\hyperlink{_entrypoint_8h_a3c04138a5bfe5d72780bb7e82a18e627}{main}}(\textcolor{keywordtype}{int} argc, \textcolor{keywordtype}{char}** argv)}
+\DoxyCodeLine{12 \{}
+\DoxyCodeLine{13     \textcolor{keyword}{auto} app = \mbox{\hyperlink{namespace_two_d_e_a4857aeef5f1a6875c49dc31ffe4c8da1}{TwoDE::createApplication}}();}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15     app-\/>init();}
+\DoxyCodeLine{16     app-\/>start();}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18     \textcolor{keywordflow}{while}(!app-\/>shouldClose())}
+\DoxyCodeLine{19         app-\/>update();}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21     \textcolor{keyword}{delete} app;}
+\DoxyCodeLine{22 \}}
+
+\end{DoxyCode}

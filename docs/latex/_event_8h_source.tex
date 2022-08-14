@@ -1,0 +1,33 @@
+\hypertarget{_event_8h_source}{}\doxysection{Event.\+h}
+\label{_event_8h_source}\index{src/Event.h@{src/Event.h}}
+\mbox{\hyperlink{_event_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_core_8h}{Core.h}}"{}}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <functional>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <any>}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_two_d_e}{TwoDE}}}
+\DoxyCodeLine{9 \{   }
+\DoxyCodeLine{10     \textcolor{keyword}{class }\mbox{\hyperlink{_core_8h_a441750824a16f7ae56bd40c3a3346197}{TWO\_DLL}} \mbox{\hyperlink{class_two_d_e_1_1_event}{Event}}}
+\DoxyCodeLine{11     \{}
+\DoxyCodeLine{12         \textcolor{keyword}{template}<\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{13         \textcolor{keyword}{using }callback = std::function<void(T\&)>;}
+\DoxyCodeLine{14         }
+\DoxyCodeLine{15         std::any fun;}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17     \textcolor{keyword}{public}:}
+\DoxyCodeLine{18         \textcolor{keyword}{template}<\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{19         \mbox{\hyperlink{class_two_d_e_1_1_event_a563f3ae95b295fc506e4e3b1da81ae8f}{Event}}(callback<T> fun) : fun(fun) \{\}}
+\DoxyCodeLine{20         }
+\DoxyCodeLine{21         \textcolor{keyword}{template}<\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{22         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_two_d_e_1_1_event_aade0fbc32c38a8cebd2f8c11ed2bfb6c}{call}}(T params)}
+\DoxyCodeLine{23         \{}
+\DoxyCodeLine{24             std::any\_cast<callback<T>>(fun)(params);}
+\DoxyCodeLine{25         \}}
+\DoxyCodeLine{26     \};}
+\DoxyCodeLine{27 \}}
+
+\end{DoxyCode}

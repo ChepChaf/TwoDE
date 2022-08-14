@@ -1,0 +1,40 @@
+\hypertarget{_pub_sub_8h_source}{}\doxysection{Pub\+Sub.\+h}
+\label{_pub_sub_8h_source}\index{src/PubSub.h@{src/PubSub.h}}
+\mbox{\hyperlink{_pub_sub_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_core_8h}{Core.h}}"{}}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_event_8h}{Event.h}}"{}}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <functional>}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <unordered\_map>}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <any>}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_two_d_e}{TwoDE}}}
+\DoxyCodeLine{13 \{}
+\DoxyCodeLine{14     \textcolor{keyword}{class }\mbox{\hyperlink{_core_8h_a441750824a16f7ae56bd40c3a3346197}{TWO\_DLL}} \mbox{\hyperlink{class_two_d_e_1_1_pub_sub}{PubSub}}}
+\DoxyCodeLine{15     \{}
+\DoxyCodeLine{16         std::unordered\_map<std::string, std::vector<Event>> subscriptions;}
+\DoxyCodeLine{17     \textcolor{keyword}{public}:}
+\DoxyCodeLine{18         \textcolor{keyword}{template}<\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{19         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_two_d_e_1_1_pub_sub_aafe2413e677ea31621799a0141ba87e0}{publish}}(std::string topic, T\& params)}
+\DoxyCodeLine{20         \{}
+\DoxyCodeLine{21             \textcolor{keywordflow}{if} (subscriptions.find(topic) != subscriptions.end())}
+\DoxyCodeLine{22             \{}
+\DoxyCodeLine{23                 \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} event : subscriptions[topic])}
+\DoxyCodeLine{24                 \{}
+\DoxyCodeLine{25                     \textcolor{keyword}{event}.call(params);}
+\DoxyCodeLine{26                 \}}
+\DoxyCodeLine{27             \}}
+\DoxyCodeLine{28         \}}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30         \textcolor{keywordtype}{void} subscribe(std::string topic, \mbox{\hyperlink{class_two_d_e_1_1_event}{Event}} event);}
+\DoxyCodeLine{31         \textcolor{keywordtype}{void} init();}
+\DoxyCodeLine{32     \};}
+\DoxyCodeLine{33 \}}
+\DoxyCodeLine{34 }
+
+\end{DoxyCode}
