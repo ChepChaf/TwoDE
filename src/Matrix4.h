@@ -1,7 +1,5 @@
 #pragma once
 
-#include<glm/glm.hpp>
-
 #include "Core.h"
 #include "Vector2.h"
 #include "Vector3.h"
@@ -11,12 +9,13 @@ namespace TwoDE
 	class TWO_DLL Matrix4
 	{
 	public:
-		glm::mat4 mat{ 1.f };
+		float *mat;
 
-		Matrix4(){}
-		Matrix4(float val) : mat(glm::mat4(val)) {}
+		Matrix4();
+		Matrix4(float val);
+		Matrix4(float *val);
 
-		const float* value_ptr();
+		const float *value_ptr();
 
 		void translate(Vector2 vec);
 		void translate(Vector3 vec);
@@ -24,4 +23,3 @@ namespace TwoDE
 		void scale(Vector2 vec);
 	};
 }
-
