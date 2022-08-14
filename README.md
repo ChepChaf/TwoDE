@@ -13,25 +13,19 @@ it probably won't be usable on a productive environment.
 - [ ] Lua Scripting
 - [ ] ECS system
 
+## Dependencies:
+	- glew
+	- GLFW
+
 ## Building:
 - Windows:
 	TBD
 - Linux:
 If arch based:
-```
-yay -S cmake libxcb libfontenc libice libsm libxaw libxcomposite libxcursor libxdamage libxdmcp libxtst libxinerama libxkbfile libxrandr libxres libxss libxvmc xtrans xcb-util-wm xcb-util-image xcb-util-keysyms xcb-util-renderutil libxxf86vm libxv xkeyboard-config xcb-util util-linux-libs
-```
+	
+MacOS:
+	- brew install spdlog
 
-`pip install conan`
-
-`mkdir bin`
-
-`cd bin`
-
-`conan install .. --build=missing`
-
-`cmake .. -DCMAKE_TOOLCHAIN_FILE=conan_toolchain.cmake`
-  
 ## Usage:
 
 ### Basic structure

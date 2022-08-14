@@ -1,10 +1,10 @@
-include(${TWODE_BIN}/conanbuildinfo.cmake)
-conan_basic_setup()
-
 add_executable(Sandbox SandboxApp.cpp)
 
-target_link_libraries(Sandbox PRIVATE TwoDE ${CONAN_LIBS})
-target_include_directories(Sandbox PUBLIC ${TWODE_SOURCE} ${CONAN_INCLUDE_DIRS})
+link_directories(${TWODE_LIB})
+include_directories(${TWODE_SOURCE})
+
+target_link_libraries(Sandbox PRIVATE TwoDE)
+target_include_directories(Sandbox PUBLIC ${TWODE_SOURCE})
 
 message ("TWODE_BIN:" ${TWODE_BIN})
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${TWODE_BIN})

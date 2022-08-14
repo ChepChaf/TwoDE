@@ -1,11 +1,16 @@
 [requires]
-entt/3.8.0
+entt/3.10.3
 spdlog/1.10.0
 glm/0.9.9.8
 glfw/3.3.4
 glew/2.2.0
 
+
+
 [generators]
 cmake
 CMakeDeps
 CMakeToolchain
+
+[layout]
+cmake_layout
