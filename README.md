@@ -24,7 +24,7 @@ it probably won't be usable on a productive environment.
 - Linux & MacOS
 	- mkdir build && cd build
 	- cmake "Unix Makefiles" ..
-	- make
+	- make all
 ## Usage:
 
 ### Basic structure
