@@ -4,14 +4,14 @@ link_directories(${TWODE_LIB})
 include_directories(${TWODE_SOURCE})
 
 target_link_libraries(Sandbox PRIVATE TwoDE)
-target_include_directories(Sandbox PUBLIC ${TWODE_SOURCE})
+target_include_directories(Sandbox PUBLIC ${TWODE_SOURCE} ${VENDOR_DIR})
 
 message ("TWODE_BIN:" ${TWODE_BIN})
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${TWODE_BIN})
 
 set_property(TARGET Sandbox PROPERTY FOLDER "tests")
 set_target_properties(Sandbox PROPERTIES
-                      RUNTIME_OUTPUT_DIRECTORY ${TWODE_BIN})
+                      RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/bin)
 
 install (TARGETS Sandbox
     RUNTIME DESTINATION ${TWODE_BIN}/_install)

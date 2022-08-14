@@ -4,14 +4,14 @@ link_directories(${TWODE_LIB})
 include_directories(${TWODE_SOURCE})
 
 target_link_libraries(Primitives PRIVATE TwoDE)
-target_include_directories(Primitives PRIVATE ${TWODE_SOURCE})
+target_include_directories(Primitives PRIVATE ${TWODE_SOURCE} ${VENDOR_DIR})
 
 message ("TWODE_BIN:" ${TWODE_BIN})
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${TWODE_BIN})
 
 set_property(TARGET Primitives PROPERTY FOLDER "tests")
 set_target_properties(Primitives PROPERTIES
-                      RUNTIME_OUTPUT_DIRECTORY ${TWODE_BIN})
+                      RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/bin)
 
 install (TARGETS Primitives
     RUNTIME DESTINATION ${TWODE_BIN}/_install)
