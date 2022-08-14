@@ -1,4 +1,4 @@
-#include <GL/glew.h>
+#include "GL/glew.h"
 
 #include "Logger.h"
 #include "OpenGLRenderer.h"
@@ -6,6 +6,7 @@
 #include "EngineMath.h"
 
 #include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtc/type_ptr.hpp>
 
 #include <iostream>
 #include <cmath>
@@ -19,8 +20,7 @@ messageCallback(GLenum source,
                 const GLchar *message,
                 const void *userParam)
 {
-    std::cerr << "GL CALLBACK: " << (type == GL_DEBUG_TYPE_ERROR ? "** GL ERROR **" : "") <<
-              "type = " << type << "\nseverity = " << severity << "\nmessage = " << message << std::endl;
+    std::cerr << "GL CALLBACK: " << (type == GL_DEBUG_TYPE_ERROR ? "** GL ERROR **" : "") << "type = " << type << "\nseverity = " << severity << "\nmessage = " << message << std::endl;
 }
 
 namespace TwoDE
@@ -96,14 +96,14 @@ namespace TwoDE
     void OpenGLRenderer::checkGLError()
     {
         GLenum err;
-        while ((err = glGetError()) != GL_NO_ERROR) {
+        while ((err = glGetError()) != GL_NO_ERROR)
+        {
             TWODE_CORE_ERROR(err);
         }
     }
 
     int OpenGLRenderer::init(int width, int height)
     {
-        // TODO: Find way to abstract this so it's not dependent on glfw
         GLenum err = glewInit();
         if (GLEW_OK != err)
             return -1;
@@ -116,21 +116,21 @@ namespace TwoDE
         glEnable(GL_BLEND);
 
         glEnable(GL_DEBUG_OUTPUT);
-        glDebugMessageCallback(messageCallback, 0);
-        glDebugMessageControl(GL_DONT_CARE, GL_DEBUG_TYPE_OTHER, GL_DEBUG_SEVERITY_NOTIFICATION, 0, 0, GL_FALSE);
+        // glDebugMessageCallback(messageCallback, 0);
+        // glDebugMessageControl(GL_DONT_CARE, GL_DEBUG_TYPE_OTHER, GL_DEBUG_SEVERITY_NOTIFICATION, 0, 0, GL_FALSE);
 
-        glCreateVertexArrays(1, &vao);
+        glGenVertexArrays(1, &vao);
         glBindVertexArray(vao);
 
-        glCreateBuffers(1, &vbo);
+        glGenBuffers(1, &vbo);
         glBindBuffer(GL_ARRAY_BUFFER, vbo);
 
         glBufferData(GL_ARRAY_BUFFER, 16 * sizeof(float) * maxNumberSprites, 0, GL_DYNAMIC_DRAW);
 
-        glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 4 * sizeof(float), (void *) 0);
+        glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 4 * sizeof(float), (void *)0);
         glEnableVertexAttribArray(0);
 
-        glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 4 * sizeof(float), (void *) (2 * sizeof(float)));
+        glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 4 * sizeof(float), (void *)(2 * sizeof(float)));
         glEnableVertexAttribArray(1);
 
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
@@ -158,16 +158,14 @@ namespace TwoDE
     void OpenGLRenderer::draw(Transform &viewport)
     {
         float square[] = {
-                0.5f, 0.5f, 1.f, 1.f,
-                0.5f, -0.5f, 1.f, 0.f,
-                -0.5f, -0.5f, 0.f, 0.f,
-                -0.5f, 0.5f, 0.f, 1.f
-        };
+            0.5f, 0.5f, 1.f, 1.f,
+            0.5f, -0.5f, 1.f, 0.f,
+            -0.5f, -0.5f, 0.f, 0.f,
+            -0.5f, 0.5f, 0.f, 1.f};
 
         unsigned int indices[]{
-                0, 2, 1,
-                0, 3, 2
-        };
+            0, 2, 1,
+            0, 3, 2};
 
         glBindVertexArray(vao);
         glBindBuffer(GL_ARRAY_BUFFER, vbo);
@@ -175,8 +173,8 @@ namespace TwoDE
         OpenGLRenderer::defaultShader.use();
 
         glm::mat4 ortho = glm::ortho(0.0f, m_Width, 0.0f, m_Height, -10.0f, 10.0f);
-        Matrix4 projection;
-        projection.mat = ortho;
+        auto vPtr = glm::value_ptr(ortho);
+        auto projection = Matrix4(vPtr);
 
         OpenGLRenderer::defaultShader.setMatrix4("projection", projection);
         OpenGLRenderer::defaultShader.setMatrix4("view", viewport.getMatrix());
@@ -188,17 +186,18 @@ namespace TwoDE
 
         auto registry = Locator::getLocator().getSceneManagerSystem().GetRegistry();
 
-        registry->sort<Sprite>([&](const entt::entity lhs, const entt::entity rhs) {
+        registry->sort<Sprite>([&](const entt::entity lhs, const entt::entity rhs)
+                               {
             const auto &lTrans = registry->get<Transform>(lhs);
             const auto &rTrans = registry->get<Transform>(rhs);
 
-            return lTrans.m_Position.z < rTrans.m_Position.z;
-        });
+            return lTrans.m_Position.z < rTrans.m_Position.z; });
 
         auto view = registry->view<Sprite, Transform>();
 
         int i = 0;
-        for (auto entity : view) {
+        for (auto entity : view)
+        {
             auto &sprite = view.get<Sprite>(entity);
             auto &transform = view.get<Transform>(entity);
 
@@ -206,7 +205,8 @@ namespace TwoDE
 
             OpenGLRenderer::defaultShader.setMatrix4("transform", transform.getMatrix());
 
-            if (!sprite.binded) {
+            if (!sprite.binded)
+            {
                 glGenTextures(1, &sprite.ID);
 
                 glBindTexture(GL_TEXTURE_2D, sprite.ID);
