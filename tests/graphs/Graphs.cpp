@@ -20,7 +20,7 @@ void GraphsApp::start()
     auto& cam = registry->get<TwoDE::Transform>(camera);
 
     cam.translate({-10, 0});
-    cam.scale({25.f, 25.f});
+    cam.scale({25.f, 25.f, 0.0f});
 
     TwoDE::Locator::getLocator().getSystemRegistry().subscribe<NodeSystem>();
 }

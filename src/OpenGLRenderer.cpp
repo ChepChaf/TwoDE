@@ -3,7 +3,6 @@
 #include "Logger.h"
 #include "OpenGLRenderer.h"
 #include "Locator.h"
-#include "EngineMath.h"
 
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
@@ -48,44 +47,45 @@ namespace TwoDE
         return ent;
     }
 
-    Entity OpenGLRenderer::drawLine(Vector3 origin, Vector3 end, Color color, int width)
+    Entity OpenGLRenderer::drawLine(glm::vec3 origin, glm::vec3 end, Color color, int width)
     {
-        Vector3 dir = end - origin;
-        float dirMagnitude = dir.magnitude();
+        glm::vec3 dir = end - origin;
+        float dirMagnitude = glm::length(dir);
 
-        Vector3 normalizedDir = dir.normalize();
-        float dot = normalizedDir.dot(Vector3{1, 0, 0});
+        glm::vec3 normalizedDir = glm::normalize(dir);
+        float dot = glm::dot(normalizedDir, glm::vec3{1, 0, 0});
 
         // Back to degrees
-        float ang = EngineMath::toDeg(acos(dot));
+        float ang = glm::degrees(acos(dot));
 
         Transform trans;
-        trans.setPosition(origin + Vector3{dir.x / 2, dir.y / 2, end.z});
+        trans.setPosition(origin + glm::vec3{dir.x / 2, dir.y / 2, end.z});
         trans.setRotation(static_cast<int>(ang));
-        trans.setScale(Vector2{dirMagnitude, static_cast<float>(width)});
+        trans.setScale(glm::vec3{dirMagnitude, static_cast<float>(width), 0.0f});
 
         const auto &sprite = Locator::getLocator().getResourceManagerSystem().getSolidColorTexture(color);
 
         return drawSprite(sprite, trans);
     }
 
-    Entity OpenGLRenderer::drawRect(Vector3 origin, Vector2 size, Color color)
+    Entity OpenGLRenderer::drawRect(glm::vec3 origin, glm::vec2 size, Color color)
     {
         Transform trans;
 
-        trans.setScale(size);
-        trans.setPosition(origin + (size * 0.5f));
+        trans.setScale(glm::vec3{size, 0.0f});
+        size *= 0.5f;
+        trans.setPosition(origin + glm::vec3{size.x, size.y, 0.0});
 
         const auto &sprite = Locator::getLocator().getResourceManagerSystem().getSolidColorTexture(color);
 
         return drawSprite(sprite, trans);
     }
 
-    Entity OpenGLRenderer::drawCircle(Vector3 center, float radius, Color color, float quality)
+    Entity OpenGLRenderer::drawCircle(glm::vec3 center, float radius, Color color, float quality)
     {
         Transform trans;
 
-        trans.setScale(Vector2{radius, radius});
+        trans.setScale(glm::vec3{radius, radius, 0.0f});
         trans.setPosition(center);
 
         const auto &sprite = Locator::getLocator().getResourceManagerSystem().getCircleTexture(color);
@@ -146,6 +146,10 @@ namespace TwoDE
         OpenGLRenderer::defaultShader.setInt("texture1", 0);
         glActiveTexture(GL_TEXTURE0);
 
+        projection = glm::ortho(0.0f, m_Width, 0.0f, m_Height, -10.0f, 10.0f);
+        
+        OpenGLRenderer::defaultShader.setMatrix4("projection", projection);
+
         return 0;
     }
 
@@ -170,19 +174,12 @@ namespace TwoDE
         glBindVertexArray(vao);
         glBindBuffer(GL_ARRAY_BUFFER, vbo);
 
-        OpenGLRenderer::defaultShader.use();
-
-        glm::mat4 ortho = glm::ortho(0.0f, m_Width, 0.0f, m_Height, -10.0f, 10.0f);
-        auto vPtr = glm::value_ptr(ortho);
-        auto projection = Matrix4(vPtr);
-
-        OpenGLRenderer::defaultShader.setMatrix4("projection", projection);
-        OpenGLRenderer::defaultShader.setMatrix4("view", viewport.getMatrix());
-
         unsigned int ebo;
         glGenBuffers(1, &ebo);
         glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ebo);
         glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_DYNAMIC_DRAW);
+
+        OpenGLRenderer::defaultShader.setMatrix4("view", viewport.getMatrix());
 
         auto registry = Locator::getLocator().getSceneManagerSystem().GetRegistry();
 

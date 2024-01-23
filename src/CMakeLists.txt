@@ -12,7 +12,7 @@ add_library(TwoDE SHARED ${SOURCE_FILES} ${VENDOR_DIR}/stb_image/stb_image.cpp)
 
 target_compile_definitions(TwoDE PRIVATE TWODE_DLL)
 
-find_package(glew REQUIRED)
+find_package(GLEW REQUIRED)
 find_package(glfw3 3.3 REQUIRED)
 
 target_link_libraries(TwoDE GLEW::GLEW glfw)

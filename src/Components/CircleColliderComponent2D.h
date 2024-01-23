@@ -9,12 +9,12 @@ namespace TwoDE
         float radius = 0.f;
 
     public:
-        bool collision(Vector3 position, Vector3 collisionPoint) override;
+        bool collision(glm::vec3 position, glm::vec3 collisionPoint) override;
         CircleColliderComponent2D(float radius) : radius(radius) {}
     };
 
-    bool CircleColliderComponent2D::collision(Vector3 position, Vector3 collisionPoint)
+    bool CircleColliderComponent2D::collision(glm::vec3 position, glm::vec3 collisionPoint)
     {
-        return (collisionPoint-position).magnitude() < radius;
+        return glm::length(collisionPoint-position) < radius;
     }
 }

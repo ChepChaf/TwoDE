@@ -8,7 +8,7 @@ void SandboxApp::start()
 
 	player = TwoDE::Locator::getLocator().getSceneManagerSystem().CreateEntity();
 	
-	renderer->drawSprite(player, TwoDE::Sprite("resources/sprites/Character01.png"), TwoDE::Vector3{ 0.0f, 0.0f, 1.0f });
+	renderer->drawSprite(player, TwoDE::Sprite("resources/sprites/Character01.png"), glm::vec3{ 0.0f, 0.0f, 1.0f });
 	
 	// 5 tiles
 	TwoDE::Sprite tile{ "resources/sprites/Tile01.png" };
@@ -23,8 +23,8 @@ void SandboxApp::start()
 		{
 			if (params.button == TwoDE::Input::MOUSE_BUTTON::LEFT_BUTTON)
 			{
-				TWODE_INFO("Mouse x position: {}", params.position.getX());
-				TWODE_INFO("Mouse y position: {}", params.position.getY());
+				TWODE_INFO("Mouse x position: {}", params.position.x);
+				TWODE_INFO("Mouse y position: {}", params.position.x);
 				dragging = true;
 			}
 			if (params.button == TwoDE::Input::MOUSE_BUTTON::RIGHT_BUTTON)
@@ -44,7 +44,7 @@ void SandboxApp::start()
 
 	onEvent("mouse_scroll", TwoDE::Event(std::function([=, this](TwoDE::Input::ScrollEventInfo& params)
 		{
-			TwoDE::Vector2 scale = TwoDE::Vector2{ params.offset.getY(), params.offset.getY() };
+			glm::vec3 scale = glm::vec3{ params.offset.y, params.offset.x, 0.0f };
 
 			auto& cam = getEntityRegistry()->get<TwoDE::Transform>(camera);
 
@@ -57,8 +57,8 @@ void SandboxApp::update()
 {
 	TwoDE::Application::update();
 
-	TwoDE::Vector2 right{ 1, 0 };
-	TwoDE::Vector2 up{ 0, 1 };
+	glm::vec2 right{ 1, 0 };
+	glm::vec2 up{ 0, 1 };
 
 	TwoDE::Input input = TwoDE::Locator::getLocator().getInputSystem();
 
@@ -85,11 +85,11 @@ void SandboxApp::update()
 	
 	if (dragging)
 	{
-		TwoDE::Vector2 position = TwoDE::Locator::getLocator().getInputSystem().getCursorPosition() - TwoDE::Vector2{ 0.5f, 0.5f };
+		glm::vec2 position = TwoDE::Locator::getLocator().getInputSystem().getCursorPosition() - glm::vec2{ 0.5f, 0.5f };
 
 		auto& cam = registry->get<TwoDE::Transform>(camera);
 
-		cam.translate(position * -1.f * TwoDE::EngineTime::deltaTime * 200.f);
+		cam.translate(position * -1.f * TwoDE::EngineTime::deltaTime * 50.f);
 	}
 
 	renderer->clear(TwoDE::Color(0.2f, 0.4f, 0.6f, 1.0f));

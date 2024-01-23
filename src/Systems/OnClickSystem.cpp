@@ -25,7 +25,7 @@ void TwoDE::OnClickSystem::start()
                     auto col = view.get<CircleColliderComponent2D>(entity);
                     auto transform = view.get<Transform>(entity);
 
-                    if (col.collision(params.position, transform.getPosition()))
+                    if (col.collision(glm::vec3{params.position, 0.0f}, transform.getPosition()))
                     {
                         auto click = view.get<ClickableComponent>(entity);
                         click.onClickEvent(entity);

@@ -1,9 +1,9 @@
 #include <fmt/format.h>
 
-#include <Vector3.h>
+#include <glm::vec3.h>
 
 template <>
-struct fmt::formatter<TwoDE::Vector3> {
+struct fmt::formatter<glm::vec3> {
     
     char presentation = 'f';
 constexpr auto parse(format_parse_context& ctx) {
@@ -17,7 +17,7 @@ constexpr auto parse(format_parse_context& ctx) {
     }
 
     template <typename FormatContext>
-    auto format(const TwoDE::Vector3& v, FormatContext& ctx) {
+    auto format(const glm::vec3& v, FormatContext& ctx) {
         return format_to(
             ctx.out(),
             presentation == 'f' ? "({:.1f}, {:.1f})" : "({:.1e}, {:.1e})",

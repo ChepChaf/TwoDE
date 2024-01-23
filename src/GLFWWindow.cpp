@@ -52,16 +52,21 @@ namespace TwoDE
 
 			glfwGetCursorPos(window, &x, &y);
 
+			TWODE_CORE_TRACE("Mouse clicked at {0}, {1}", x, y);
+
 			int width, height;
 			glfwGetWindowSize(window, &width, &height);
 
-			x = x / width;
-			y = 1-y / height;
+			// Transform to OpenGL coordinates
+			x = (x / width) + 0.5;
+			y = 1-(y+0.5) / height;
+
+			TWODE_CORE_TRACE("Mouse clicked at {0}, {1}", x, y);
 
 			if (action == GLFW_PRESS)
-			    Locator::getLocator().getInputSystem().mouseClick(button, Vector2{ static_cast<float>(x), static_cast<float>(y) });
+			    Locator::getLocator().getInputSystem().mouseClick(button, glm::vec2{ static_cast<float>(x), static_cast<float>(y) });
 			if (action == GLFW_RELEASE)
-			    Locator::getLocator().getInputSystem().mouseRelease(button, Vector2{ static_cast<float>(x), static_cast<float>(y) });
+			    Locator::getLocator().getInputSystem().mouseRelease(button, glm::vec2{ static_cast<float>(x), static_cast<float>(y) });
 		};
 		glfwSetMouseButtonCallback(m_Window, mouse_callback);
 
@@ -73,7 +78,7 @@ namespace TwoDE
 			xpos = xpos / width;
 			ypos = 1-ypos / height;
 
-			Locator::getLocator().getInputSystem().setCursorPosition(Vector2{ static_cast<float>(xpos), static_cast<float>(ypos) });
+			Locator::getLocator().getInputSystem().setCursorPosition(glm::vec2{ static_cast<float>(xpos), static_cast<float>(ypos) });
 		};
 		glfwSetCursorPosCallback(m_Window, cursor_callback);
 
@@ -88,8 +93,8 @@ namespace TwoDE
 			x = x / width;
 			y = 1-y / height;
 
-			Locator::getLocator().getInputSystem().mouseScroll(Vector2{ static_cast<float>(x), static_cast<float>(y) },
-				Vector2{ static_cast<float>(xoffset), static_cast<float>(yoffset) });
+			Locator::getLocator().getInputSystem().mouseScroll(glm::vec2{ static_cast<float>(x), static_cast<float>(y) },
+				glm::vec2{ static_cast<float>(xoffset), static_cast<float>(yoffset) });
 		};
 		glfwSetScrollCallback(m_Window, scroll_callback);
 

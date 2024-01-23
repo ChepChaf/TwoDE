@@ -8,23 +8,23 @@ namespace TwoDE
 	void Transform::recalculateMatrix()
 	{
 		// TODO: do this without glm
-		matrix = Matrix4(1.f);
-		matrix.translate(m_Position);
-		matrix.rotate(m_Rotation);
-		matrix.scale(m_Scale);
+		matrix = glm::mat4(1.f);
+		matrix = glm::translate(matrix, m_Position);
+		matrix = glm::rotate(matrix, m_Rotation, glm::vec3{0, 0, 1});
+		matrix = glm::scale(matrix, m_Scale);
 	}
-	Transform::Transform(Vector3 position, float rotation, Vector2 scale) : m_Position(position), m_Rotation(rotation), m_Scale(scale)
+	Transform::Transform(glm::vec3 position, float rotation, glm::vec3 scale) : m_Position(position), m_Rotation(rotation), m_Scale(scale)
 	{
 		recalculateMatrix();
 	}
 
-	void Transform::translate(Vector2 translation)
+	void Transform::translate(glm::vec2 translation)
 	{
-		m_Position += translation;
+		m_Position += glm::vec3{translation, 0.0f};
 		recalculateMatrix();
 	}
 
-	void Transform::translate(Vector3 translation)
+	void Transform::translate(glm::vec3 translation)
 	{
 		m_Position += translation;
 		recalculateMatrix();
@@ -36,7 +36,7 @@ namespace TwoDE
 		recalculateMatrix();
 	}
 
-	void Transform::scale(Vector2 scale)
+	void Transform::scale(glm::vec3 scale)
 	{
 		m_Scale += scale;
 		recalculateMatrix();
@@ -48,7 +48,7 @@ namespace TwoDE
 		recalculateMatrix();
 	}
 
-	void Transform::setScale(Vector2 scale)
+	void Transform::setScale(glm::vec3 scale)
 	{
 		m_Scale = scale;
 		recalculateMatrix();
@@ -60,22 +60,22 @@ namespace TwoDE
 		recalculateMatrix();
 	}
 
-	void Transform::setPosition(Vector3 pos)
+	void Transform::setPosition(glm::vec3 pos)
 	{
 		m_Position = pos;
 		recalculateMatrix();
 	}
-	Vector3 Transform::getPosition()
+	glm::vec3 Transform::getPosition()
 	{
 		return m_Position;
 	}
 
-	Vector2 Transform::getPositionv2()
+	glm::vec2 Transform::getPositionv2()
 	{
-		return Vector2{ m_Position.x, m_Position.y };
+		return glm::vec2{ m_Position.x, m_Position.y };
 	}
 
-	const Matrix4 Transform::getMatrix() const
+	const glm::mat4 Transform::getMatrix() const
 	{
 		return matrix;
 	}

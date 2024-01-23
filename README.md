@@ -22,9 +22,11 @@ it probably won't be usable on a productive environment.
 - Windows:
 	TBD
 - Linux & MacOS
-	- mkdir build && cd build
-	- cmake "Unix Makefiles" ..
-	- make all
+	```
+	mkdir build && cd build
+	cmake "Unix Makefiles" ..
+	make all
+	```
 ## Usage:
 
 ### Basic structure

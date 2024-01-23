@@ -1,7 +1,6 @@
 #pragma once
 
-#include "Vector2.h"
-#include "Matrix4.h"
+#include <glm/glm.hpp>
 
 #include <string>
 
@@ -23,7 +22,7 @@ namespace TwoDE
         void setFloat2(const std::string& name, float x, float y) const;
         void setFloat3(const std::string& name, float x, float y, float z) const;
         void setFloat4(const std::string& name, float x, float y, float z, float w) const;
-        void setVector2(const std::string& name, Vector2 value) const;
-        void setMatrix4(const std::string& name, Matrix4 value) const;
+        void setVector2(const std::string& name, glm::vec2 value) const;
+        void setMatrix4(const std::string& name, glm::mat4 value) const;
     };
 }

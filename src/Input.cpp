@@ -33,19 +33,19 @@ namespace TwoDE
         Locator::getLocator().getEventSystem().publish("button_released", info);
     }
 
-    void Input::mouseClick(int button, Vector2 position)
+    void Input::mouseClick(int button, glm::vec2 position)
     {
         MouseEventInfo info{.position=position, .button = (MOUSE_BUTTON) button};
         Locator::getLocator().getEventSystem().publish("mouse_click", info);
     }
 
-    void Input::mouseRelease(int button, Vector2 position)
+    void Input::mouseRelease(int button, glm::vec2 position)
     {
         MouseEventInfo info{.position=position, .button = (MOUSE_BUTTON) button};
         Locator::getLocator().getEventSystem().publish("mouse_release", info);
     }
 
-    void Input::mouseScroll(Vector2 position, Vector2 offset)
+    void Input::mouseScroll(glm::vec2 position, glm::vec2 offset)
     {
         ScrollEventInfo info{.position = position, .offset = offset};
         Locator::getLocator().getEventSystem().publish("mouse_scroll", info);
@@ -56,12 +56,12 @@ namespace TwoDE
         return keyboardButtonsPressed[static_cast<BUTTON>(button)];
     }
 
-    void Input::setCursorPosition(Vector2 position)
+    void Input::setCursorPosition(glm::vec2 position)
     {
         currentMousePosition = position;
     }
 
-    Vector2 Input::getCursorPosition()
+    glm::vec2 Input::getCursorPosition()
     {
         return currentMousePosition;
     }

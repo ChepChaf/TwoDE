@@ -1,10 +1,8 @@
 #pragma once
 
 #include "Core.h"
-#include "Vector2.h"
-#include "Vector3.h"
 
-#include "Matrix4.h"
+#include <glm/glm.hpp>
 
 namespace TwoDE
 {
@@ -12,28 +10,28 @@ namespace TwoDE
 	{
 		void recalculateMatrix();
 	public:
-		Matrix4 matrix;
-		Vector3 m_Position;
-		Vector2 m_Scale;
+		glm::mat4 matrix;
+		glm::vec3 m_Position;
+		glm::vec3 m_Scale;
 		float m_Rotation;
 
-		Transform(Vector3 position = { 0.0f, 0.0f, 0.0f }, float rotation = { 0.0f }, Vector2 scale = { 10.0f, 10.0f });
+		Transform(glm::vec3 position = { 0.0f, 0.0f, 0.0f }, float rotation = { 0.0f }, glm::vec3 scale = { 10.0f, 10.0f, 0.0f });
 
-		void translate(Vector2 translation);
-		void translate(Vector3 translation);
+		void translate(glm::vec2 translation);
+		void translate(glm::vec3 translation);
 
 		void rotate(float rotation);
-		void scale(Vector2 scale);
+		void scale(glm::vec3 scale);
 
 		void setRotation(float rotation);
-		void setScale(Vector2 scale);
+		void setScale(glm::vec3 scale);
 		void setZ(int z);
-		void setPosition(Vector3 pos);
+		void setPosition(glm::vec3 pos);
 
-		Vector3 getPosition();
-		Vector2 getPositionv2();
+		glm::vec3 getPosition();
+		glm::vec2 getPositionv2();
 
-		const Matrix4 getMatrix() const;
+		const glm::mat4 getMatrix() const;
 	};
 }
 

@@ -1,5 +1,7 @@
 #include "Primitives.h"
 
+#include <glm/glm.hpp>
+
 #include <iostream>
 
 void PrimitivesApp::start()
@@ -42,14 +44,14 @@ void PrimitivesApp::start()
 
 	onEvent("mouse_scroll", TwoDE::Event(std::function([=](TwoDE::Input::ScrollEventInfo& params)
 		{
-			TwoDE::Vector2 scale = TwoDE::Vector2{ params.offset.getY(), params.offset.getY() };
+			auto scale = glm::vec3{ params.offset.y, params.offset.y, 0.0f };
 
 			auto& cam = getEntityRegistry()->get<TwoDE::Transform>(camera);
 
-			cam.scale(scale * TwoDE::EngineTime::deltaTime * 4.0f);
+			cam.scale(scale * TwoDE::EngineTime::deltaTime * 1.0f);
 
-			TWODE_INFO("Camera scaleX: {}", cam.m_Scale.getX());
-			TWODE_INFO("Camera scaleY: {}", cam.m_Scale.getY());
+			TWODE_INFO("Camera scaleX: {}", cam.m_Scale.x);
+			TWODE_INFO("Camera scaleY: {}", cam.m_Scale.x);
 		}
 	)));
 }
@@ -62,7 +64,7 @@ void PrimitivesApp::update()
 
 	if (dragging)
 	{
-		TwoDE::Vector2 position = TwoDE::Locator::getLocator().getInputSystem().getCursorPosition() - TwoDE::Vector2{ 0.5f, 0.5f };
+		glm::vec2 position = TwoDE::Locator::getLocator().getInputSystem().getCursorPosition() - glm::vec2{ 0.5f, 0.5f };
 
 		auto& cam = registry->get<TwoDE::Transform>(camera);
 
@@ -76,7 +78,7 @@ void PrimitivesApp::update()
 	for (auto square : squares)
 	{
 		auto& transform = view.get<TwoDE::Transform>(square);
-		transform.rotate(10.f * i * TwoDE::EngineTime::deltaTime);
+		transform.rotate(3.f * i * TwoDE::EngineTime::deltaTime);
 		i = -i;
 	}
 
@@ -84,7 +86,7 @@ void PrimitivesApp::update()
 	for (auto circle : circles)
 	{
 		auto& transform = view.get<TwoDE::Transform>(circle);
-		transform.rotate(10.f * i * TwoDE::EngineTime::deltaTime);
+		transform.rotate(4.f * i * TwoDE::EngineTime::deltaTime);
 		i = -i;
 	}
 

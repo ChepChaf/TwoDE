@@ -1,16 +1,16 @@
 #pragma once
 
-#include <Vector3.h>
+#include <glm/glm.hpp>
 
 namespace TwoDE
 {
     class ColliderComponent2D
     {
     public:
-        virtual bool collision(Vector3 position, Vector3 collisionPoint);
+        virtual bool collision(glm::vec3 position, glm::vec3 collisionPoint);
     };
 
-    bool ColliderComponent2D::collision(Vector3 position, Vector3 collisionPoint)
+    bool ColliderComponent2D::collision(glm::vec3 position, glm::vec3 collisionPoint)
     {
         return false;
     }

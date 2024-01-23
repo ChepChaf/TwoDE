@@ -1,7 +1,7 @@
 #pragma once
 
 #include "Core.h"
-#include "Vector2.h"
+#include <glm/glm.hpp>
 
 #include <GLFW/glfw3.h>
 
@@ -36,32 +36,32 @@ namespace TwoDE
 
 		struct MouseEventInfo
 		{
-			Vector2 position;
+			glm::vec2 position;
 			MOUSE_BUTTON button;
 		};
 
 		struct ScrollEventInfo
 		{
-			Vector2 position;
-			Vector2 offset;
+			glm::vec2 position;
+			glm::vec2 offset;
 		};
 
 		void init();
 		void buttonClicked(int button);
 		void buttonReleased(int button);
 
-		void mouseClick(int button, Vector2 position);
-		void mouseRelease(int button, Vector2 position);
+		void mouseClick(int button, glm::vec2 position);
+		void mouseRelease(int button, glm::vec2 position);
 
-		void mouseScroll(Vector2 position, Vector2 offset);
+		void mouseScroll(glm::vec2 position, glm::vec2 offset);
 
 		bool buttonPressed(BUTTON button);
 
 
-		void setCursorPosition(Vector2 position);
-		Vector2 getCursorPosition();
+		void setCursorPosition(glm::vec2 position);
+		glm::vec2 getCursorPosition();
 	private:
-		Vector2 currentMousePosition;
+		glm::vec2 currentMousePosition;
 
 		std::map<BUTTON, bool> keyboardButtonsPressed;
 	};

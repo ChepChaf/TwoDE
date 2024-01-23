@@ -30,7 +30,7 @@ namespace TwoDE
         camera = Locator::getLocator().getCameraEntity();
 
         Transform trans;
-        trans.setScale({8.f, 8.f});
+        trans.setScale({8.f, 8.f, 0.0f});
         trans.setPosition({590.f, 120.f, 0.f});
         Locator::getLocator().getSceneManagerSystem().AddComponent<Transform>(camera, trans);
 
